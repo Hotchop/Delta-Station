@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://d031l5mvjvfwt"]
+
+[ext_resource type="Texture2D" uid="uid://51n1adi7ua1b" path="res://Assets/Backgrounds/Station-Background-Full.png" id="1_ws5mv"]
+[ext_resource type="PackedScene" uid="uid://qo43418nws8u" path="res://Station Modules/station_module.tscn" id="2_n6kc8"]
+
+[node name="Game" type="Node2D"]
+
+[node name="BG" type="ParallaxBackground" parent="."]
+
+[node name="Station-background" type="Sprite2D" parent="BG"]
+position = Vector2(960, 540)
+texture = ExtResource("1_ws5mv")
+
+[node name="Station Parts" type="Node2D" parent="."]
+
+[node name="Station Module" parent="Station Parts" instance=ExtResource("2_n6kc8")]
+position = Vector2(1221, 351)
