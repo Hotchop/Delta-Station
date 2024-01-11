@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://qo43418nws8u"]
+
+[ext_resource type="Script" path="res://Global/station_module.gd" id="1_7cib4"]
+
+[node name="Station Module" type="Node2D"]
+script = ExtResource("1_7cib4")

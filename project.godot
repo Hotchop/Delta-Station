@@ -11,13 +11,12 @@ config_version=5
 [application]
 
 config/name="Delta Station"
-run/main_scene="res://Screens/main.tscn"
+run/main_scene="res://Screens/game.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Module="*res://Global/Module.gd"
 Cursor="*res://Global/Cursor.gd"
 
 [display]
