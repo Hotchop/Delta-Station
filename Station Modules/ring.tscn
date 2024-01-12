@@ -1,0 +1,161 @@
+[gd_scene load_steps=22 format=3 uid="uid://yeqlaavupdnf"]
+
+[ext_resource type="Texture2D" uid="uid://c0ub384cidla" path="res://Assets/Station Parts/Ring.png" id="1_qj4av"]
+[ext_resource type="PackedScene" uid="uid://dv3x8bg41sp3l" path="res://Global/hull_component.tscn" id="2_7xr12"]
+[ext_resource type="Script" path="res://Global/station_module.gd" id="3_www6m"]
+[ext_resource type="PackedScene" uid="uid://07j33mqmft0x" path="res://Global/module_hitbox.tscn" id="4_nb51h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ohep"]
+atlas = ExtResource("1_qj4av")
+region = Rect2(0, 0, 98, 570)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8aw4w"]
+atlas = ExtResource("1_qj4av")
+region = Rect2(98, 0, 98, 570)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7sp0x"]
+atlas = ExtResource("1_qj4av")
+region = Rect2(196, 0, 98, 570)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dcws4"]
+atlas = ExtResource("1_qj4av")
+region = Rect2(294, 0, 98, 570)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yrgvr"]
+atlas = ExtResource("1_qj4av")
+region = Rect2(0, 1710, 98, 570)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gj4sv"]
+atlas = ExtResource("1_qj4av")
+region = Rect2(98, 1710, 98, 570)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sn63d"]
+atlas = ExtResource("1_qj4av")
+region = Rect2(196, 1710, 98, 570)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4apmx"]
+atlas = ExtResource("1_qj4av")
+region = Rect2(294, 1710, 98, 570)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_scuy4"]
+atlas = ExtResource("1_qj4av")
+region = Rect2(0, 1140, 98, 570)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4qajo"]
+atlas = ExtResource("1_qj4av")
+region = Rect2(98, 1140, 98, 570)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qy5li"]
+atlas = ExtResource("1_qj4av")
+region = Rect2(196, 1140, 98, 570)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kgwh6"]
+atlas = ExtResource("1_qj4av")
+region = Rect2(294, 1140, 98, 570)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ysug"]
+atlas = ExtResource("1_qj4av")
+region = Rect2(0, 570, 98, 570)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1wl8"]
+atlas = ExtResource("1_qj4av")
+region = Rect2(98, 570, 98, 570)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnkm8"]
+atlas = ExtResource("1_qj4av")
+region = Rect2(196, 570, 98, 570)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5l7o"]
+atlas = ExtResource("1_qj4av")
+region = Rect2(294, 570, 98, 570)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_roxtb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ohep")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8aw4w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7sp0x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcws4")
+}],
+"loop": true,
+"name": &"100",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yrgvr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gj4sv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sn63d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4apmx")
+}],
+"loop": true,
+"name": &"25",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_scuy4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4qajo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qy5li")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kgwh6")
+}],
+"loop": true,
+"name": &"50",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ysug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1wl8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wnkm8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5l7o")
+}],
+"loop": true,
+"name": &"75",
+"speed": 1.0
+}]
+
+[node name="Ring" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_roxtb")
+animation = &"100"
+autoplay = "100"
+frame_progress = 0.135558
+
+[node name="HullComponent" parent="." instance=ExtResource("2_7xr12")]
+
+[node name="Station Module" type="Node2D" parent="."]
+script = ExtResource("3_www6m")
+
+[node name="ModuleHitbox" parent="." instance=ExtResource("4_nb51h")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ModuleHitbox"]
+visible = false
+position = Vector2(147, 857)
+polygon = PackedVector2Array(-139, -1136, -135, -1136, -135, -1135, -132, -1135, -132, -1134, -129, -1134, -129, -1133, -127, -1133, -127, -1132, -125, -1132, -125, -1131, -124, -1131, -124, -1130, -122, -1130, -122, -1129, -121, -1129, -121, -1128, -120, -1128, -120, -1127, -118, -1127, -118, -1126, -117, -1126, -117, -1125, -116, -1125, -116, -1124, -115, -1124, -115, -1123, -114, -1123, -114, -1122, -113, -1122, -113, -1121, -112, -1121, -112, -1120, -111, -1120, -111, -1118, -110, -1118, -110, -1117, -109, -1117, -109, -1116, -108, -1116, -108, -1114, -107, -1114, -107, -1113, -106, -1113, -106, -1111, -105, -1111, -105, -1109, -104, -1109, -104, -1106, -103, -1106, -103, -1103, -102, -1103, -102, -1099, -101, -1099, -101, -611, -102, -611, -102, -607, -103, -607, -103, -604, -104, -604, -104, -601, -105, -601, -105, -599, -106, -599, -106, -597, -107, -597, -107, -596, -108, -596, -108, -594, -109, -594, -109, -593, -110, -593, -110, -592, -111, -592, -111, -590, -112, -590, -112, -589, -113, -589, -113, -588, -114, -588, -114, -587, -115, -587, -115, -586, -116, -586, -116, -585, -117, -585, -117, -584, -118, -584, -118, -583, -120, -583, -120, -582, -121, -582, -121, -581, -122, -581, -122, -580, -124, -580, -124, -579, -125, -579, -125, -578, -127, -578, -127, -577, -129, -577, -129, -576, -132, -576, -132, -575, -135, -575, -135, -574, -139, -574, -139, -573, -155, -573, -155, -574, -159, -574, -159, -575, -162, -575, -162, -576, -165, -576, -165, -577, -167, -577, -167, -578, -169, -578, -169, -579, -170, -579, -170, -580, -172, -580, -172, -581, -173, -581, -173, -582, -174, -582, -174, -583, -176, -583, -176, -584, -177, -584, -177, -585, -178, -585, -178, -586, -179, -586, -179, -587, -180, -587, -180, -588, -181, -588, -181, -589, -182, -589, -182, -590, -183, -590, -183, -592, -184, -592, -184, -593, -185, -593, -185, -594, -186, -594, -186, -596, -187, -596, -187, -597, -188, -597, -188, -599, -189, -599, -189, -601, -190, -601, -190, -604, -191, -604, -191, -607, -192, -607, -192, -611, -193, -611, -193, -1099, -192, -1099, -192, -1103, -191, -1103, -191, -1106, -190, -1106, -190, -1109, -189, -1109, -189, -1111, -188, -1111, -188, -1113, -187, -1113, -187, -1114, -186, -1114, -186, -1116, -185, -1116, -185, -1117, -184, -1117, -184, -1118, -183, -1118, -183, -1120, -182, -1120, -182, -1121, -181, -1121, -181, -1122, -180, -1122, -180, -1123, -179, -1123, -179, -1124, -178, -1124, -178, -1125, -177, -1125, -177, -1126, -176, -1126, -176, -1127, -174, -1127, -174, -1128, -173, -1128, -173, -1129, -172, -1129, -172, -1130, -170, -1130, -170, -1131, -169, -1131, -169, -1132, -167, -1132, -167, -1133, -165, -1133, -165, -1134, -162, -1134, -162, -1135, -159, -1135, -159, -1136, -155, -1136, -155, -1137, -139, -1137)

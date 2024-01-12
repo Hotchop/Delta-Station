@@ -1,0 +1,118 @@
+[gd_scene load_steps=16 format=3 uid="uid://ckm6su6vqhhdp"]
+
+[ext_resource type="Texture2D" uid="uid://cwr0vpewfrpb2" path="res://Assets/Station Parts/Water-Module.png" id="1_mkhbq"]
+[ext_resource type="Texture2D" uid="uid://cqw3ol8jsd3ob" path="res://Assets/Station Parts/Water-Sprite.png" id="1_ygv0x"]
+[ext_resource type="PackedScene" uid="uid://dv3x8bg41sp3l" path="res://Global/hull_component.tscn" id="2_yis6i"]
+[ext_resource type="Script" path="res://Global/station_module.gd" id="3_e0mal"]
+[ext_resource type="PackedScene" uid="uid://07j33mqmft0x" path="res://Global/module_hitbox.tscn" id="4_ccl5d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58wv4"]
+atlas = ExtResource("1_ygv0x")
+region = Rect2(0, 0, 194, 109)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lphtx"]
+atlas = ExtResource("1_ygv0x")
+region = Rect2(194, 0, 194, 109)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcude"]
+atlas = ExtResource("1_ygv0x")
+region = Rect2(388, 0, 194, 109)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uaauf"]
+atlas = ExtResource("1_ygv0x")
+region = Rect2(582, 0, 194, 109)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yr4vf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58wv4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lphtx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jcude")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uaauf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ysa3g"]
+atlas = ExtResource("1_mkhbq")
+region = Rect2(0, 0, 194, 109)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34bw6"]
+atlas = ExtResource("1_mkhbq")
+region = Rect2(194, 109, 194, 109)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85ats"]
+atlas = ExtResource("1_mkhbq")
+region = Rect2(0, 109, 194, 109)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdmqc"]
+atlas = ExtResource("1_mkhbq")
+region = Rect2(194, 0, 194, 109)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_roxtb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ysa3g")
+}],
+"loop": true,
+"name": &"100",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_34bw6")
+}],
+"loop": true,
+"name": &"25",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85ats")
+}],
+"loop": true,
+"name": &"50",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdmqc")
+}],
+"loop": true,
+"name": &"75",
+"speed": 1.0
+}]
+
+[node name="Water Module" type="Node2D"]
+
+[node name="Water Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_yr4vf")
+autoplay = "default"
+frame = 3
+frame_progress = 0.0545414
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_roxtb")
+animation = &"25"
+autoplay = "100"
+
+[node name="HullComponent" parent="." instance=ExtResource("2_yis6i")]
+
+[node name="Station Module" type="Node2D" parent="."]
+script = ExtResource("3_e0mal")
+
+[node name="ModuleHitbox" parent="." instance=ExtResource("4_ccl5d")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ModuleHitbox"]
+visible = false
+polygon = PackedVector2Array(-70, -18, -60, -18, -60, -27, -58, -29, 58, -29, 60, -27, 60, -18, 70, -18, 75, -13, 78, -13, 90, -3, 92, 2, 92, 20, 86, 28, 77, 35, 70, 39, 60, 39, 60, 47, 58, 50, -58, 50, -60, 48, -60, 39, -70, 39, -73, 35, -81, 32, -88, 25, -92, 17, -92, 5, -91, 1, -87, -5, -83, -8, -81, -11, -76, -13, -73, -14)

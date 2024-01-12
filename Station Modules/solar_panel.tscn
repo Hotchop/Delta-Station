@@ -1,0 +1,76 @@
+[gd_scene load_steps=10 format=3 uid="uid://dqat5ttat3he8"]
+
+[ext_resource type="Texture2D" uid="uid://blxxawj64pcmy" path="res://Assets/Station Parts/Solar-Panel.png" id="1_5m7ix"]
+[ext_resource type="PackedScene" uid="uid://dv3x8bg41sp3l" path="res://Global/hull_component.tscn" id="2_qfn8j"]
+[ext_resource type="Script" path="res://Global/station_module.gd" id="3_5k7ob"]
+[ext_resource type="PackedScene" uid="uid://07j33mqmft0x" path="res://Global/module_hitbox.tscn" id="4_u7ao7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5t4c"]
+atlas = ExtResource("1_5m7ix")
+region = Rect2(0, 0, 632, 254)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vyaud"]
+atlas = ExtResource("1_5m7ix")
+region = Rect2(632, 254, 632, 254)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3hgdm"]
+atlas = ExtResource("1_5m7ix")
+region = Rect2(0, 254, 632, 254)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gtgqv"]
+atlas = ExtResource("1_5m7ix")
+region = Rect2(632, 0, 632, 254)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_roxtb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5t4c")
+}],
+"loop": true,
+"name": &"100",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vyaud")
+}],
+"loop": true,
+"name": &"25",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3hgdm")
+}],
+"loop": true,
+"name": &"50",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gtgqv")
+}],
+"loop": true,
+"name": &"75",
+"speed": 1.0
+}]
+
+[node name="Solar Panel" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_roxtb")
+animation = &"100"
+autoplay = "100"
+
+[node name="HullComponent" parent="." instance=ExtResource("2_qfn8j")]
+
+[node name="Station Module" type="Node2D" parent="."]
+script = ExtResource("3_5k7ob")
+
+[node name="ModuleHitbox" parent="." instance=ExtResource("4_u7ao7")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ModuleHitbox"]
+visible = false
+position = Vector2(318, 127)
+polygon = PackedVector2Array(-313, -250, -311, -250, -311, -249, -310, -249, -310, -248, -309, -248, -309, -247, -308, -247, -308, -246, -307, -246, -307, -245, -306, -245, -306, -244, -305, -244, -305, -243, -304, -243, -304, -241, -303, -241, -303, -202, -251, -202, -251, -228, -250, -228, -250, -229, -249, -229, -249, -230, -248, -230, -248, -231, -247, -231, -247, -232, -7, -232, -7, -231, -6, -231, -6, -230, -5, -230, -5, -229, -4, -229, -4, -228, -3, -228, -3, -158, -4, -158, -4, -157, -5, -157, -5, -156, -6, -156, -6, -155, -7, -155, -7, -154, -247, -154, -247, -155, -248, -155, -248, -156, -249, -156, -249, -157, -250, -157, -250, -158, -251, -158, -251, -186, -303, -186, -303, -145, -304, -145, -304, -143, -305, -143, -305, -142, -306, -142, -306, -141, -307, -141, -307, -140, -308, -140, -308, -138, -307, -138, -307, -86, -306, -86, -306, -85, -305, -85, -305, -35, -304, -35, -304, -34, -303, -34, -303, -33, -302, -33, -302, -32, -301, -32, -301, -31, -300, -31, -300, -29, -299, -29, -299, -26, -298, -26, -298, -24, -297, -24, -297, -23, -295, -23, -295, -22, -293, -22, -293, -21, -292, -21, -292, -20, -290, -20, -290, -19, -289, -19, -289, -18, -288, -18, -288, -17, -287, -17, -287, -16, -286, -16, -286, -15, -285, -15, -285, -14, -284, -14, -284, -13, -283, -13, -283, -12, -282, -12, -282, -10, -281, -10, -281, -9, -280, -9, -280, -6, -279, -6, -279, -5, -280, -5, -280, -4, -281, -4, -281, -3, -351, -3, -351, -4, -352, -4, -352, -5, -353, -5, -353, -6, -352, -6, -352, -9, -351, -9, -351, -10, -350, -10, -350, -12, -349, -12, -349, -13, -348, -13, -348, -14, -347, -14, -347, -15, -346, -15, -346, -16, -345, -16, -345, -17, -344, -17, -344, -18, -343, -18, -343, -19, -342, -19, -342, -20, -340, -20, -340, -21, -339, -21, -339, -22, -337, -22, -337, -23, -335, -23, -335, -24, -334, -24, -334, -26, -333, -26, -333, -29, -332, -29, -332, -31, -331, -31, -331, -32, -330, -32, -330, -33, -329, -33, -329, -34, -328, -34, -328, -35, -327, -35, -327, -85, -326, -85, -326, -86, -325, -86, -325, -138, -324, -138, -324, -140, -325, -140, -325, -141, -326, -141, -326, -142, -327, -142, -327, -143, -328, -143, -328, -145, -329, -145, -329, -186, -381, -186, -381, -158, -382, -158, -382, -157, -383, -157, -383, -156, -384, -156, -384, -155, -385, -155, -385, -154, -625, -154, -625, -155, -626, -155, -626, -156, -627, -156, -627, -157, -628, -157, -628, -158, -629, -158, -629, -228, -628, -228, -628, -229, -627, -229, -627, -230, -626, -230, -626, -231, -625, -231, -625, -232, -385, -232, -385, -231, -384, -231, -384, -230, -383, -230, -383, -229, -382, -229, -382, -228, -381, -228, -381, -202, -329, -202, -329, -241, -328, -241, -328, -243, -327, -243, -327, -244, -326, -244, -326, -245, -325, -245, -325, -246, -324, -246, -324, -247, -323, -247, -323, -248, -322, -248, -322, -249, -321, -249, -321, -250, -319, -250, -319, -251, -313, -251)

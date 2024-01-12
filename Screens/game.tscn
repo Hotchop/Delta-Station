@@ -1,7 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://d031l5mvjvfwt"]
+[gd_scene load_steps=16 format=3 uid="uid://d031l5mvjvfwt"]
 
 [ext_resource type="Texture2D" uid="uid://51n1adi7ua1b" path="res://Assets/Backgrounds/Station-Background-Full.png" id="1_ws5mv"]
+[ext_resource type="Texture2D" uid="uid://co573qj12lwmd" path="res://Assets/Station Parts/Station-Background.png" id="2_f0djv"]
 [ext_resource type="PackedScene" uid="uid://bl2jf6iexhjb4" path="res://Station Modules/atmosphere_generator.tscn" id="2_soymp"]
+[ext_resource type="Script" path="res://Screens/Quit Button DB.gd" id="3_d6pon"]
+[ext_resource type="PackedScene" uid="uid://djw5rny2ym3au" path="res://Station Modules/battery.tscn" id="4_j4de0"]
+[ext_resource type="PackedScene" uid="uid://jv8ggtmj80l6" path="res://Station Modules/probe.tscn" id="5_4nw3o"]
+[ext_resource type="PackedScene" uid="uid://drshswm10xhix" path="res://Station Modules/materials.tscn" id="6_5m0kk"]
+[ext_resource type="PackedScene" uid="uid://d1lmo1hrm442h" path="res://Station Modules/biosphere.tscn" id="7_8t7o8"]
+[ext_resource type="PackedScene" uid="uid://dix1a5gdydf8w" path="res://Station Modules/probe_station.tscn" id="8_hnw00"]
+[ext_resource type="PackedScene" uid="uid://by16b882gnvra" path="res://Station Modules/observation.tscn" id="9_n4jvv"]
+[ext_resource type="PackedScene" uid="uid://dcqdt4vwtg2kj" path="res://Station Modules/propulsor.tscn" id="11_ergll"]
+[ext_resource type="PackedScene" uid="uid://cgntm5eau2f4u" path="res://Station Modules/reactor.tscn" id="11_nhl55"]
+[ext_resource type="PackedScene" uid="uid://yeqlaavupdnf" path="res://Station Modules/ring.tscn" id="12_sgjgt"]
+[ext_resource type="PackedScene" uid="uid://dqat5ttat3he8" path="res://Station Modules/solar_panel.tscn" id="13_sfobf"]
+[ext_resource type="PackedScene" uid="uid://ckm6su6vqhhdp" path="res://Station Modules/water_module.tscn" id="15_6xrrf"]
 
 [node name="Game" type="Node2D"]
 
@@ -22,13 +35,70 @@ texture = ExtResource("1_ws5mv")
 
 [node name="Station Parts" type="Node2D" parent="."]
 
+[node name="Station-background" type="Sprite2D" parent="Station Parts"]
+position = Vector2(947, 389.5)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_f0djv")
+
 [node name="Atmosphere Generator" parent="Station Parts" instance=ExtResource("2_soymp")]
-position = Vector2(1169, 389)
+position = Vector2(1168.8, 388.83)
 scale = Vector2(0.8, 0.8)
 
-[node name="Button" type="Button" parent="."]
+[node name="Battery" parent="Station Parts" instance=ExtResource("4_j4de0")]
+position = Vector2(972.8, 388.81)
+scale = Vector2(0.8, 0.8)
+
+[node name="Water Module" parent="Station Parts" instance=ExtResource("15_6xrrf")]
+position = Vector2(1350.4, 550.77)
+scale = Vector2(0.8, 0.8)
+
+[node name="Biosphere" parent="Station Parts" instance=ExtResource("7_8t7o8")]
+position = Vector2(1350.39, 390.37)
+scale = Vector2(0.8, 0.8)
+
+[node name="Materials" parent="Station Parts" instance=ExtResource("6_5m0kk")]
+position = Vector2(762, 408)
+scale = Vector2(0.8, 0.8)
+
+[node name="Observation" parent="Station Parts" instance=ExtResource("9_n4jvv")]
+position = Vector2(1616.81, 389.6)
+scale = Vector2(0.8, 0.8)
+
+[node name="Probe Station" parent="Station Parts" instance=ExtResource("8_hnw00")]
+position = Vector2(782.5, 279.5)
+scale = Vector2(0.8, 0.8)
+
+[node name="Probe" parent="Station Parts" instance=ExtResource("5_4nw3o")]
+position = Vector2(782.5, 268.015)
+scale = Vector2(0.8, 0.8)
+
+[node name="Propulsor" parent="Station Parts" instance=ExtResource("11_ergll")]
+position = Vector2(379.18, 389.68)
+scale = Vector2(0.8, 0.8)
+
+[node name="Reactor" parent="Station Parts" instance=ExtResource("11_nhl55")]
+position = Vector2(576, 389.645)
+scale = Vector2(0.8, 0.8)
+
+[node name="Ring" parent="Station Parts" instance=ExtResource("12_sgjgt")]
+position = Vector2(1524, 375.2)
+scale = Vector2(0.8, 0.8)
+
+[node name="Solar Panel Top" parent="Station Parts" instance=ExtResource("13_sfobf")]
+position = Vector2(972.8, 255.2)
+scale = Vector2(0.8, 0.8)
+
+[node name="Solar Panel Bottom" parent="Station Parts" instance=ExtResource("13_sfobf")]
+position = Vector2(972.805, 522.385)
+rotation = 3.14159
+scale = Vector2(0.8, 0.8)
+
+[node name="Quit Button DB" type="Button" parent="."]
 offset_left = 1736.0
 offset_top = 996.0
 offset_right = 1891.0
 offset_bottom = 1052.0
 text = "Quit"
+script = ExtResource("3_d6pon")
+
+[connection signal="pressed" from="Quit Button DB" to="Quit Button DB" method="_on_pressed"]
