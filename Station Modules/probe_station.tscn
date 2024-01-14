@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dix1a5gdydf8w"]
+[gd_scene load_steps=11 format=3 uid="uid://dix1a5gdydf8w"]
 
 [ext_resource type="Texture2D" uid="uid://b6hikbbh8scy4" path="res://Assets/Station Parts/Probe-Station.png" id="1_v1kgc"]
 [ext_resource type="PackedScene" uid="uid://dv3x8bg41sp3l" path="res://Global/hull_component.tscn" id="2_ycnyp"]
 [ext_resource type="Script" path="res://Global/station_module.gd" id="3_mlgfk"]
-[ext_resource type="PackedScene" uid="uid://07j33mqmft0x" path="res://Global/module_hitbox.tscn" id="4_mmriv"]
+[ext_resource type="PackedScene" uid="uid://b0cymfq7qi6a6" path="res://Global/module_hitbox.tscn" id="4_mmriv"]
+[ext_resource type="BitMap" uid="uid://dp5sbm25621gd" path="res://Assets/Bitmap/Probe-Station-Bitmap.bmp" id="5_akp3q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6ud1w"]
 atlas = ExtResource("1_v1kgc")
@@ -59,6 +60,7 @@ animations = [{
 [node name="Probe Station" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -0.5)
 sprite_frames = SubResource("SpriteFrames_roxtb")
 animation = &"100"
 autoplay = "100"
@@ -69,8 +71,8 @@ autoplay = "100"
 script = ExtResource("3_mlgfk")
 
 [node name="ModuleHitbox" parent="." instance=ExtResource("4_mmriv")]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ModuleHitbox"]
-visible = false
-position = Vector2(55, 47)
-polygon = PackedVector2Array(-74, -89.9, -69, -84, -69, -71, -70, -55, -69, -50, -66.3, -37, -58.3, -30, -51.6, -30, -45, -34.1, -45, -35.3, -40, -53, -40, -53.9, -41, -61, -41, -78, -40.9, -85, -34, -90, -21, -90, -14, -89, -10, -84, -8, -78, -8, -49, -3, -40, -3, -23, -4, -17, -10, -14, -13, -11, -18, -5, -92, -5, -96, -7, -98, -10, -99, -12, -100, -13, -102, -14, -106, -19, -107, -38, -107, -43, -103, -48.6, -103, -78.3, -101.4, -83, -100.1, -83, -96.2, -90, -93.1, -90, -91, -90.5, -88, -91, -77, -91)
+offset_left = -50.0
+offset_top = -42.0
+offset_right = 50.0
+offset_bottom = 41.0
+texture_click_mask = ExtResource("5_akp3q")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=38 format=3 uid="uid://drshswm10xhix"]
+[gd_scene load_steps=39 format=3 uid="uid://drshswm10xhix"]
 
 [ext_resource type="Texture2D" uid="uid://bnkpkdybne018" path="res://Assets/Station Parts/Materials.png" id="1_x6l04"]
 [ext_resource type="PackedScene" uid="uid://dv3x8bg41sp3l" path="res://Global/hull_component.tscn" id="2_3nlcw"]
 [ext_resource type="Script" path="res://Global/station_module.gd" id="3_dqimb"]
-[ext_resource type="PackedScene" uid="uid://07j33mqmft0x" path="res://Global/module_hitbox.tscn" id="4_tg83y"]
+[ext_resource type="PackedScene" uid="uid://b0cymfq7qi6a6" path="res://Global/module_hitbox.tscn" id="4_tg83y"]
+[ext_resource type="BitMap" uid="uid://c67q2nw5d6sqk" path="res://Assets/Bitmap/Materials-Bitmap.bmp" id="5_ooptd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hla67"]
 atlas = ExtResource("1_x6l04")
@@ -265,8 +266,8 @@ autoplay = "100"
 script = ExtResource("3_dqimb")
 
 [node name="ModuleHitbox" parent="." instance=ExtResource("4_tg83y")]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ModuleHitbox"]
-visible = false
-position = Vector2(580, 670)
-polygon = PackedVector2Array(-484, -791, -480, -788, -480, -780.6, -478.9, -779, -477, -777, -467, -774, -467, -611, -469, -609, -480, -602.9, -480, -596, -484, -593, -484, -570, -486, -570, -489, -566, -499, -566, -499, -564.3, -510, -550, -512.4, -550, -520.4, -545, -533.6, -545, -551, -556.9, -551, -559.5, -554.3, -566, -557.6, -566, -561.6, -556, -563.2, -556, -571.2, -548, -573.5, -548, -578.4, -545, -593, -545, -593, -546.5, -600, -548.5, -600, -550, -609, -557, -609, -559.5, -612.3, -566, -622.8, -566, -628, -571.2, -628, -593, -632, -596, -632, -603.3, -633.1, -605, -634.4, -605, -647, -610.7, -647, -634, -648.4, -634, -675, -645.7, -675, -647.1, -685, -657, -689, -662, -692, -670, -692, -677, -647, -678.9, -647, -707, -691.4, -707, -692, -714, -692.2, -717, -686.2, -729, -684.9, -729, -673.9, -741, -671.7, -741, -664.7, -747, -661.3, -747, -647, -751.5, -647, -772.8, -641.8, -778, -634.5, -778, -634, -778.3, -631.6, -789, -629.8, -789, -628, -790.8, -625, -792, -491, -792)
+offset_left = -110.0
+offset_top = -137.0
+offset_right = 112.0
+offset_bottom = 121.0
+texture_click_mask = ExtResource("5_ooptd")

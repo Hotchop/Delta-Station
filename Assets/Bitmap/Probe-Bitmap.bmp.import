@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://nbgcnka1rajo"
+path="res://.godot/imported/Probe-Bitmap.bmp-2b061deaf718673e460c5af3a99fcfd0.res"
+
+[deps]
+
+source_file="res://Assets/Bitmap/Probe-Bitmap.bmp"
+dest_files=["res://.godot/imported/Probe-Bitmap.bmp-2b061deaf718673e460c5af3a99fcfd0.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

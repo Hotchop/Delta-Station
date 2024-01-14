@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://cijvdnymwjmm8"
+path="res://.godot/imported/Observation-Bitmap.bmp-0888b4568735b3b15377d515d6293fef.res"
+
+[deps]
+
+source_file="res://Assets/Bitmap/Observation-Bitmap.bmp"
+dest_files=["res://.godot/imported/Observation-Bitmap.bmp-0888b4568735b3b15377d515d6293fef.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://dcg0e6jpqt2ef"
+path="res://.godot/imported/Atmosphere-Bitmap.bmp-6f4d21012aa3ac23789d7aec4c972f97.res"
+
+[deps]
+
+source_file="res://Assets/Bitmap/Atmosphere-Bitmap.bmp"
+dest_files=["res://.godot/imported/Atmosphere-Bitmap.bmp-6f4d21012aa3ac23789d7aec4c972f97.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

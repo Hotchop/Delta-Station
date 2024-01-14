@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://co573qj12lwmd"
-path="res://.godot/imported/Station-Background.png-3055a5c2f7c5599ac541d92b3fa98a84.ctex"
+uid="uid://dmtfkbth6h88a"
+path="res://.godot/imported/Connector5-Biosphere-Ring.png-50f783c4c5010f48cb57a9cb12d0a7f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Station Parts/Station-Background.png"
-dest_files=["res://.godot/imported/Station-Background.png-3055a5c2f7c5599ac541d92b3fa98a84.ctex"]
+source_file="res://Assets/UI/Connector5-Biosphere-Ring.png"
+dest_files=["res://.godot/imported/Connector5-Biosphere-Ring.png-50f783c4c5010f48cb57a9cb12d0a7f2.ctex"]
 
 [params]
 

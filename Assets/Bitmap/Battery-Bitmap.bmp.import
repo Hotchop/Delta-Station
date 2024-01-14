@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://b5pmfl56ldvya"
+path="res://.godot/imported/Battery-Bitmap.bmp-5ec1ceae582368652181394f13ca84b4.res"
+
+[deps]
+
+source_file="res://Assets/Bitmap/Battery-Bitmap.bmp"
+dest_files=["res://.godot/imported/Battery-Bitmap.bmp-5ec1ceae582368652181394f13ca84b4.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

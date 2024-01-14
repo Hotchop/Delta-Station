@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://c1vgsg82ohy67"
+path="res://.godot/imported/Reactor-Bitmap.bmp-beab0f97ce4810be27f4452ffaa0ae74.res"
+
+[deps]
+
+source_file="res://Assets/Bitmap/Reactor-Bitmap.bmp"
+dest_files=["res://.godot/imported/Reactor-Bitmap.bmp-beab0f97ce4810be27f4452ffaa0ae74.res"]
+
+[params]
+
+create_from=0
+threshold=0.5
