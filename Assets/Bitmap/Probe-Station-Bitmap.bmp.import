@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://dp5sbm25621gd"
+path="res://.godot/imported/Probe-Station-Bitmap.bmp-dbb3bf825acdc7e2ec738a3cc96e2ec1.res"
+
+[deps]
+
+source_file="res://Assets/Bitmap/Probe-Station-Bitmap.bmp"
+dest_files=["res://.godot/imported/Probe-Station-Bitmap.bmp-dbb3bf825acdc7e2ec738a3cc96e2ec1.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

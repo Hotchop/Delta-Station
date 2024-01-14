@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dcqdt4vwtg2kj"]
+[gd_scene load_steps=11 format=3 uid="uid://dcqdt4vwtg2kj"]
 
 [ext_resource type="Texture2D" uid="uid://bc2gh1vveew63" path="res://Assets/Station Parts/Propulsor.png" id="1_57f7x"]
 [ext_resource type="PackedScene" uid="uid://dv3x8bg41sp3l" path="res://Global/hull_component.tscn" id="2_ptv3w"]
 [ext_resource type="Script" path="res://Global/station_module.gd" id="3_6taur"]
-[ext_resource type="PackedScene" uid="uid://07j33mqmft0x" path="res://Global/module_hitbox.tscn" id="4_d8cln"]
+[ext_resource type="PackedScene" uid="uid://b0cymfq7qi6a6" path="res://Global/module_hitbox.tscn" id="4_d8cln"]
+[ext_resource type="BitMap" uid="uid://pxofde0qpy6r" path="res://Assets/Bitmap/Propulsor-Bitmap.bmp" id="5_setnk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wyb52"]
 atlas = ExtResource("1_57f7x")
@@ -69,8 +70,8 @@ autoplay = "100"
 script = ExtResource("3_6taur")
 
 [node name="ModuleHitbox" parent="." instance=ExtResource("4_d8cln")]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ModuleHitbox"]
-visible = false
-position = Vector2(133, 178)
-polygon = PackedVector2Array(-183, -325, -182, -329, -180, -333, -175, -335, -171, -334, -96, -299.2, -95, -302, -93.5, -304, -88, -305, -84, -304, -7, -254, -4, -250, -5, -109, -5, -105, -86, -52, -91, -52, -96.2, -57.7, -172.5, -20, -178.3, -20, -182.6, -29.6, -257, -2, -259, -3, -261, -6, -261, -350, -260, -352, -258, -353, -255, -353)
+offset_left = -127.0
+offset_top = -174.0
+offset_right = 127.0
+offset_bottom = 174.0
+texture_click_mask = ExtResource("5_setnk")

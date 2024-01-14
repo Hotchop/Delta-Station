@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://pxofde0qpy6r"
+path="res://.godot/imported/Propulsor-Bitmap.bmp-cd550cac0f9b1589172e4888d93045e7.res"
+
+[deps]
+
+source_file="res://Assets/Bitmap/Propulsor-Bitmap.bmp"
+dest_files=["res://.godot/imported/Propulsor-Bitmap.bmp-cd550cac0f9b1589172e4888d93045e7.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

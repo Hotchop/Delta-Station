@@ -1,7 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://d031l5mvjvfwt"]
+[gd_scene load_steps=20 format=3 uid="uid://d031l5mvjvfwt"]
 
 [ext_resource type="Texture2D" uid="uid://51n1adi7ua1b" path="res://Assets/Backgrounds/Station-Background-Full.png" id="1_ws5mv"]
-[ext_resource type="Texture2D" uid="uid://co573qj12lwmd" path="res://Assets/Station Parts/Station-Background.png" id="2_f0djv"]
 [ext_resource type="PackedScene" uid="uid://bl2jf6iexhjb4" path="res://Station Modules/atmosphere_generator.tscn" id="2_soymp"]
 [ext_resource type="Script" path="res://Screens/Quit Button DB.gd" id="3_d6pon"]
 [ext_resource type="PackedScene" uid="uid://djw5rny2ym3au" path="res://Station Modules/battery.tscn" id="4_j4de0"]
@@ -15,6 +14,11 @@
 [ext_resource type="PackedScene" uid="uid://yeqlaavupdnf" path="res://Station Modules/ring.tscn" id="12_sgjgt"]
 [ext_resource type="PackedScene" uid="uid://dqat5ttat3he8" path="res://Station Modules/solar_panel.tscn" id="13_sfobf"]
 [ext_resource type="PackedScene" uid="uid://ckm6su6vqhhdp" path="res://Station Modules/water_module.tscn" id="15_6xrrf"]
+[ext_resource type="Texture2D" uid="uid://dlxtfp7bf68ig" path="res://Assets/UI/Connector1-Reactor-Materials.png" id="18_b3f58"]
+[ext_resource type="Texture2D" uid="uid://ddxkugucjulvn" path="res://Assets/UI/Connector2-Materials-Battery.png" id="19_kxcwf"]
+[ext_resource type="Texture2D" uid="uid://ceq0asxn2qpog" path="res://Assets/UI/Connector3-Battery-Atmosphere.png" id="20_wqj2i"]
+[ext_resource type="Texture2D" uid="uid://wiewvgbbjmye" path="res://Assets/UI/Connector4-Atmosphere-Biosphere.png" id="21_mwhsq"]
+[ext_resource type="Texture2D" uid="uid://dmtfkbth6h88a" path="res://Assets/UI/Connector5-Biosphere-Ring.png" id="22_hnjjf"]
 
 [node name="Game" type="Node2D"]
 
@@ -27,18 +31,15 @@ offset_right = 2105.0
 offset_bottom = 1238.0
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
 
 [node name="Station-background" type="Sprite2D" parent="BG"]
 position = Vector2(960, 540)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("1_ws5mv")
+metadata/_edit_lock_ = true
 
 [node name="Station Parts" type="Node2D" parent="."]
-
-[node name="Station-background" type="Sprite2D" parent="Station Parts"]
-position = Vector2(947, 389.5)
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("2_f0djv")
 
 [node name="Atmosphere Generator" parent="Station Parts" instance=ExtResource("2_soymp")]
 position = Vector2(1168.8, 388.83)
@@ -57,7 +58,7 @@ position = Vector2(1350.39, 390.37)
 scale = Vector2(0.8, 0.8)
 
 [node name="Materials" parent="Station Parts" instance=ExtResource("6_5m0kk")]
-position = Vector2(762, 408)
+position = Vector2(762.405, 408)
 scale = Vector2(0.8, 0.8)
 
 [node name="Observation" parent="Station Parts" instance=ExtResource("9_n4jvv")]
@@ -65,7 +66,7 @@ position = Vector2(1616.81, 389.6)
 scale = Vector2(0.8, 0.8)
 
 [node name="Probe Station" parent="Station Parts" instance=ExtResource("8_hnw00")]
-position = Vector2(782.5, 279.5)
+position = Vector2(782.5, 280)
 scale = Vector2(0.8, 0.8)
 
 [node name="Probe" parent="Station Parts" instance=ExtResource("5_4nw3o")]
@@ -92,6 +93,39 @@ scale = Vector2(0.8, 0.8)
 position = Vector2(972.805, 522.385)
 rotation = 3.14159
 scale = Vector2(0.8, 0.8)
+
+[node name="Connectors" type="Node2D" parent="Station Parts"]
+position = Vector2(-6, -4)
+
+[node name="Connector1-reactor-materials" type="Sprite2D" parent="Station Parts/Connectors"]
+position = Vector2(696.8, 393.595)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("18_b3f58")
+metadata/_edit_lock_ = true
+
+[node name="Connector2-materials-battery" type="Sprite2D" parent="Station Parts/Connectors"]
+position = Vector2(882, 393.59)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("19_kxcwf")
+metadata/_edit_lock_ = true
+
+[node name="Connector3-battery-atmosphere" type="Sprite2D" parent="Station Parts/Connectors"]
+position = Vector2(1081.18, 393.61)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("20_wqj2i")
+metadata/_edit_lock_ = true
+
+[node name="Connector4-atmosphere-biosphere" type="Sprite2D" parent="Station Parts/Connectors"]
+position = Vector2(1226.8, 393.635)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("21_mwhsq")
+metadata/_edit_lock_ = true
+
+[node name="Connector5-biosphere-ring" type="Sprite2D" parent="Station Parts/Connectors"]
+position = Vector2(1485.59, 393.57)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("22_hnjjf")
+metadata/_edit_lock_ = true
 
 [node name="Quit Button DB" type="Button" parent="."]
 offset_left = 1736.0

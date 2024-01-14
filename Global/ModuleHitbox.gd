@@ -1,12 +1,5 @@
-extends Area2D
+extends TextureButton
 
 
-
-func _on_mouse_entered():
-	Cursor.hover_cursor()
-	
-	
-
-
-func _on_mouse_exited():
-	Cursor.default_cursor()
+func _on_pressed():
+	print("Hello")

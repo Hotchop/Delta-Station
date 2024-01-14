@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://bhkykverbaxym"
+path="res://.godot/imported/Water-Module-Bitmap.bmp-729d92a8676c300d028fb8dc9950da28.res"
+
+[deps]
+
+source_file="res://Assets/Bitmap/Water-Module-Bitmap.bmp"
+dest_files=["res://.godot/imported/Water-Module-Bitmap.bmp-729d92a8676c300d028fb8dc9950da28.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

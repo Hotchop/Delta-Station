@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://cf2nmaq75g8id"
+path="res://.godot/imported/Solar-Panel-Bitmap.bmp-6a3d070cab0a7ec040a406f4b5fb7230.res"
+
+[deps]
+
+source_file="res://Assets/Bitmap/Solar-Panel-Bitmap.bmp"
+dest_files=["res://.godot/imported/Solar-Panel-Bitmap.bmp-6a3d070cab0a7ec040a406f4b5fb7230.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

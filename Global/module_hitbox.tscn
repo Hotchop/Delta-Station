@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://07j33mqmft0x"]
+[gd_scene load_steps=2 format=3 uid="uid://b0cymfq7qi6a6"]
 
-[ext_resource type="Script" path="res://Global/ModuleHitbox.gd" id="1_y5ya8"]
+[ext_resource type="Script" path="res://Global/ModuleHitbox.gd" id="1_7jik0"]
 
-[node name="ModuleHitbox" type="Area2D"]
-script = ExtResource("1_y5ya8")
+[node name="ModuleHitbox" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_default_cursor_shape = 2
+script = ExtResource("1_7jik0")
 
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]
