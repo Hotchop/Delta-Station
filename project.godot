@@ -17,8 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Cursor="*res://Global/Cursor.gd"
 WorldUi="*res://Global/world_ui.gd"
+Game="*res://Global/Game.gd"
 
 [display]
 

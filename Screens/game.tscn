@@ -1,9 +1,9 @@
-[gd_scene load_steps=24 format=3 uid="uid://d031l5mvjvfwt"]
+[gd_scene load_steps=29 format=3 uid="uid://d031l5mvjvfwt"]
 
 [ext_resource type="Texture2D" uid="uid://bbij0qk86gr8e" path="res://Assets/Backgrounds/Station-Background-Clear.png" id="1_f3xoh"]
 [ext_resource type="PackedScene" uid="uid://b08qe65cohrkh" path="res://Assets/Particle Generators/star_bg_particles.tscn" id="2_1jq43"]
 [ext_resource type="PackedScene" uid="uid://bl2jf6iexhjb4" path="res://Station Modules/atmosphere_generator.tscn" id="2_soymp"]
-[ext_resource type="Script" path="res://Screens/Quit Button DB.gd" id="3_d6pon"]
+[ext_resource type="Script" path="res://Screens/Station Parts.gd" id="3_vdors"]
 [ext_resource type="PackedScene" uid="uid://djw5rny2ym3au" path="res://Station Modules/battery.tscn" id="4_j4de0"]
 [ext_resource type="PackedScene" uid="uid://jv8ggtmj80l6" path="res://Station Modules/probe.tscn" id="5_4nw3o"]
 [ext_resource type="PackedScene" uid="uid://drshswm10xhix" path="res://Station Modules/materials.tscn" id="6_5m0kk"]
@@ -17,13 +17,34 @@
 [ext_resource type="PackedScene" uid="uid://ckm6su6vqhhdp" path="res://Station Modules/water_module.tscn" id="15_6xrrf"]
 [ext_resource type="Texture2D" uid="uid://dlxtfp7bf68ig" path="res://Assets/UI/Connector1-Reactor-Materials.png" id="18_b3f58"]
 [ext_resource type="Texture2D" uid="uid://ddxkugucjulvn" path="res://Assets/UI/Connector2-Materials-Battery.png" id="19_kxcwf"]
+[ext_resource type="Script" path="res://Screens/UI.gd" id="20_8j76g"]
 [ext_resource type="Texture2D" uid="uid://ceq0asxn2qpog" path="res://Assets/UI/Connector3-Battery-Atmosphere.png" id="20_wqj2i"]
 [ext_resource type="FontFile" uid="uid://c1rx8lmdovuo4" path="res://Assets/Fonts/VT323-Regular.ttf" id="21_kwp8f"]
 [ext_resource type="Texture2D" uid="uid://wiewvgbbjmye" path="res://Assets/UI/Connector4-Atmosphere-Biosphere.png" id="21_mwhsq"]
-[ext_resource type="Script" path="res://Screens/HoveredModule.gd" id="22_70l1w"]
 [ext_resource type="Texture2D" uid="uid://dmtfkbth6h88a" path="res://Assets/UI/Connector5-Biosphere-Ring.png" id="22_hnjjf"]
+[ext_resource type="Script" path="res://Screens/Debugg.gd" id="22_q7h35"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6bxh6"]
+font = ExtResource("21_kwp8f")
+font_size = 48
+font_color = Color(0, 1, 0.313726, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1jcgu"]
+font = ExtResource("21_kwp8f")
+font_size = 48
+font_color = Color(0, 1, 0.313726, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xfi4u"]
+font = ExtResource("21_kwp8f")
+font_size = 24
+font_color = Color(0, 0.337255, 0.105882, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_egki7"]
+font = ExtResource("21_kwp8f")
+font_size = 48
+font_color = Color(0, 1, 0.313726, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5lgfh"]
 font = ExtResource("21_kwp8f")
 font_size = 48
 font_color = Color(0, 1, 0.313726, 1)
@@ -55,6 +76,7 @@ scale_amount_min = 0.1
 scale_amount_max = 0.3
 
 [node name="Station Parts" type="Node2D" parent="."]
+script = ExtResource("3_vdors")
 
 [node name="Atmosphere Generator" parent="Station Parts" instance=ExtResource("2_soymp")]
 position = Vector2(1168.8, 388.83)
@@ -84,10 +106,6 @@ scale = Vector2(0.8, 0.8)
 position = Vector2(782.5, 280)
 scale = Vector2(0.8, 0.8)
 
-[node name="Probe" parent="Station Parts" instance=ExtResource("5_4nw3o")]
-position = Vector2(782.5, 268.015)
-scale = Vector2(0.8, 0.8)
-
 [node name="Propulsor" parent="Station Parts" instance=ExtResource("11_ergll")]
 position = Vector2(379.18, 389.68)
 scale = Vector2(0.8, 0.8)
@@ -109,48 +127,8 @@ position = Vector2(972.805, 522.41)
 rotation = 3.14159
 scale = Vector2(0.8, 0.8)
 
-[node name="Connectors" type="Node2D" parent="Station Parts"]
-position = Vector2(-6, -4)
-
-[node name="Connector1-reactor-materials" type="Sprite2D" parent="Station Parts/Connectors"]
-position = Vector2(696.8, 393.595)
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("18_b3f58")
-metadata/_edit_lock_ = true
-
-[node name="Connector2-materials-battery" type="Sprite2D" parent="Station Parts/Connectors"]
-position = Vector2(882, 393.59)
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("19_kxcwf")
-metadata/_edit_lock_ = true
-
-[node name="Connector3-battery-atmosphere" type="Sprite2D" parent="Station Parts/Connectors"]
-position = Vector2(1081.18, 393.61)
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("20_wqj2i")
-metadata/_edit_lock_ = true
-
-[node name="Connector4-atmosphere-biosphere" type="Sprite2D" parent="Station Parts/Connectors"]
-position = Vector2(1226.8, 393.635)
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("21_mwhsq")
-metadata/_edit_lock_ = true
-
-[node name="Connector5-biosphere-ring" type="Sprite2D" parent="Station Parts/Connectors"]
-position = Vector2(1485.59, 393.57)
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("22_hnjjf")
-metadata/_edit_lock_ = true
-
-[node name="Quit Button DB" type="Button" parent="."]
-offset_left = 1736.0
-offset_top = 996.0
-offset_right = 1891.0
-offset_bottom = 1052.0
-text = "Quit"
-script = ExtResource("3_d6pon")
-
-[node name="UI" type="Node2D" parent="."]
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("20_8j76g")
 
 [node name="HoveredModule" type="Label" parent="UI"]
 layout_direction = 3
@@ -158,13 +136,111 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -1870.0
-offset_top = 35.0
-offset_right = -1359.0
-offset_bottom = 100.0
+offset_top = 40.0
+offset_right = -1370.0
+offset_bottom = 105.0
 grow_horizontal = 0
 text = "Hovered Module"
 label_settings = SubResource("LabelSettings_6bxh6")
 autowrap_mode = 1
-script = ExtResource("22_70l1w")
 
-[connection signal="pressed" from="Quit Button DB" to="Quit Button DB" method="_on_pressed"]
+[node name="HoveredHull" type="Label" parent="UI/HoveredModule"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 57.0
+offset_right = 81.0
+offset_bottom = 106.0
+text = "100%"
+label_settings = SubResource("LabelSettings_1jcgu")
+
+[node name="Delta-OS" type="Label" parent="UI"]
+offset_left = 50.0
+offset_top = 40.0
+offset_right = 390.0
+offset_bottom = 89.0
+text = "DELTA_OS_V5.0.2.6
+MANUAL_CONTROL_MODE
+COMMUNICATION: OFFLINE"
+label_settings = SubResource("LabelSettings_xfi4u")
+
+[node name="Date" type="Label" parent="UI"]
+offset_left = 909.0
+offset_top = 40.0
+offset_right = 973.0
+offset_bottom = 89.0
+text = "DAY"
+label_settings = SubResource("LabelSettings_egki7")
+
+[node name="dayNumber" type="Label" parent="UI/Date"]
+layout_mode = 0
+offset_left = 64.0
+offset_right = 136.0
+offset_bottom = 49.0
+text = "0"
+label_settings = SubResource("LabelSettings_5lgfh")
+horizontal_alignment = 1
+
+[node name="Connectors" type="Node2D" parent="UI"]
+position = Vector2(-6, -4)
+
+[node name="Connector1-reactor-materials" type="Sprite2D" parent="UI/Connectors"]
+position = Vector2(696.8, 393.595)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("18_b3f58")
+metadata/_edit_lock_ = true
+
+[node name="Connector2-materials-battery" type="Sprite2D" parent="UI/Connectors"]
+position = Vector2(882, 393.59)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("19_kxcwf")
+metadata/_edit_lock_ = true
+
+[node name="Connector3-battery-atmosphere" type="Sprite2D" parent="UI/Connectors"]
+position = Vector2(1081.18, 393.61)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("20_wqj2i")
+metadata/_edit_lock_ = true
+
+[node name="Connector4-atmosphere-biosphere" type="Sprite2D" parent="UI/Connectors"]
+position = Vector2(1226.8, 393.635)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("21_mwhsq")
+metadata/_edit_lock_ = true
+
+[node name="Connector5-biosphere-ring" type="Sprite2D" parent="UI/Connectors"]
+position = Vector2(1485.59, 393.57)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("22_hnjjf")
+metadata/_edit_lock_ = true
+
+[node name="Probe" parent="UI" instance=ExtResource("5_4nw3o")]
+position = Vector2(782.5, 268.015)
+scale = Vector2(0.8, 0.8)
+
+[node name="Debugg" type="CanvasLayer" parent="."]
+script = ExtResource("22_q7h35")
+
+[node name="Quit Button DB" type="Button" parent="Debugg"]
+offset_left = 50.0
+offset_top = 992.0
+offset_right = 148.0
+offset_bottom = 1023.0
+text = "Quit"
+
+[node name="Next Day DB" type="Button" parent="Debugg"]
+offset_left = 53.0
+offset_top = 950.0
+offset_right = 147.0
+offset_bottom = 981.0
+text = "Next Day"
+
+[node name="Damage Hull" type="Button" parent="Debugg"]
+offset_left = 47.0
+offset_top = 909.0
+offset_right = 154.0
+offset_bottom = 942.0
+text = "Damage Hull"
+
+[connection signal="pressed" from="Debugg/Quit Button DB" to="Debugg" method="_on_quit_button_db_pressed"]
+[connection signal="pressed" from="Debugg/Next Day DB" to="Debugg" method="_on_next_day_db_pressed"]
+[connection signal="pressed" from="Debugg/Damage Hull" to="Debugg" method="_on_damage_hull_pressed"]

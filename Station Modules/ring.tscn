@@ -149,7 +149,8 @@ animation = &"100"
 autoplay = "100"
 frame_progress = 0.921699
 
-[node name="HullComponent" parent="." instance=ExtResource("2_7xr12")]
+[node name="HullComponent" parent="." node_paths=PackedStringArray("anim") instance=ExtResource("2_7xr12")]
+anim = NodePath("../AnimatedSprite2D")
 
 [node name="Station Module" type="Node2D" parent="."]
 script = ExtResource("3_www6m")

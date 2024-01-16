@@ -52,11 +52,13 @@ frame = 2
 frame_progress = 0.419466
 
 [node name="HullComponent" parent="." instance=ExtResource("2_mdyya")]
+visible = false
 
 [node name="Station Module" type="Node2D" parent="."]
 script = ExtResource("3_211lv")
 
 [node name="ModuleHitbox" parent="." instance=ExtResource("4_m5lip")]
+visible = false
 offset_left = -20.0
 offset_top = -31.0
 offset_right = 20.0

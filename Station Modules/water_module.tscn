@@ -40,7 +40,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 1.0
+"speed": 2.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ysa3g"]
@@ -109,14 +109,15 @@ position = Vector2(0, 20)
 sprite_frames = SubResource("SpriteFrames_yr4vf")
 autoplay = "default"
 frame = 3
-frame_progress = 0.0545414
+frame_progress = 0.802039
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_roxtb")
 animation = &"100"
 autoplay = "100"
 
-[node name="HullComponent" parent="." instance=ExtResource("2_yis6i")]
+[node name="HullComponent" parent="." node_paths=PackedStringArray("anim") instance=ExtResource("2_yis6i")]
+anim = NodePath("../AnimatedSprite2D")
 
 [node name="Station Module" type="Node2D" parent="."]
 script = ExtResource("3_e0mal")
