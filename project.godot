@@ -33,6 +33,10 @@ movie_writer/movie_file="H:/Videos/Godot Movies/Delta-Station.avi"
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
 
+[filesystem]
+
+import/blender/enabled=false
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

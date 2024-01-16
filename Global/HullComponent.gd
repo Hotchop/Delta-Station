@@ -4,7 +4,6 @@ const MAX_HULL: float = 100
 
 @export var hull: float = MAX_HULL
 @export var destroyed: bool = false
-@export var anim: AnimatedSprite2D
 signal is_destroyed
 
 func _process(_delta):
@@ -32,14 +31,16 @@ func damage_hull(amount: float):
 func destroy():
 	hull = 0
 	destroyed = true
+	get_tree().queue_delete(get_parent())
 	is_destroyed.emit()
 	
 func update_sprite_with_hp():
-	if range(75,100).has(hull):
-		anim.play("100")
-	if range(50,75).has(hull):
-		anim.play("75")
-	if range(25,50).has(hull):
-		anim.play("50")
-	if range(0,25).has(hull):
-		anim.play("25")
+	var anim = get_node("../AnimatedSprite2D")
+	if hull > 75:
+		anim.animation = "100"
+	elif 50 < hull && hull <= 75:
+		anim.animation = "75"
+	elif 25 < hull && hull <= 50:
+		anim.animation = "50"
+	else:
+		anim.animation = "25"
