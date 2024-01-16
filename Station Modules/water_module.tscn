@@ -96,7 +96,16 @@ animations = [{
 
 [node name="Water Module" type="Node2D"]
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -66.0
+offset_top = -24.0
+offset_right = 68.0
+offset_bottom = 47.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
 [node name="Water Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 20)
 sprite_frames = SubResource("SpriteFrames_yr4vf")
 autoplay = "default"
 frame = 3

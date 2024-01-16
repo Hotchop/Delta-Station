@@ -8,4 +8,5 @@ offset_bottom = 40.0
 mouse_default_cursor_shape = 2
 script = ExtResource("1_7jik0")
 
-[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

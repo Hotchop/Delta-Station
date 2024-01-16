@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://d031l5mvjvfwt"]
+[gd_scene load_steps=24 format=3 uid="uid://d031l5mvjvfwt"]
 
 [ext_resource type="Texture2D" uid="uid://bbij0qk86gr8e" path="res://Assets/Backgrounds/Station-Background-Clear.png" id="1_f3xoh"]
 [ext_resource type="PackedScene" uid="uid://b08qe65cohrkh" path="res://Assets/Particle Generators/star_bg_particles.tscn" id="2_1jq43"]
@@ -18,8 +18,15 @@
 [ext_resource type="Texture2D" uid="uid://dlxtfp7bf68ig" path="res://Assets/UI/Connector1-Reactor-Materials.png" id="18_b3f58"]
 [ext_resource type="Texture2D" uid="uid://ddxkugucjulvn" path="res://Assets/UI/Connector2-Materials-Battery.png" id="19_kxcwf"]
 [ext_resource type="Texture2D" uid="uid://ceq0asxn2qpog" path="res://Assets/UI/Connector3-Battery-Atmosphere.png" id="20_wqj2i"]
+[ext_resource type="FontFile" uid="uid://c1rx8lmdovuo4" path="res://Assets/Fonts/VT323-Regular.ttf" id="21_kwp8f"]
 [ext_resource type="Texture2D" uid="uid://wiewvgbbjmye" path="res://Assets/UI/Connector4-Atmosphere-Biosphere.png" id="21_mwhsq"]
+[ext_resource type="Script" path="res://Screens/HoveredModule.gd" id="22_70l1w"]
 [ext_resource type="Texture2D" uid="uid://dmtfkbth6h88a" path="res://Assets/UI/Connector5-Biosphere-Ring.png" id="22_hnjjf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6bxh6"]
+font = ExtResource("21_kwp8f")
+font_size = 48
+font_color = Color(0, 1, 0.313726, 1)
 
 [node name="Game" type="Node2D"]
 
@@ -89,15 +96,15 @@ scale = Vector2(0.8, 0.8)
 position = Vector2(576, 389.645)
 scale = Vector2(0.8, 0.8)
 
-[node name="Ring" parent="Station Parts" instance=ExtResource("12_sgjgt")]
+[node name="Gravity Ring" parent="Station Parts" instance=ExtResource("12_sgjgt")]
 position = Vector2(1524, 375.2)
 scale = Vector2(0.8, 0.8)
 
-[node name="Solar Panel Top" parent="Station Parts" instance=ExtResource("13_sfobf")]
+[node name="Solar Panel - Upper Deck" parent="Station Parts" instance=ExtResource("13_sfobf")]
 position = Vector2(972.8, 255.2)
 scale = Vector2(0.8, 0.8)
 
-[node name="Solar Panel Bottom" parent="Station Parts" instance=ExtResource("13_sfobf")]
+[node name="Solar Panel - Lower Deck" parent="Station Parts" instance=ExtResource("13_sfobf")]
 position = Vector2(972.805, 522.41)
 rotation = 3.14159
 scale = Vector2(0.8, 0.8)
@@ -142,5 +149,22 @@ offset_right = 1891.0
 offset_bottom = 1052.0
 text = "Quit"
 script = ExtResource("3_d6pon")
+
+[node name="UI" type="Node2D" parent="."]
+
+[node name="HoveredModule" type="Label" parent="UI"]
+layout_direction = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1870.0
+offset_top = 35.0
+offset_right = -1359.0
+offset_bottom = 100.0
+grow_horizontal = 0
+text = "Hovered Module"
+label_settings = SubResource("LabelSettings_6bxh6")
+autowrap_mode = 1
+script = ExtResource("22_70l1w")
 
 [connection signal="pressed" from="Quit Button DB" to="Quit Button DB" method="_on_pressed"]
