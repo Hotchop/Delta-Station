@@ -1,6 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://d031l5mvjvfwt"]
+[gd_scene load_steps=21 format=3 uid="uid://d031l5mvjvfwt"]
 
-[ext_resource type="Texture2D" uid="uid://51n1adi7ua1b" path="res://Assets/Backgrounds/Station-Background-Full.png" id="1_ws5mv"]
+[ext_resource type="Texture2D" uid="uid://bbij0qk86gr8e" path="res://Assets/Backgrounds/Station-Background-Clear.png" id="1_f3xoh"]
+[ext_resource type="PackedScene" uid="uid://b08qe65cohrkh" path="res://Assets/Particle Generators/star_bg_particles.tscn" id="2_1jq43"]
 [ext_resource type="PackedScene" uid="uid://bl2jf6iexhjb4" path="res://Station Modules/atmosphere_generator.tscn" id="2_soymp"]
 [ext_resource type="Script" path="res://Screens/Quit Button DB.gd" id="3_d6pon"]
 [ext_resource type="PackedScene" uid="uid://djw5rny2ym3au" path="res://Station Modules/battery.tscn" id="4_j4de0"]
@@ -33,11 +34,18 @@ mouse_filter = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_lock_ = true
 
-[node name="Station-background" type="Sprite2D" parent="BG"]
-position = Vector2(960, 540)
+[node name="Station-background-clear" type="Sprite2D" parent="BG"]
+position = Vector2(960, 539.825)
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("1_ws5mv")
-metadata/_edit_lock_ = true
+texture = ExtResource("1_f3xoh")
+
+[node name="StarBG-Particles" parent="BG/Station-background-clear" instance=ExtResource("2_1jq43")]
+modulate = Color(0.494118, 0.494118, 0.494118, 1)
+position = Vector2(1406.25, -149.781)
+scale = Vector2(0.5, 0.5)
+gravity = Vector2(-200, 0)
+scale_amount_min = 0.1
+scale_amount_max = 0.3
 
 [node name="Station Parts" type="Node2D" parent="."]
 
@@ -90,7 +98,7 @@ position = Vector2(972.8, 255.2)
 scale = Vector2(0.8, 0.8)
 
 [node name="Solar Panel Bottom" parent="Station Parts" instance=ExtResource("13_sfobf")]
-position = Vector2(972.805, 522.385)
+position = Vector2(972.805, 522.41)
 rotation = 3.14159
 scale = Vector2(0.8, 0.8)
 

@@ -87,7 +87,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"100",
-"speed": 1.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -104,7 +104,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"25",
-"speed": 1.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -121,7 +121,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"50",
-"speed": 1.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -138,7 +138,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"75",
-"speed": 1.0
+"speed": 2.0
 }]
 
 [node name="Ring" type="Node2D"]
@@ -147,7 +147,7 @@ animations = [{
 sprite_frames = SubResource("SpriteFrames_roxtb")
 animation = &"100"
 autoplay = "100"
-frame_progress = 0.135558
+frame_progress = 0.921699
 
 [node name="HullComponent" parent="." instance=ExtResource("2_7xr12")]
 

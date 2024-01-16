@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://b08qe65cohrkh"]
+
+[ext_resource type="Texture2D" uid="uid://cu8q8sfkblucf" path="res://Assets/UI/Star-Background.png" id="1_bmu6k"]
+
+[node name="StarBG-Particles" type="CPUParticles2D"]
+show_behind_parent = true
+amount = 3
+lifetime = 5.0
+texture = ExtResource("1_bmu6k")
+emission_shape = 3
+emission_rect_extents = Vector2(0, 800)
+gravity = Vector2(-980, 0)
+scale_amount_min = 0.3
+scale_amount_max = 0.8
