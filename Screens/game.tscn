@@ -241,6 +241,14 @@ offset_right = 154.0
 offset_bottom = 942.0
 text = "Damage Hull"
 
+[node name="Reset" type="Button" parent="Debugg"]
+offset_left = 61.0
+offset_top = 874.0
+offset_right = 138.0
+offset_bottom = 905.0
+text = "Reset"
+
 [connection signal="pressed" from="Debugg/Quit Button DB" to="Debugg" method="_on_quit_button_db_pressed"]
 [connection signal="pressed" from="Debugg/Next Day DB" to="Debugg" method="_on_next_day_db_pressed"]
 [connection signal="pressed" from="Debugg/Damage Hull" to="Debugg" method="_on_damage_hull_pressed"]
+[connection signal="pressed" from="Debugg/Reset" to="Debugg" method="_on_reset_pressed"]

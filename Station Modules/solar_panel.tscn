@@ -64,8 +64,7 @@ sprite_frames = SubResource("SpriteFrames_roxtb")
 animation = &"100"
 autoplay = "100"
 
-[node name="HullComponent" parent="." node_paths=PackedStringArray("anim") instance=ExtResource("2_qfn8j")]
-anim = NodePath("../AnimatedSprite2D")
+[node name="HullComponent" parent="." instance=ExtResource("2_qfn8j")]
 
 [node name="Station Module" type="Node2D" parent="."]
 script = ExtResource("3_5k7ob")

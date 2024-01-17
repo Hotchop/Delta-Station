@@ -6,27 +6,27 @@
 [ext_resource type="PackedScene" uid="uid://b0cymfq7qi6a6" path="res://Global/module_hitbox.tscn" id="4_lcwc8"]
 [ext_resource type="BitMap" uid="uid://b5pmfl56ldvya" path="res://Assets/Bitmap/Battery-Bitmap.bmp" id="5_8lvam"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_n7v2s"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3tfei"]
 atlas = ExtResource("1_dgix4")
 region = Rect2(0, 0, 238, 142)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hfnkj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7rae"]
 atlas = ExtResource("1_dgix4")
-region = Rect2(238, 0, 238, 142)
+region = Rect2(238, 142, 238, 142)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ogeop"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5sqp2"]
 atlas = ExtResource("1_dgix4")
 region = Rect2(0, 142, 238, 142)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_af1nc"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_dtmvl"]
 atlas = ExtResource("1_dgix4")
-region = Rect2(238, 142, 238, 142)
+region = Rect2(238, 0, 238, 142)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_roxtb"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_n7v2s")
+"texture": SubResource("AtlasTexture_3tfei")
 }],
 "loop": true,
 "name": &"100",
@@ -34,7 +34,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hfnkj")
+"texture": SubResource("AtlasTexture_u7rae")
 }],
 "loop": true,
 "name": &"25",
@@ -42,7 +42,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ogeop")
+"texture": SubResource("AtlasTexture_5sqp2")
 }],
 "loop": true,
 "name": &"50",
@@ -50,7 +50,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_af1nc")
+"texture": SubResource("AtlasTexture_dtmvl")
 }],
 "loop": true,
 "name": &"75",
@@ -61,11 +61,10 @@ animations = [{
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_roxtb")
-animation = &"100"
+animation = &"25"
 autoplay = "100"
 
-[node name="HullComponent" parent="." node_paths=PackedStringArray("anim") instance=ExtResource("2_7d42n")]
-anim = NodePath("../AnimatedSprite2D")
+[node name="HullComponent" parent="." instance=ExtResource("2_7d42n")]
 
 [node name="Station Module" type="Node2D" parent="."]
 script = ExtResource("3_c7jf2")

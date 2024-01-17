@@ -16,3 +16,7 @@ func _on_damage_hull_pressed():
 		var child = j.get_node("HullComponent")
 		if child.has_method("damage_hull"):
 			child.damage_hull(10)
+
+
+func _on_reset_pressed():
+	get_tree().reload_current_scene()

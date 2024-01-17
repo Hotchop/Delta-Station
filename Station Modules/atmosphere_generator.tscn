@@ -146,8 +146,6 @@ animations = [{
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_roxtb")
 animation = &"100"
-autoplay = "100"
-frame_progress = 0.316298
 
 [node name="HullComponent" parent="." instance=ExtResource("1_tnmwo")]
 
