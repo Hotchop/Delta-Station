@@ -3,7 +3,7 @@ extends TextureButton
 var cursor_h = preload("res://Assets/UI/Cursor-Hover.png")
 
 func _ready():
-	Input.set_custom_mouse_cursor(cursor_h,Input.CURSOR_POINTING_HAND,Vector2(20,20))
+	Input.set_custom_mouse_cursor(cursor_h,Input.CURSOR_POINTING_HAND,Vector2(0,0))
 
 func _on_mouse_entered():
 	var module_name = get_parent().name

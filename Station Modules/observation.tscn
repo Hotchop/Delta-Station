@@ -6,66 +6,65 @@
 [ext_resource type="PackedScene" uid="uid://b0cymfq7qi6a6" path="res://Global/module_hitbox.tscn" id="4_1u3kn"]
 [ext_resource type="BitMap" uid="uid://cijvdnymwjmm8" path="res://Assets/Bitmap/Observation-Bitmap.bmp" id="5_itcr8"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3uy52"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvnmp"]
 atlas = ExtResource("1_yutan")
 region = Rect2(0, 0, 154, 164)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_b6y2e"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvf2x"]
 atlas = ExtResource("1_yutan")
 region = Rect2(154, 164, 154, 164)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_g0pem"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1h8m1"]
 atlas = ExtResource("1_yutan")
 region = Rect2(0, 164, 154, 164)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_301ip"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3vqe"]
 atlas = ExtResource("1_yutan")
 region = Rect2(154, 0, 154, 164)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_roxtb"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_0gjrj"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3uy52")
+"texture": SubResource("AtlasTexture_wvnmp")
 }],
 "loop": true,
 "name": &"100",
-"speed": 1.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_b6y2e")
+"texture": SubResource("AtlasTexture_vvf2x")
 }],
 "loop": true,
 "name": &"25",
-"speed": 1.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_g0pem")
+"texture": SubResource("AtlasTexture_1h8m1")
 }],
 "loop": true,
 "name": &"50",
-"speed": 1.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_301ip")
+"texture": SubResource("AtlasTexture_g3vqe")
 }],
 "loop": true,
 "name": &"75",
-"speed": 1.0
+"speed": 5.0
 }]
 
 [node name="Observation" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_roxtb")
+sprite_frames = SubResource("SpriteFrames_0gjrj")
 animation = &"100"
 autoplay = "100"
 
-[node name="HullComponent" parent="." node_paths=PackedStringArray("anim") instance=ExtResource("2_1vvrr")]
-anim = NodePath("../AnimatedSprite2D")
+[node name="HullComponent" parent="." instance=ExtResource("2_1vvrr")]
 
 [node name="Station Module" type="Node2D" parent="."]
 script = ExtResource("3_r0m8d")

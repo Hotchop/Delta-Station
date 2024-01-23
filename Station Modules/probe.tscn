@@ -38,7 +38,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_7n2br")
 }],
 "loop": true,
-"name": &"Idle",
+"name": &"100",
 "speed": 5.0
 }]
 
@@ -46,10 +46,8 @@ animations = [{
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_roxtb")
-animation = &"Idle"
-autoplay = "Idle"
-frame = 2
-frame_progress = 0.419466
+animation = &"100"
+autoplay = "100"
 
 [node name="HullComponent" parent="." instance=ExtResource("2_mdyya")]
 visible = false

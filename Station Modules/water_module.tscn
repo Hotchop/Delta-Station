@@ -43,55 +43,55 @@ animations = [{
 "speed": 2.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ysa3g"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5dfd"]
 atlas = ExtResource("1_mkhbq")
 region = Rect2(0, 0, 194, 109)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_34bw6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4273"]
 atlas = ExtResource("1_mkhbq")
 region = Rect2(194, 109, 194, 109)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_85ats"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_vp1es"]
 atlas = ExtResource("1_mkhbq")
 region = Rect2(0, 109, 194, 109)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gdmqc"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_7nmgt"]
 atlas = ExtResource("1_mkhbq")
 region = Rect2(194, 0, 194, 109)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_roxtb"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ppyj7"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ysa3g")
+"texture": SubResource("AtlasTexture_u5dfd")
 }],
 "loop": true,
 "name": &"100",
-"speed": 1.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_34bw6")
+"texture": SubResource("AtlasTexture_x4273")
 }],
 "loop": true,
 "name": &"25",
-"speed": 1.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_85ats")
+"texture": SubResource("AtlasTexture_vp1es")
 }],
 "loop": true,
 "name": &"50",
-"speed": 1.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gdmqc")
+"texture": SubResource("AtlasTexture_7nmgt")
 }],
 "loop": true,
 "name": &"75",
-"speed": 1.0
+"speed": 5.0
 }]
 
 [node name="Water Module" type="Node2D"]
@@ -112,7 +112,7 @@ frame = 3
 frame_progress = 0.802039
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_roxtb")
+sprite_frames = SubResource("SpriteFrames_ppyj7")
 animation = &"100"
 autoplay = "100"
 

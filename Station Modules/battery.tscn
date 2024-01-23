@@ -6,62 +6,62 @@
 [ext_resource type="PackedScene" uid="uid://b0cymfq7qi6a6" path="res://Global/module_hitbox.tscn" id="4_lcwc8"]
 [ext_resource type="BitMap" uid="uid://b5pmfl56ldvya" path="res://Assets/Bitmap/Battery-Bitmap.bmp" id="5_8lvam"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3tfei"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_pumbr"]
 atlas = ExtResource("1_dgix4")
 region = Rect2(0, 0, 238, 142)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_u7rae"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_21olc"]
 atlas = ExtResource("1_dgix4")
 region = Rect2(238, 142, 238, 142)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5sqp2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgrfk"]
 atlas = ExtResource("1_dgix4")
 region = Rect2(0, 142, 238, 142)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dtmvl"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_o07v2"]
 atlas = ExtResource("1_dgix4")
 region = Rect2(238, 0, 238, 142)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_roxtb"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_6kr70"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3tfei")
+"texture": SubResource("AtlasTexture_pumbr")
 }],
 "loop": true,
 "name": &"100",
-"speed": 1.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_u7rae")
+"texture": SubResource("AtlasTexture_21olc")
 }],
 "loop": true,
 "name": &"25",
-"speed": 1.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5sqp2")
+"texture": SubResource("AtlasTexture_bgrfk")
 }],
 "loop": true,
 "name": &"50",
-"speed": 1.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dtmvl")
+"texture": SubResource("AtlasTexture_o07v2")
 }],
 "loop": true,
 "name": &"75",
-"speed": 1.0
+"speed": 2.0
 }]
 
 [node name="Battery" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_roxtb")
-animation = &"25"
+sprite_frames = SubResource("SpriteFrames_6kr70")
+animation = &"100"
 autoplay = "100"
 
 [node name="HullComponent" parent="." instance=ExtResource("2_7d42n")]
