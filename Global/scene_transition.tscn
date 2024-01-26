@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dbbn0rxj4tntd"]
+[gd_scene load_steps=4 format=3 uid="uid://dbbn0rxj4tntd"]
 
 [sub_resource type="Animation" id="Animation_1l7cw"]
 resource_name = "fade_out"
+length = 2.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -9,18 +10,37 @@ tracks/0/path = NodePath("Overlay:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.1, 0.9),
+"times": PackedFloat32Array(0.1, 2.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_xkjr4"]
+resource_name = "fade_in"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Overlay:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xhjty"]
 _data = {
+"fade_in": SubResource("Animation_xkjr4"),
 "fade_out": SubResource("Animation_1l7cw")
 }
 
-[node name="Scene Transition" type="Node2D"]
+[node name="Scene Transition" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 
 [node name="Overlay" type="ColorRect" parent="."]
 offset_left = -225.0

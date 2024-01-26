@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://yio4amjjij1j"]
+[gd_scene load_steps=8 format=3 uid="uid://yio4amjjij1j"]
 
 [ext_resource type="FontFile" uid="uid://c1rx8lmdovuo4" path="res://Assets/Fonts/VT323-Regular.ttf" id="1_6bltt"]
 [ext_resource type="Script" path="res://Screens/intro.gd" id="1_bites"]
@@ -8,6 +8,50 @@ line_spacing = 1.0
 font = ExtResource("1_6bltt")
 font_size = 30
 font_color = Color(0, 1, 0.313726, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tj0vf"]
+line_spacing = 1.0
+font = ExtResource("1_6bltt")
+font_size = 40
+font_color = Color(0, 1, 0.313726, 1)
+
+[sub_resource type="Animation" id="Animation_1l7cw"]
+resource_name = "fade_out"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Overlay:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xkjr4"]
+resource_name = "fade_in"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Overlay:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xhjty"]
+_data = {
+"fade_in": SubResource("Animation_xkjr4"),
+"fade_out": SubResource("Animation_1l7cw")
+}
 
 [node name="Intro" type="Node2D"]
 script = ExtResource("1_bites")
@@ -47,9 +91,35 @@ INITIATING EMERGENCY MODE:
 
 -SWITCHING TO RESERVE MODE
 
--DISTRESS BEACON LAUNCHED
-
-
-Initiate manual controls? Y/N"
+-DISTRESS BEACON LAUNCHED"
 label_settings = SubResource("LabelSettings_658hk")
 autowrap_mode = 3
+
+[node name="Input Text" type="Label" parent="."]
+offset_left = 255.0
+offset_top = 843.0
+offset_right = 1013.0
+offset_bottom = 945.0
+text = "INITIALIZE MANUAL CONTROLS? Y / N"
+label_settings = SubResource("LabelSettings_tj0vf")
+autowrap_mode = 3
+
+[node name="Scene Transition" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Overlay" type="ColorRect" parent="Scene Transition"]
+layout_mode = 0
+offset_left = -225.0
+offset_top = -44.0
+offset_right = 2200.0
+offset_bottom = 1146.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Scene Transition"]
+libraries = {
+"": SubResource("AnimationLibrary_xhjty")
+}
+
+[connection signal="animation_finished" from="Scene Transition/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

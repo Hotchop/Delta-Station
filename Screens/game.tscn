@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://d031l5mvjvfwt"]
+[gd_scene load_steps=32 format=3 uid="uid://d031l5mvjvfwt"]
 
 [ext_resource type="Texture2D" uid="uid://bbij0qk86gr8e" path="res://Assets/Backgrounds/Station-Background-Clear.png" id="1_f3xoh"]
 [ext_resource type="PackedScene" uid="uid://b08qe65cohrkh" path="res://Assets/Particle Generators/star_bg_particles.tscn" id="2_1jq43"]
@@ -48,6 +48,44 @@ font_color = Color(0, 1, 0.313726, 1)
 font = ExtResource("21_kwp8f")
 font_size = 48
 font_color = Color(0, 1, 0.313726, 1)
+
+[sub_resource type="Animation" id="Animation_1l7cw"]
+resource_name = "fade_out"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Overlay:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xkjr4"]
+resource_name = "fade_in"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Overlay:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xhjty"]
+_data = {
+"fade_in": SubResource("Animation_xkjr4"),
+"fade_out": SubResource("Animation_1l7cw")
+}
 
 [node name="Game" type="Node2D"]
 
@@ -216,6 +254,25 @@ metadata/_edit_lock_ = true
 [node name="Probe" parent="UI" instance=ExtResource("5_4nw3o")]
 position = Vector2(782.5, 268.015)
 scale = Vector2(0.8, 0.8)
+
+[node name="Scene Transition" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Overlay" type="ColorRect" parent="UI/Scene Transition"]
+layout_mode = 0
+offset_left = -225.0
+offset_top = -44.0
+offset_right = 2200.0
+offset_bottom = 1146.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/Scene Transition"]
+libraries = {
+"": SubResource("AnimationLibrary_xhjty")
+}
 
 [node name="Debugg" type="CanvasLayer" parent="."]
 script = ExtResource("22_q7h35")
