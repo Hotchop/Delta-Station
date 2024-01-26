@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://yio4amjjij1j"]
+
+[ext_resource type="FontFile" uid="uid://c1rx8lmdovuo4" path="res://Assets/Fonts/VT323-Regular.ttf" id="1_6bltt"]
+[ext_resource type="Script" path="res://Screens/intro.gd" id="1_bites"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_658hk"]
+line_spacing = 1.0
+font = ExtResource("1_6bltt")
+font_size = 30
+font_color = Color(0, 1, 0.313726, 1)
+
+[node name="Intro" type="Node2D"]
+script = ExtResource("1_bites")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -371.0
+offset_top = -61.0
+offset_right = 2349.0
+offset_bottom = 1183.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Intro Text" type="Label" parent="."]
+offset_left = 256.0
+offset_top = 80.0
+offset_right = 1652.0
+offset_bottom = 952.0
+text = "//ERROR
+
+STATION SYSTEMS DEFECTIVE
+
+//ERROR
+
+UNABLE TO CONFIRM STATION COORDINATES
+
+//ANALYSIS
+
+STATION OFF-COURSE
+
+//ANALYSIS
+
+COMMUNICATION SYSTEMS NOT FUNCTIONAL
+
+INITIATING EMERGENCY MODE:
+
+-SWITCHING TO ANALOG MODE
+
+-SWITCHING TO RESERVE MODE
+
+-DISTRESS BEACON LAUNCHED
+
+
+Initiate manual controls? Y/N"
+label_settings = SubResource("LabelSettings_658hk")
+autowrap_mode = 3

@@ -108,8 +108,8 @@ color = Color(0, 0, 0, 1)
 position = Vector2(0, 20)
 sprite_frames = SubResource("SpriteFrames_yr4vf")
 autoplay = "default"
-frame = 3
-frame_progress = 0.802039
+frame = 2
+frame_progress = 0.656519
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ppyj7")

@@ -12,7 +12,7 @@ var difficulty
 
 func _ready():
 	date = DATE_START
-	difficulty = difficultyList["Normal"]
+	difficulty = difficultyList["Voided"]
 
 func next_day():
 	date += 1
