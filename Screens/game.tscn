@@ -49,22 +49,6 @@ font = ExtResource("21_kwp8f")
 font_size = 48
 font_color = Color(0, 1, 0.313726, 1)
 
-[sub_resource type="Animation" id="Animation_1l7cw"]
-resource_name = "fade_out"
-length = 2.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Overlay:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.1, 2.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_xkjr4"]
 resource_name = "fade_in"
 length = 2.5
@@ -79,6 +63,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1l7cw"]
+resource_name = "fade_out"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Overlay:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xhjty"]
@@ -143,6 +143,10 @@ scale = Vector2(0.8, 0.8)
 [node name="Probe Station" parent="Station Parts" instance=ExtResource("8_hnw00")]
 position = Vector2(782.5, 280)
 scale = Vector2(0.8, 0.8)
+
+[node name="Probe" parent="Station Parts/Probe Station" instance=ExtResource("5_4nw3o")]
+position = Vector2(0, -14.9812)
+scale = Vector2(1, 1)
 
 [node name="Propulsor" parent="Station Parts" instance=ExtResource("11_ergll")]
 position = Vector2(379.18, 389.68)
@@ -250,10 +254,6 @@ position = Vector2(1485.59, 393.57)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("22_hnjjf")
 metadata/_edit_lock_ = true
-
-[node name="Probe" parent="UI" instance=ExtResource("5_4nw3o")]
-position = Vector2(782.5, 268.015)
-scale = Vector2(0.8, 0.8)
 
 [node name="Scene Transition" type="Control" parent="UI"]
 visible = false

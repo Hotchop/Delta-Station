@@ -1,0 +1,336 @@
+[gd_scene load_steps=20 format=3 uid="uid://d3cc54dpupjr6"]
+
+[ext_resource type="Script" path="res://Screens/new_game.gd" id="1_4dneu"]
+[ext_resource type="FontFile" uid="uid://c1rx8lmdovuo4" path="res://Assets/Fonts/VT323-Regular.ttf" id="1_yqybp"]
+[ext_resource type="PackedScene" uid="uid://crnf5vthlii6q" path="res://Global/menu_button.tscn" id="2_t6vho"]
+[ext_resource type="LabelSettings" uid="uid://dgri43qjj5xtv" path="res://Assets/Fonts/game_titles.tres" id="3_evf4h"]
+[ext_resource type="ButtonGroup" uid="uid://7gginc2sfjts" path="res://Settings/difficutly_button_group.tres" id="4_k00gg"]
+[ext_resource type="Texture2D" uid="uid://cgd77evvex27a" path="res://Assets/UI/Menu-Button.png" id="4_m6iux"]
+[ext_resource type="Texture2D" uid="uid://d0rxgptnhgtk7" path="res://Assets/UI/Toggle-X-Button.png" id="7_xe1q2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_68tt3"]
+font = ExtResource("1_yqybp")
+font_size = 100
+font_color = Color(0, 1, 0.313726, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2ncir"]
+font = ExtResource("1_yqybp")
+font_size = 64
+font_color = Color(0, 1, 0.313726, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66ydp"]
+atlas = ExtResource("4_m6iux")
+region = Rect2(5, 5, 200, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6rgl"]
+atlas = ExtResource("4_m6iux")
+region = Rect2(215, 5, 200, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u664v"]
+atlas = ExtResource("4_m6iux")
+region = Rect2(215, 5, 200, 50)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ae4ey"]
+font = ExtResource("1_yqybp")
+font_size = 48
+font_color = Color(0, 1, 0.313726, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6spnm"]
+atlas = ExtResource("7_xe1q2")
+region = Rect2(5, 5, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wulpx"]
+atlas = ExtResource("7_xe1q2")
+region = Rect2(225, 5, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogkts"]
+atlas = ExtResource("7_xe1q2")
+region = Rect2(115, 5, 100, 100)
+
+[sub_resource type="Animation" id="Animation_xkjr4"]
+resource_name = "fade_in"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Overlay:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1l7cw"]
+resource_name = "fade_out"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Overlay:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xhjty"]
+_data = {
+"fade_in": SubResource("Animation_xkjr4"),
+"fade_out": SubResource("Animation_1l7cw")
+}
+
+[node name="New Game" type="Node2D"]
+script = ExtResource("1_4dneu")
+
+[node name="Background" type="CanvasLayer" parent="."]
+
+[node name="Background" type="ColorRect" parent="Background"]
+anchors_preset = -1
+anchor_right = 0.030303
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Scene Title" type="Label" parent="Background"]
+offset_top = 128.0
+offset_right = 1979.0
+offset_bottom = 249.0
+text = "New Game"
+label_settings = SubResource("LabelSettings_68tt3")
+horizontal_alignment = 1
+
+[node name="Menu Button" parent="Background" instance=ExtResource("2_t6vho")]
+offset_left = 1557.0
+offset_top = 930.0
+offset_right = 1757.0
+offset_bottom = 980.0
+scale = Vector2(1.5, 1.5)
+button_text = "Back"
+
+[node name="Start" parent="Background" instance=ExtResource("2_t6vho")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -206.0
+offset_top = 904.0
+offset_right = -6.0
+offset_bottom = 954.0
+grow_horizontal = 2
+scale = Vector2(2, 2)
+size_flags_horizontal = 4
+button_text = "Start"
+
+[node name="Difficulty" type="CanvasLayer" parent="."]
+
+[node name="Difficulty Title" type="Label" parent="Difficulty"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -65.0
+offset_top = 296.0
+offset_right = 65.0
+offset_bottom = 329.0
+grow_horizontal = 2
+text = "Difficulty"
+label_settings = SubResource("LabelSettings_2ncir")
+
+[node name="Easy Option" type="TextureButton" parent="Difficulty"]
+offset_left = 320.0
+offset_top = 408.0
+offset_right = 608.0
+offset_bottom = 480.0
+size_flags_horizontal = 0
+toggle_mode = true
+button_group = ExtResource("4_k00gg")
+texture_normal = SubResource("AtlasTexture_66ydp")
+texture_pressed = SubResource("AtlasTexture_e6rgl")
+texture_hover = SubResource("AtlasTexture_u664v")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Difficulty/Easy Option"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 282.0
+offset_bottom = 66.0
+text = "Easy"
+label_settings = ExtResource("3_evf4h")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Normal Option" type="TextureButton" parent="Difficulty"]
+offset_left = 672.0
+offset_top = 408.0
+offset_right = 960.0
+offset_bottom = 480.0
+size_flags_horizontal = 0
+toggle_mode = true
+button_group = ExtResource("4_k00gg")
+texture_normal = SubResource("AtlasTexture_66ydp")
+texture_pressed = SubResource("AtlasTexture_e6rgl")
+texture_hover = SubResource("AtlasTexture_u664v")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Difficulty/Normal Option"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 282.0
+offset_bottom = 66.0
+text = "Normal"
+label_settings = ExtResource("3_evf4h")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Hard Option" type="TextureButton" parent="Difficulty"]
+offset_left = 1024.0
+offset_top = 407.0
+offset_right = 1312.0
+offset_bottom = 479.0
+size_flags_horizontal = 0
+toggle_mode = true
+button_group = ExtResource("4_k00gg")
+texture_normal = SubResource("AtlasTexture_66ydp")
+texture_pressed = SubResource("AtlasTexture_e6rgl")
+texture_hover = SubResource("AtlasTexture_u664v")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Difficulty/Hard Option"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 282.0
+offset_bottom = 66.0
+text = "Hard"
+label_settings = ExtResource("3_evf4h")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Voided Option" type="TextureButton" parent="Difficulty"]
+offset_left = 1376.0
+offset_top = 407.0
+offset_right = 1664.0
+offset_bottom = 479.0
+size_flags_horizontal = 0
+toggle_mode = true
+button_group = ExtResource("4_k00gg")
+texture_normal = SubResource("AtlasTexture_66ydp")
+texture_pressed = SubResource("AtlasTexture_e6rgl")
+texture_hover = SubResource("AtlasTexture_u664v")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Difficulty/Voided Option"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 282.0
+offset_bottom = 66.0
+text = "Voided"
+label_settings = ExtResource("3_evf4h")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Description" type="RichTextLabel" parent="Difficulty"]
+offset_left = 320.0
+offset_top = 512.0
+offset_right = 1664.0
+offset_bottom = 672.0
+theme_override_colors/default_color = Color(0, 1, 0.313726, 1)
+theme_override_fonts/normal_font = ExtResource("1_yqybp")
+theme_override_fonts/bold_font = ExtResource("1_yqybp")
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 42
+bbcode_enabled = true
+text = "[center][b]Normal Mode[/b]
+Standar game mode
+Some modules may start a bit damaged
+"
+
+[node name="Extra Settings" type="CanvasLayer" parent="."]
+
+[node name="Tutorial" type="Label" parent="Extra Settings"]
+offset_left = 648.0
+offset_top = 704.0
+offset_right = 999.0
+offset_bottom = 769.0
+text = "Skip Tutorial"
+label_settings = SubResource("LabelSettings_ae4ey")
+horizontal_alignment = 1
+
+[node name="Tutorial Toggle" type="TextureButton" parent="Extra Settings/Tutorial"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -39.5
+offset_top = -1.00001
+offset_right = 60.5
+offset_bottom = 99.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.7, 0.7)
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_6spnm")
+texture_pressed = SubResource("AtlasTexture_wulpx")
+texture_hover = SubResource("AtlasTexture_ogkts")
+
+[node name="Intro" type="Label" parent="Extra Settings"]
+offset_left = 992.0
+offset_top = 704.0
+offset_right = 1343.0
+offset_bottom = 769.0
+text = "Skip Intro"
+label_settings = SubResource("LabelSettings_ae4ey")
+horizontal_alignment = 1
+
+[node name="Intro Toggle" type="TextureButton" parent="Extra Settings/Intro"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -39.5
+offset_top = -1.00001
+offset_right = 60.5
+offset_bottom = 99.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.7, 0.7)
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_6spnm")
+texture_pressed = SubResource("AtlasTexture_wulpx")
+texture_hover = SubResource("AtlasTexture_ogkts")
+
+[node name="Scene Transition" type="Control" parent="Extra Settings"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Overlay" type="ColorRect" parent="Extra Settings/Scene Transition"]
+layout_mode = 0
+offset_left = -225.0
+offset_top = -44.0
+offset_right = 2200.0
+offset_bottom = 1146.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Extra Settings/Scene Transition"]
+libraries = {
+"": SubResource("AnimationLibrary_xhjty")
+}
+
+[connection signal="pressed" from="Background/Menu Button" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="Background/Start" to="." method="_on_start_pressed"]
+[connection signal="toggled" from="Extra Settings/Tutorial/Tutorial Toggle" to="." method="_on_tutorial_toggle_toggled"]
+[connection signal="toggled" from="Extra Settings/Intro/Intro Toggle" to="." method="_on_intro_toggle_toggled"]
+[connection signal="animation_finished" from="Extra Settings/Scene Transition/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

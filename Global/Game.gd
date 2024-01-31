@@ -9,10 +9,12 @@ var difficultyList: Dictionary = {
 	"Voided": 0
 }
 var difficulty
+@onready var skip_tutorial: bool = false
+@onready var skip_intro: bool = false
 
 func _ready():
 	date = DATE_START
-	difficulty = difficultyList["Voided"]
+	difficulty = difficultyList["Normal"]
 
 func next_day():
 	date += 1

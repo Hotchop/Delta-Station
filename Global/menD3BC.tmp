@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://crnf5vthlii6q"]
+
+[ext_resource type="Texture2D" uid="uid://cgd77evvex27a" path="res://Assets/UI/Menu-Button.png" id="1_p6db3"]
+[ext_resource type="Script" path="res://Global/menu_button.gd" id="2_8haui"]
+[ext_resource type="FontFile" uid="uid://c1rx8lmdovuo4" path="res://Assets/Fonts/VT323-Regular.ttf" id="2_x8x7a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8buo"]
+atlas = ExtResource("1_p6db3")
+region = Rect2(5, 5, 200, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ow8hr"]
+atlas = ExtResource("1_p6db3")
+region = Rect2(215, 5, 200, 50)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4jop5"]
+font = ExtResource("2_x8x7a")
+font_size = 38
+font_color = Color(0, 0.337255, 0.105882, 1)
+
+[node name="Menu Button" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = SubResource("AtlasTexture_v8buo")
+texture_hover = SubResource("AtlasTexture_ow8hr")
+script = ExtResource("2_8haui")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 196.0
+offset_bottom = 46.0
+text = "Text"
+label_settings = SubResource("LabelSettings_4jop5")
+horizontal_alignment = 1

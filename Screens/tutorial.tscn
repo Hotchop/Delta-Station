@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://da8vm8oyswmwq"]
+
+[ext_resource type="Script" path="res://Screens/tutorial.gd" id="1_ntonk"]
+[ext_resource type="LabelSettings" uid="uid://dgri43qjj5xtv" path="res://Assets/Fonts/game_titles.tres" id="2_58n55"]
+
+[node name="Tutorial" type="Node2D"]
+script = ExtResource("1_ntonk")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 1980.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 703.0
+offset_top = 406.0
+offset_right = 1363.0
+offset_bottom = 507.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+text = "The tutorial is under development
+Please continue"
+label_settings = ExtResource("2_58n55")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+offset_left = 928.0
+offset_top = 538.0
+offset_right = 1131.0
+offset_bottom = 607.0
+text = "Continue"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
