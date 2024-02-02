@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="BasicResource" load_steps=2 format=3 uid="uid://cma46ja0nupef"]
+
+[ext_resource type="Script" path="res://Resources/Basic Resource.gd" id="1_msbp1"]
+
+[resource]
+script = ExtResource("1_msbp1")

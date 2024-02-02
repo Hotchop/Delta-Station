@@ -322,7 +322,7 @@ offset_top = -44.0
 offset_right = 2200.0
 offset_bottom = 1146.0
 mouse_filter = 2
-color = Color(0, 0, 0, 1)
+color = Color(0, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Extra Settings/Scene Transition"]
 libraries = {

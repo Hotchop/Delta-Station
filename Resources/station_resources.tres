@@ -1,0 +1,55 @@
+[gd_resource type="Resource" script_class="StationResourses" load_steps=11 format=3 uid="uid://dck0ah4cvcapv"]
+
+[ext_resource type="Script" path="res://Resources/Basic Resource.gd" id="1_eamsj"]
+[ext_resource type="Script" path="res://Resources/Station Resourses.gd" id="1_pespt"]
+
+[sub_resource type="Resource" id="Resource_4wocu"]
+script = ExtResource("1_eamsj")
+stored = 0.0
+is_available = true
+
+[sub_resource type="Resource" id="Resource_21y08"]
+script = ExtResource("1_eamsj")
+stored = 0.0
+is_available = true
+
+[sub_resource type="Resource" id="Resource_alk2m"]
+script = ExtResource("1_eamsj")
+stored = 0.0
+is_available = true
+
+[sub_resource type="Resource" id="Resource_p601w"]
+script = ExtResource("1_eamsj")
+stored = 0.0
+is_available = true
+
+[sub_resource type="Resource" id="Resource_1e12w"]
+script = ExtResource("1_eamsj")
+stored = 0.0
+is_available = true
+
+[sub_resource type="Resource" id="Resource_3q4sh"]
+script = ExtResource("1_eamsj")
+stored = 0.0
+is_available = true
+
+[sub_resource type="Resource" id="Resource_80pns"]
+script = ExtResource("1_eamsj")
+stored = 0.0
+is_available = true
+
+[sub_resource type="Resource" id="Resource_ae6wu"]
+script = ExtResource("1_eamsj")
+stored = 0.0
+is_available = true
+
+[resource]
+script = ExtResource("1_pespt")
+energy = SubResource("Resource_alk2m")
+battery = SubResource("Resource_21y08")
+food = SubResource("Resource_p601w")
+water = SubResource("Resource_ae6wu")
+oxigen = SubResource("Resource_80pns")
+nitrogen = SubResource("Resource_3q4sh")
+CO2 = SubResource("Resource_4wocu")
+metals = SubResource("Resource_1e12w")

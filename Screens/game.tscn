@@ -146,7 +146,6 @@ scale = Vector2(0.8, 0.8)
 
 [node name="Probe" parent="Station Parts/Probe Station" instance=ExtResource("5_4nw3o")]
 position = Vector2(0, -14.9812)
-scale = Vector2(1, 1)
 
 [node name="Propulsor" parent="Station Parts" instance=ExtResource("11_ergll")]
 position = Vector2(379.18, 389.68)
