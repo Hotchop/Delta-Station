@@ -13,7 +13,9 @@ config_version=5
 config/name="Delta Station"
 run/main_scene="res://Screens/game.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0, 0, 0, 1)
+config/icon="res://Assets/Icons/Delta-Station-Logo.svg"
+config/windows_native_icon="res://Assets/Icons/Delta-Station-Logo.ico"
 
 [autoload]
 
