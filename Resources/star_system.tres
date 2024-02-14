@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="StarSystem" load_steps=2 format=3 uid="uid://67xa4h4htmr1"]
+
+[ext_resource type="Script" path="res://Resources/Star System.gd" id="1_hl5c8"]
+
+[resource]
+script = ExtResource("1_hl5c8")
+starType = 2
+starName = "System Name"

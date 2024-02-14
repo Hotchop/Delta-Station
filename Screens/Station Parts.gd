@@ -7,7 +7,7 @@ func _ready():
 
 func difficulty_mod():
 	difficulty_damage()
-
+	
 func difficulty_damage():
 	var rng = RandomNumberGenerator.new()
 	var value

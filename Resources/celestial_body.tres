@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="CelestialBody" load_steps=2 format=3 uid="uid://da0v5jjvlic7e"]
+
+[ext_resource type="Script" path="res://Resources/Celestial Body.gd" id="1_h7atx"]
+
+[resource]
+script = ExtResource("1_h7atx")

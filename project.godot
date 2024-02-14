@@ -21,6 +21,7 @@ config/windows_native_icon="res://Assets/Icons/Delta-Station-Logo.ico"
 
 WorldUi="*res://Global/world_ui.gd"
 Game="*res://Global/Game.gd"
+GlobalEnums="*res://Global/GlobalEnums.gd"
 
 [display]
 
