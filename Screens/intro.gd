@@ -25,7 +25,6 @@ func _process(delta):
 				$"Scene Transition/AnimationPlayer".play("fade_out")
 			elif Input.is_key_pressed(KEY_N):
 				get_tree().quit()
-	
 
 
 func _on_animation_player_animation_finished(anim_name):

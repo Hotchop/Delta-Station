@@ -1,11 +1,11 @@
 extends Resource
 class_name CelestialBody
 
-const MAX_VALUE: float = 60
-const MIN_VALUE: float = 0
-const LOW_RANGE: float = 10
-const MID_RANGE: float = 20
-const HIGH_RANGE: float = 40
+const MAX_VALUE: float = 60.0
+const MIN_VALUE: float = 0.0
+const LOW_RANGE: float = 10.0
+const MID_RANGE: float = 20.0
+const HIGH_RANGE: float = 40.0
 
 var quality: Dictionary = {
 	"None": MIN_VALUE,
@@ -17,15 +17,15 @@ var quality: Dictionary = {
 @export var bodyType = GlobalEnums.CelestialBodyType.ROCK
 @export var bodyName: String = "Body Name"
 @export var probeTime: int = 5
-@export var food: BasicResource
-@export var water: BasicResource
-@export var O2: BasicResource
-@export var metal: BasicResource
+@export var food: BasicResource = BasicResource.new()
+@export var water: BasicResource = BasicResource.new()
+@export var O2: BasicResource = BasicResource.new()
+@export var metal: BasicResource = BasicResource.new()
 
 #Init only accepts the Enum type GlobalEnums.CelestialBodyType
-func _init(type):
+func _init(type,name: String):
 	bodyType = type
-	bodyName = randomName(type)
+	bodyName = name
 	match type:
 		GlobalEnums.CelestialBodyType.ASTEROID:
 			newAsteroid()
@@ -37,13 +37,6 @@ func _init(type):
 			newRing()
 		GlobalEnums.CelestialBodyType.ROCK: 
 			newRock()
-	print(self)
-
-func randomName(type) -> String:
-	if type != GlobalEnums.CelestialBodyType.ASTEROID:
-		return "Planet"
-	else:
-		return "Asteroid"
 
 func generateResourse(baseValue: float) -> float:
 	match baseValue:

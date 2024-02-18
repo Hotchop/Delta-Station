@@ -6,7 +6,9 @@ func _ready():
 	difficulty_mod()
 
 func difficulty_mod():
-	difficulty_damage()
+	if GlobalFlags.game_start == true:
+		difficulty_damage()
+		GlobalFlags.game_start = false
 	
 func difficulty_damage():
 	var rng = RandomNumberGenerator.new()

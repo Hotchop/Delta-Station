@@ -304,7 +304,24 @@ offset_right = 138.0
 offset_bottom = 905.0
 text = "Reset"
 
+[node name="Current System" type="Button" parent="Debugg"]
+offset_left = 171.0
+offset_top = 876.0
+offset_right = 299.0
+offset_bottom = 907.0
+text = "Current System"
+
+[node name="Next System" type="Button" parent="Debugg"]
+offset_left = 174.0
+offset_top = 909.0
+offset_right = 279.0
+offset_bottom = 940.0
+text = "Next System
+"
+
 [connection signal="pressed" from="Debugg/Quit Button DB" to="Debugg" method="_on_quit_button_db_pressed"]
 [connection signal="pressed" from="Debugg/Next Day DB" to="Debugg" method="_on_next_day_db_pressed"]
 [connection signal="pressed" from="Debugg/Damage Hull" to="Debugg" method="_on_damage_hull_pressed"]
 [connection signal="pressed" from="Debugg/Reset" to="Debugg" method="_on_reset_pressed"]
+[connection signal="pressed" from="Debugg/Current System" to="Debugg" method="_on_current_system_pressed"]
+[connection signal="pressed" from="Debugg/Next System" to="Debugg" method="_on_next_system_pressed"]

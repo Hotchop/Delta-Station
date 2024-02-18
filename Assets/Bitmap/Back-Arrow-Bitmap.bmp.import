@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://iyjhcvdd4ra2"
+path="res://.godot/imported/Back-Arrow-Bitmap.bmp-08c59fcb6874c18ce85508e758fbe4f8.res"
+
+[deps]
+
+source_file="res://Assets/Bitmap/Back-Arrow-Bitmap.bmp"
+dest_files=["res://.godot/imported/Back-Arrow-Bitmap.bmp-08c59fcb6874c18ce85508e758fbe4f8.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

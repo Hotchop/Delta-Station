@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://cgujy4dvwbmie"]
+[gd_scene load_steps=58 format=3 uid="uid://cgujy4dvwbmie"]
 
 [ext_resource type="Script" path="res://Star System/planet_card.gd" id="1_o1t52"]
 [ext_resource type="Texture2D" uid="uid://qs4vg885bncm" path="res://Assets/Star System Parts/Asteroid-Animation.png" id="1_teatd"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://chltb4u4r1q5m" path="res://Assets/Star System Parts/Probe-Body-Selector.png" id="6_v0gjo"]
 [ext_resource type="FontFile" uid="uid://c1rx8lmdovuo4" path="res://Assets/Fonts/VT323-Regular.ttf" id="7_fxb80"]
 [ext_resource type="PackedScene" uid="uid://crnf5vthlii6q" path="res://Global/menu_button.tscn" id="7_wkk80"]
+[ext_resource type="Texture2D" uid="uid://cgd77evvex27a" path="res://Assets/UI/Menu-Button.png" id="10_bcib5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m1tqt"]
 atlas = ExtResource("1_teatd")
@@ -306,7 +307,7 @@ animations = [{
 
 [sub_resource type="LabelSettings" id="LabelSettings_nhgtb"]
 font = ExtResource("7_fxb80")
-font_size = 48
+font_size = 36
 font_color = Color(0, 0, 0, 1)
 outline_size = 2
 outline_color = Color(2.76752e-07, 0.233367, 0.0457854, 1)
@@ -316,14 +317,116 @@ font = ExtResource("7_fxb80")
 font_size = 34
 font_color = Color(0, 1, 0.313726, 1)
 
+[sub_resource type="ButtonGroup" id="ButtonGroup_srkr3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmsq3"]
+atlas = ExtResource("10_bcib5")
+region = Rect2(215, 5, 200, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ow8hr"]
+atlas = ExtResource("10_bcib5")
+region = Rect2(215, 5, 200, 50)
+
+[sub_resource type="Animation" id="Animation_y6urm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Planet Name:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Planet Resources:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Transition:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(25, 500)]
+}
+
+[sub_resource type="Animation" id="Animation_rlcgg"]
+resource_name = "typing"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Planet Name:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Planet Resources:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Transition:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(25, 133), Vector2(25, 500)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wowcy"]
+_data = {
+"RESET": SubResource("Animation_y6urm"),
+"typing": SubResource("Animation_rlcgg")
+}
+
 [node name="Planet Card" type="Node2D"]
+scale = Vector2(0.75, 0.75)
 script = ExtResource("1_o1t52")
-metadata/_edit_vertical_guides_ = [33.0, 392.0]
 
 [node name="Planet Animation" type="AnimatedSprite2D" parent="."]
 position = Vector2(212, 323)
 sprite_frames = SubResource("SpriteFrames_uj5xs")
 animation = &"Rock"
+
+[node name="Transition" type="ColorRect" parent="."]
+offset_left = 25.0
+offset_top = 500.0
+offset_right = 400.0
+offset_bottom = 879.001
+color = Color(0, 0, 0, 1)
 
 [node name="Probe-body-selector" type="Sprite2D" parent="."]
 position = Vector2(212, 448)
@@ -338,6 +441,9 @@ text = "Planet Name"
 label_settings = SubResource("LabelSettings_nhgtb")
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="Planet Resources" type="Label" parent="."]
 offset_left = 33.0
@@ -352,10 +458,22 @@ text = "//Resources Detected
 
 //Exploration Days: 5"
 label_settings = SubResource("LabelSettings_4kq8x")
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="Menu Button" parent="." instance=ExtResource("7_wkk80")]
 offset_left = 111.0
 offset_top = 803.0
 offset_right = 311.0
 offset_bottom = 853.0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_srkr3")
+texture_pressed = SubResource("AtlasTexture_nmsq3")
+texture_disabled = SubResource("AtlasTexture_ow8hr")
 button_text = "Launch"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wowcy")
+}
+autoplay = "typing"

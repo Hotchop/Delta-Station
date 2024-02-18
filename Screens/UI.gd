@@ -1,8 +1,10 @@
 extends CanvasLayer
 
 func _ready():
-	$"Scene Transition".visible = true
-	$"Scene Transition/AnimationPlayer".play("fade_in")
+	if GlobalFlags.day_start == true:
+		$"Scene Transition".visible = true
+		$"Scene Transition/AnimationPlayer".play("fade_in")
+		GlobalFlags.day_start = false
 
 func _process(_delta):
 	get_node("HoveredModule").text = WorldUi.hovered_module_name

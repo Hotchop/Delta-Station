@@ -11,8 +11,22 @@ var difficultyList: Dictionary = {
 	"Voided": 0
 }
 var difficulty = difficultyList["Normal"]
-@onready var skip_tutorial: bool = false
-@onready var skip_intro: bool = false
+@onready var skip_tutorial: bool = false	#Move to Global Flags
+@onready var skip_intro: bool = false	#Move to Global Flags
+
+var greekLetterList: Array = []
+var constellationList: Array = []
+var greek_list_path = "res://Assets/json/greek_letters.json"
+var constellation_list_path = "res://Assets/json/constellations.json"
+
+var cursor_h = preload("res://Assets/UI/Cursor-Hover.png")
+
+
+func _ready():
+	Input.set_custom_mouse_cursor(cursor_h,Input.CURSOR_POINTING_HAND,Vector2(0,0))
+	greekLetterList = load_name_files(greek_list_path)
+	constellationList = load_name_files(constellation_list_path)
+	game_start()
 
 func game_start():
 	if date == 0:
@@ -30,3 +44,14 @@ func _first_system():
 func warp_system():
 	currentSystem = nextSystem
 	nextSystem = StarSystem.new()
+
+func load_name_files(filepath: String):
+	if FileAccess.file_exists(filepath):
+		var datafile = FileAccess.open(filepath,FileAccess.READ)
+		var parsedResult = JSON.parse_string(datafile.get_as_text())
+		if parsedResult is Array:
+			return parsedResult
+		else:
+			print("Error reading file")
+	else:
+		print("Error: File doesn't exist at "+ filepath)

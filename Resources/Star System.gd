@@ -33,13 +33,17 @@ func _init():
 		else:
 			starType = GlobalEnums.StarSystemType.YELLOW
 			starEnergy = starEnergyChart["Yellow"]
-		newStarSystem(starType)
+		newStarSystem()
 
 func randomName() -> String:
-	return "System Name"
+	var first: Dictionary = Game.greekLetterList.pick_random()
+	var second: Dictionary = Game.constellationList.pick_random()
+	var name = first["letter"]+"-"+second["genitive"]
+	return name
 
 #Creates new barren system with 0 (40%), 1 (50%) or 2 (10%) asteroids
 func newBarrenSystem():
+	systemName = "AB-"+str(randi_range(10000,99999))
 	var bodyNumber = randf_range(0,100)
 	if bodyNumber > 90:
 		generateAsteroids(2)
@@ -52,10 +56,10 @@ func newBarrenSystem():
 func generateAsteroids(amount: int):
 	totalBodies = amount
 	for i in range(amount):
-		bodyList.append(CelestialBody.new(GlobalEnums.CelestialBodyType.ASTEROID))
+		bodyList.append(CelestialBody.new(GlobalEnums.CelestialBodyType.ASTEROID,"CB-"+str(randi_range(1000,9999)))) 
 
 #Creates new star system with 3 (60%), 2 (30%) or 1 (10%) planets
-func newStarSystem(type):
+func newStarSystem():
 	var bodyNumber = randf_range(0,100)
 	if bodyNumber > 40:
 		generatePlanets(3)
@@ -70,18 +74,20 @@ func newStarSystem(type):
 #5% chance for asteroid
 func generatePlanets(amount: int):
 	totalBodies = amount
+	var letter = "A"
 	for i in range(amount):
 		var bodyType = randf_range(0,100)
 		if bodyType > 40:
-			bodyList.append(CelestialBody.new(GlobalEnums.CelestialBodyType.ROCK))
+			bodyList.append(CelestialBody.new(GlobalEnums.CelestialBodyType.ROCK,systemName+" "+letter))
 		elif bodyType <= 5:
-			bodyList.append(CelestialBody.new(GlobalEnums.CelestialBodyType.ASTEROID))
+			bodyList.append(CelestialBody.new(GlobalEnums.CelestialBodyType.ASTEROID,"CB-"+str(randi_range(1000,9999))))
 		else:
 			var rng = randi_range(1,3)
 			match rng:
 				1:
-					bodyList.append(CelestialBody.new(GlobalEnums.CelestialBodyType.RING))
+					bodyList.append(CelestialBody.new(GlobalEnums.CelestialBodyType.RING,systemName+" "+letter))
 				2:
-					bodyList.append(CelestialBody.new(GlobalEnums.CelestialBodyType.ICE))
+					bodyList.append(CelestialBody.new(GlobalEnums.CelestialBodyType.ICE,systemName+" "+letter))
 				3:
-					bodyList.append(CelestialBody.new(GlobalEnums.CelestialBodyType.GAS))
+					bodyList.append(CelestialBody.new(GlobalEnums.CelestialBodyType.GAS,systemName+" "+letter))
+		letter = String.chr(letter.unicode_at(0) + 1)

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ucvnbf5vhqqa"]
+
+[ext_resource type="Texture2D" uid="uid://sl4q4ng7q7e0" path="res://Assets/UI/Back Arrow.png" id="1_hnbed"]
+[ext_resource type="BitMap" uid="uid://iyjhcvdd4ra2" path="res://Assets/Bitmap/Back-Arrow-Bitmap.bmp" id="2_mjtld"]
+
+[node name="Back Arrow" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("1_hnbed")
+texture_click_mask = ExtResource("2_mjtld")

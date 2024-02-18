@@ -20,3 +20,13 @@ func _on_damage_hull_pressed():
 
 func _on_reset_pressed():
 	get_tree().reload_current_scene()
+
+
+func _on_current_system_pressed():
+	GlobalFlags.view_current_system = true
+	get_tree().change_scene_to_file("res://Screens/system_cards.tscn")
+
+
+func _on_next_system_pressed():
+	GlobalFlags.view_current_system = true
+	get_tree().change_scene_to_file("res://Screens/system_cards.tscn")
