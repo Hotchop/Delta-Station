@@ -2,6 +2,7 @@ extends Resource
 class_name StarSystem
 
 @export var starType = GlobalEnums.StarSystemType.YELLOW
+@export var starName = "Yellow"
 @export var systemName: String = "System Name"
 @export var starEnergy: float = 1
 @export var totalBodies: int = 3
@@ -19,6 +20,7 @@ func _init():
 	var rng = randf_range(0,100)
 	if rng <= 10.0:
 		starType = GlobalEnums.StarSystemType.BARREN
+		starName = "Starless"
 		starEnergy = starEnergyChart["Barren"]
 		newBarrenSystem()
 	else:
@@ -26,12 +28,15 @@ func _init():
 			var coin = randi_range(0,1)
 			if coin == 0:
 				starType = GlobalEnums.StarSystemType.RED
+				starName = "Red"
 				starEnergy = starEnergyChart["Red"]
 			else:
 				starType = GlobalEnums.StarSystemType.BLUE
+				starName = "Blue"
 				starEnergy = starEnergyChart["Blue"]
 		else:
 			starType = GlobalEnums.StarSystemType.YELLOW
+			starName = "Yellow"
 			starEnergy = starEnergyChart["Yellow"]
 		newStarSystem()
 

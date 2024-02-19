@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://d031l5mvjvfwt"]
+[gd_scene load_steps=55 format=3 uid="uid://d031l5mvjvfwt"]
 
 [ext_resource type="Texture2D" uid="uid://bbij0qk86gr8e" path="res://Assets/Backgrounds/Station-Background-Clear.png" id="1_f3xoh"]
 [ext_resource type="PackedScene" uid="uid://b08qe65cohrkh" path="res://Assets/Particle Generators/star_bg_particles.tscn" id="2_1jq43"]
@@ -15,14 +15,82 @@
 [ext_resource type="PackedScene" uid="uid://yeqlaavupdnf" path="res://Station Modules/ring.tscn" id="12_sgjgt"]
 [ext_resource type="PackedScene" uid="uid://dqat5ttat3he8" path="res://Station Modules/solar_panel.tscn" id="13_sfobf"]
 [ext_resource type="PackedScene" uid="uid://ckm6su6vqhhdp" path="res://Station Modules/water_module.tscn" id="15_6xrrf"]
+[ext_resource type="Texture2D" uid="uid://qfbms1tu01rg" path="res://Assets/UI/Station Menus.png" id="16_2cixr"]
+[ext_resource type="Script" path="res://Screens/Station Menus.gd" id="16_febku"]
+[ext_resource type="ButtonGroup" uid="uid://cckeeejqad7ms" path="res://Settings/station_menu_buttons.tres" id="16_j5hh6"]
+[ext_resource type="Texture2D" uid="uid://bmhvt676ykh6i" path="res://Assets/UI/Station-Menu-Button.png" id="17_elx7s"]
+[ext_resource type="BitMap" uid="uid://cisrx24g5o5pk" path="res://Assets/Bitmap/Station-Menu-Button-Bitmap.bmp" id="18_7xn6w"]
 [ext_resource type="Texture2D" uid="uid://dlxtfp7bf68ig" path="res://Assets/UI/Connector1-Reactor-Materials.png" id="18_b3f58"]
 [ext_resource type="Texture2D" uid="uid://ddxkugucjulvn" path="res://Assets/UI/Connector2-Materials-Battery.png" id="19_kxcwf"]
 [ext_resource type="Script" path="res://Screens/UI.gd" id="20_8j76g"]
+[ext_resource type="LabelSettings" uid="uid://dgri43qjj5xtv" path="res://Assets/Fonts/game_titles.tres" id="20_wjdj1"]
 [ext_resource type="Texture2D" uid="uid://ceq0asxn2qpog" path="res://Assets/UI/Connector3-Battery-Atmosphere.png" id="20_wqj2i"]
 [ext_resource type="FontFile" uid="uid://c1rx8lmdovuo4" path="res://Assets/Fonts/VT323-Regular.ttf" id="21_kwp8f"]
 [ext_resource type="Texture2D" uid="uid://wiewvgbbjmye" path="res://Assets/UI/Connector4-Atmosphere-Biosphere.png" id="21_mwhsq"]
 [ext_resource type="Texture2D" uid="uid://dmtfkbth6h88a" path="res://Assets/UI/Connector5-Biosphere-Ring.png" id="22_hnjjf"]
 [ext_resource type="Script" path="res://Screens/Debugg.gd" id="22_q7h35"]
+[ext_resource type="Texture2D" uid="uid://4o7gvibxs1yh" path="res://Assets/UI/Green-Frame.png" id="22_tiqys"]
+[ext_resource type="Texture2D" uid="uid://bh8j1fpyn6qns" path="res://Assets/UI/Planet-System.png" id="23_xna26"]
+[ext_resource type="Texture2D" uid="uid://cif6gkduqdq7x" path="res://Assets/UI/Warning Simbol.png" id="24_6jod7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7rvik"]
+atlas = ExtResource("17_elx7s")
+region = Rect2(5, 155, 112, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_te12s"]
+atlas = ExtResource("17_elx7s")
+region = Rect2(127, 155, 112, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbygq"]
+atlas = ExtResource("16_2cixr")
+region = Rect2(5, 299, 1286, 284)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbwfs"]
+atlas = ExtResource("17_elx7s")
+region = Rect2(127, 80, 112, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctuv0"]
+atlas = ExtResource("17_elx7s")
+region = Rect2(249, 80, 112, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0jdf"]
+atlas = ExtResource("17_elx7s")
+region = Rect2(249, 5, 112, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fapvx"]
+atlas = ExtResource("17_elx7s")
+region = Rect2(5, 80, 112, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uypt8"]
+atlas = ExtResource("17_elx7s")
+region = Rect2(5, 5, 112, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dhmxe"]
+atlas = ExtResource("17_elx7s")
+region = Rect2(127, 5, 112, 65)
+
+[sub_resource type="LabelSettings" id="LabelSettings_oas16"]
+font = ExtResource("21_kwp8f")
+font_size = 32
+font_color = Color(0, 1, 0.313726, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mg0yf"]
+atlas = ExtResource("23_xna26")
+region = Rect2(2, 2, 224, 224)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70qmt"]
+atlas = ExtResource("16_2cixr")
+region = Rect2(5, 299, 1286, 284)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3wav5"]
+font = ExtResource("21_kwp8f")
+font_size = 120
+font_color = Color(0, 1, 0.313726, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_sfijj"]
+font = ExtResource("21_kwp8f")
+font_size = 24
+font_color = Color(0, 1, 0.313726, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_6bxh6"]
 font = ExtResource("21_kwp8f")
@@ -168,6 +236,195 @@ position = Vector2(972.805, 522.41)
 rotation = 3.14159
 scale = Vector2(0.8, 0.8)
 
+[node name="Menus" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("16_febku")
+
+[node name="Buttons" type="Control" parent="Menus"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Settings Button" type="TextureButton" parent="Menus/Buttons"]
+layout_mode = 0
+offset_left = 314.0
+offset_top = 711.0
+offset_right = 426.0
+offset_bottom = 776.0
+mouse_default_cursor_shape = 2
+toggle_mode = true
+button_group = ExtResource("16_j5hh6")
+texture_normal = SubResource("AtlasTexture_7rvik")
+texture_pressed = SubResource("AtlasTexture_te12s")
+texture_click_mask = ExtResource("18_7xn6w")
+
+[node name="Settings Menu" type="Control" parent="Menus/Buttons/Settings Button"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -294.0
+offset_top = 65.0
+offset_right = 992.0
+offset_bottom = 349.0
+
+[node name="Menu Sprite" type="Sprite2D" parent="Menus/Buttons/Settings Button/Settings Menu"]
+position = Vector2(643, 142)
+texture = SubResource("AtlasTexture_nbygq")
+
+[node name="Codex Button" type="TextureButton" parent="Menus/Buttons"]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 711.0
+offset_right = 328.0
+offset_bottom = 776.0
+mouse_default_cursor_shape = 2
+toggle_mode = true
+button_group = ExtResource("16_j5hh6")
+texture_normal = SubResource("AtlasTexture_mbwfs")
+texture_pressed = SubResource("AtlasTexture_ctuv0")
+texture_click_mask = ExtResource("18_7xn6w")
+
+[node name="Codex Menu" type="Control" parent="Menus/Buttons/Codex Button"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -196.0
+offset_top = 65.0
+offset_right = 1090.0
+offset_bottom = 349.0
+
+[node name="Menu Sprite" type="Sprite2D" parent="Menus/Buttons/Codex Button/Codex Menu"]
+position = Vector2(643, 142)
+texture = SubResource("AtlasTexture_nbygq")
+
+[node name="Module Button" type="TextureButton" parent="Menus/Buttons"]
+layout_mode = 0
+offset_left = 118.0
+offset_top = 711.0
+offset_right = 230.0
+offset_bottom = 776.0
+mouse_default_cursor_shape = 2
+toggle_mode = true
+button_group = ExtResource("16_j5hh6")
+texture_normal = SubResource("AtlasTexture_t0jdf")
+texture_pressed = SubResource("AtlasTexture_fapvx")
+texture_click_mask = ExtResource("18_7xn6w")
+
+[node name="Module Menu" type="Control" parent="Menus/Buttons/Module Button"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -98.0
+offset_top = 65.0
+offset_right = 1188.0
+offset_bottom = 349.0
+
+[node name="Menu Sprite" type="Sprite2D" parent="Menus/Buttons/Module Button/Module Menu"]
+position = Vector2(643, 142)
+texture = SubResource("AtlasTexture_nbygq")
+
+[node name="System Button" type="TextureButton" parent="Menus/Buttons"]
+top_level = true
+layout_mode = 0
+offset_left = 20.0
+offset_top = 711.0
+offset_right = 132.0
+offset_bottom = 776.0
+mouse_default_cursor_shape = 2
+toggle_mode = true
+button_pressed = true
+button_group = ExtResource("16_j5hh6")
+texture_normal = SubResource("AtlasTexture_uypt8")
+texture_pressed = SubResource("AtlasTexture_dhmxe")
+texture_click_mask = ExtResource("18_7xn6w")
+
+[node name="System Menu" type="Control" parent="Menus/Buttons/System Button"]
+top_level = true
+anchors_preset = 0
+offset_left = 20.0
+offset_top = 776.0
+offset_right = 1306.0
+offset_bottom = 1060.0
+
+[node name="Menu Sprite" type="Sprite2D" parent="Menus/Buttons/System Button/System Menu"]
+position = Vector2(643, 142)
+texture = SubResource("AtlasTexture_nbygq")
+
+[node name="System Name" type="Label" parent="Menus/Buttons/System Button/System Menu"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 29.0
+offset_right = 757.0
+offset_bottom = 78.0
+text = "Current System: System Name"
+label_settings = ExtResource("20_wjdj1")
+
+[node name="Description" type="Label" parent="Menus/Buttons/System Button/System Menu"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 81.0
+offset_right = 568.0
+offset_bottom = 255.0
+text = "//Star Type: Yellow
+//Solar Power: 100%
+//Celestial Bodies Detected: 3
+"
+label_settings = SubResource("LabelSettings_oas16")
+vertical_alignment = 1
+uppercase = true
+
+[node name="Frame" type="Sprite2D" parent="Menus/Buttons/System Button/System Menu"]
+position = Vector2(1135, 143)
+texture = ExtResource("22_tiqys")
+
+[node name="System Sprite" type="Sprite2D" parent="Menus/Buttons/System Button/System Menu/Frame"]
+position = Vector2(5.04851e-05, 2.13981e-05)
+scale = Vector2(0.928571, 0.928571)
+texture = SubResource("AtlasTexture_mg0yf")
+
+[node name="FrameW" type="Sprite2D" parent="Menus/Buttons/System Button/System Menu"]
+position = Vector2(878, 142)
+texture = ExtResource("22_tiqys")
+
+[node name="BorderW" type="Sprite2D" parent="Menus/Buttons/System Button/System Menu/FrameW"]
+position = Vector2(1.04904e-05, -82.0625)
+scale = Vector2(0.164852, 0.168574)
+texture = SubResource("AtlasTexture_70qmt")
+
+[node name="Warning" type="Label" parent="Menus/Buttons/System Button/System Menu/FrameW/BorderW"]
+offset_left = -619.0
+offset_top = -124.0
+offset_right = 619.0
+offset_bottom = 125.0
+text = "SYSTEM HAZARDS"
+label_settings = SubResource("LabelSettings_3wav5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Warning Simbol" type="Sprite2D" parent="Menus/Buttons/System Button/System Menu/FrameW/BorderW"]
+position = Vector2(-515.613, 0.370874)
+scale = Vector2(2.67999, 2.67999)
+texture = ExtResource("24_6jod7")
+
+[node name="Warning Simbol2" type="Sprite2D" parent="Menus/Buttons/System Button/System Menu/FrameW/BorderW"]
+position = Vector2(521.679, 0.370874)
+scale = Vector2(2.67999, 2.67999)
+texture = ExtResource("24_6jod7")
+
+[node name="Description" type="Label" parent="Menus/Buttons/System Button/System Menu/FrameW"]
+offset_left = -100.0
+offset_top = -58.0
+offset_right = 100.0
+offset_bottom = 104.0
+text = "//No Active Hazards Detected"
+label_settings = SubResource("LabelSettings_sfijj")
+vertical_alignment = 1
+autowrap_mode = 3
+uppercase = true
+
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("20_8j76g")
 
@@ -277,48 +534,52 @@ libraries = {
 script = ExtResource("22_q7h35")
 
 [node name="Quit Button DB" type="Button" parent="Debugg"]
-offset_left = 50.0
-offset_top = 992.0
-offset_right = 148.0
-offset_bottom = 1023.0
+offset_left = 1695.0
+offset_top = 996.0
+offset_right = 1793.0
+offset_bottom = 1027.0
 text = "Quit"
 
 [node name="Next Day DB" type="Button" parent="Debugg"]
-offset_left = 53.0
-offset_top = 950.0
-offset_right = 147.0
-offset_bottom = 981.0
+offset_left = 1698.0
+offset_top = 954.0
+offset_right = 1792.0
+offset_bottom = 985.0
 text = "Next Day"
 
 [node name="Damage Hull" type="Button" parent="Debugg"]
-offset_left = 47.0
-offset_top = 909.0
-offset_right = 154.0
-offset_bottom = 942.0
+offset_left = 1692.0
+offset_top = 913.0
+offset_right = 1799.0
+offset_bottom = 946.0
 text = "Damage Hull"
 
 [node name="Reset" type="Button" parent="Debugg"]
-offset_left = 61.0
-offset_top = 874.0
-offset_right = 138.0
-offset_bottom = 905.0
+offset_left = 1706.0
+offset_top = 878.0
+offset_right = 1783.0
+offset_bottom = 909.0
 text = "Reset"
 
 [node name="Current System" type="Button" parent="Debugg"]
-offset_left = 171.0
-offset_top = 876.0
-offset_right = 299.0
-offset_bottom = 907.0
+offset_left = 1816.0
+offset_top = 880.0
+offset_right = 1944.0
+offset_bottom = 911.0
 text = "Current System"
 
 [node name="Next System" type="Button" parent="Debugg"]
-offset_left = 174.0
-offset_top = 909.0
-offset_right = 279.0
-offset_bottom = 940.0
+offset_left = 1819.0
+offset_top = 913.0
+offset_right = 1924.0
+offset_bottom = 944.0
 text = "Next System
 "
 
+[connection signal="toggled" from="Menus/Buttons/Settings Button" to="Menus" method="_on_settings_button_toggled"]
+[connection signal="toggled" from="Menus/Buttons/Codex Button" to="Menus" method="_on_codex_button_toggled"]
+[connection signal="toggled" from="Menus/Buttons/Module Button" to="Menus" method="_on_module_button_toggled"]
+[connection signal="toggled" from="Menus/Buttons/System Button" to="Menus" method="_on_system_button_toggled"]
 [connection signal="pressed" from="Debugg/Quit Button DB" to="Debugg" method="_on_quit_button_db_pressed"]
 [connection signal="pressed" from="Debugg/Next Day DB" to="Debugg" method="_on_next_day_db_pressed"]
 [connection signal="pressed" from="Debugg/Damage Hull" to="Debugg" method="_on_damage_hull_pressed"]

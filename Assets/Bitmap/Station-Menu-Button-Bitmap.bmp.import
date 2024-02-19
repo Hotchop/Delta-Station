@@ -1,34 +1,16 @@
 [remap]
 
-importer="texture"
-type="CompressedTexture2D"
+importer="bitmap"
+type="BitMap"
 uid="uid://cisrx24g5o5pk"
-path="res://.godot/imported/Station-Menu-Button-Bitmap.bmp-91ba536c050b12b612306f3d06a17a24.ctex"
-metadata={
-"vram_texture": false
-}
+path="res://.godot/imported/Station-Menu-Button-Bitmap.bmp-91ba536c050b12b612306f3d06a17a24.res"
 
 [deps]
 
 source_file="res://Assets/Bitmap/Station-Menu-Button-Bitmap.bmp"
-dest_files=["res://.godot/imported/Station-Menu-Button-Bitmap.bmp-91ba536c050b12b612306f3d06a17a24.ctex"]
+dest_files=["res://.godot/imported/Station-Menu-Button-Bitmap.bmp-91ba536c050b12b612306f3d06a17a24.res"]
 
 [params]
 
-compress/mode=0
-compress/high_quality=false
-compress/lossy_quality=0.7
-compress/hdr_compression=1
-compress/normal_map=0
-compress/channel_pack=0
-mipmaps/generate=false
-mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
-process/fix_alpha_border=true
-process/premult_alpha=false
-process/normal_map_invert_y=false
-process/hdr_as_srgb=false
-process/hdr_clamp_exposure=false
-process/size_limit=0
-detect_3d/compress_to=1
+create_from=0
+threshold=0.5
