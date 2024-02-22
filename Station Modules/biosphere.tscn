@@ -57,21 +57,25 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Biosphere" type="Node2D"]
+[node name="Biosphere" type="TextureButton"]
+toggle_mode = true
+texture_click_mask = ExtResource("5_ndfm1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(151, 152)
 sprite_frames = SubResource("SpriteFrames_dtlul")
 animation = &"100"
 autoplay = "100"
 
 [node name="HullComponent" parent="." instance=ExtResource("2_a06qd")]
+position = Vector2(151, 152)
 
 [node name="Station Module" type="Node2D" parent="."]
+position = Vector2(151, 152)
 script = ExtResource("3_3og7n")
 
 [node name="ModuleHitbox" parent="." instance=ExtResource("4_whpf4")]
-offset_left = -151.0
-offset_top = -152.0
-offset_right = 153.0
-offset_bottom = 152.0
+offset_right = 304.0
+offset_bottom = 304.0
+mouse_filter = 1
 texture_click_mask = ExtResource("5_ndfm1")

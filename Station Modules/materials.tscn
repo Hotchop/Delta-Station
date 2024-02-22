@@ -253,21 +253,26 @@ animations = [{
 "speed": 2.0
 }]
 
-[node name="Materials" type="Node2D"]
+[node name="Materials" type="TextureButton"]
+toggle_mode = true
+texture_click_mask = ExtResource("5_ooptd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(110, 119)
 sprite_frames = SubResource("SpriteFrames_3etgm")
 animation = &"100"
 autoplay = "100"
 
 [node name="HullComponent" parent="." instance=ExtResource("2_3nlcw")]
+position = Vector2(110, 119)
 
 [node name="Station Module" type="Node2D" parent="."]
+position = Vector2(110, 119)
 script = ExtResource("3_dqimb")
 
 [node name="ModuleHitbox" parent="." instance=ExtResource("4_tg83y")]
-offset_left = -110.0
-offset_top = -137.0
-offset_right = 112.0
-offset_bottom = 121.0
+offset_top = -18.0
+offset_right = 222.0
+offset_bottom = 240.0
+mouse_filter = 1
 texture_click_mask = ExtResource("5_ooptd")

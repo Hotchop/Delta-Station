@@ -1,0 +1,290 @@
+[gd_scene load_steps=22 format=3 uid="uid://dakqrgxef16qq"]
+
+[ext_resource type="Script" path="res://UI/module_menus.gd" id="1_pge6p"]
+[ext_resource type="Texture2D" uid="uid://qfbms1tu01rg" path="res://Assets/UI/Station Menus.png" id="2_qcbua"]
+[ext_resource type="Texture2D" uid="uid://4o7gvibxs1yh" path="res://Assets/UI/Green-Frame.png" id="3_6t134"]
+[ext_resource type="FontFile" uid="uid://c1rx8lmdovuo4" path="res://Assets/Fonts/VT323-Regular.ttf" id="5_5l1ay"]
+[ext_resource type="Texture2D" uid="uid://cgd77evvex27a" path="res://Assets/UI/Menu-Button.png" id="6_sbm5o"]
+[ext_resource type="Texture2D" uid="uid://b7ue85373ij7v" path="res://Assets/Station Parts/Probe.png" id="6_syijb"]
+[ext_resource type="Script" path="res://Global/menu_button.gd" id="7_8yd37"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0dd8a"]
+atlas = ExtResource("2_qcbua")
+region = Rect2(5, 299, 1286, 284)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xhvgp"]
+font = ExtResource("5_5l1ay")
+font_size = 48
+font_color = Color(0, 1, 0.313726, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_t1ehc"]
+line_spacing = 6.0
+font = ExtResource("5_5l1ay")
+font_size = 28
+font_color = Color(0, 1, 0.313726, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_uoe1m"]
+font = ExtResource("5_5l1ay")
+font_size = 24
+font_color = Color(0, 1, 0.313726, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ouy8d"]
+atlas = ExtResource("6_syijb")
+region = Rect2(0, 0, 42, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arc4h"]
+atlas = ExtResource("6_syijb")
+region = Rect2(42, 0, 42, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5s7xt"]
+atlas = ExtResource("6_syijb")
+region = Rect2(84, 0, 42, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vn7va"]
+atlas = ExtResource("6_syijb")
+region = Rect2(126, 0, 42, 72)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fbbqa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ouy8d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_arc4h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5s7xt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vn7va")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lw8bi"]
+font = ExtResource("5_5l1ay")
+font_size = 20
+font_color = Color(0, 1, 0.313726, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8buo"]
+atlas = ExtResource("6_sbm5o")
+region = Rect2(5, 5, 200, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ow8hr"]
+atlas = ExtResource("6_sbm5o")
+region = Rect2(215, 5, 200, 50)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4jop5"]
+font = ExtResource("5_5l1ay")
+font_size = 38
+font_color = Color(0, 1, 0.313726, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_6camc"]
+font = ExtResource("5_5l1ay")
+font_size = 80
+font_color = Color(0, 0.337255, 0.105882, 1)
+
+[node name="Module Menus" type="Node2D"]
+script = ExtResource("1_pge6p")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(643, 142)
+texture = SubResource("AtlasTexture_0dd8a")
+
+[node name="General" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Title" type="Label" parent="General"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 35.0
+offset_right = 581.0
+offset_bottom = 84.0
+text = "Module: Module Name"
+label_settings = SubResource("LabelSettings_xhvgp")
+vertical_alignment = 1
+
+[node name="Description" type="Label" parent="General"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 92.0
+offset_right = 590.0
+offset_bottom = 248.0
+text = "//Module Description
+//Module Hull
+//Energy Consumption"
+label_settings = SubResource("LabelSettings_t1ehc")
+vertical_alignment = 1
+autowrap_mode = 3
+uppercase = true
+
+[node name="Special Settings" type="Sprite2D" parent="General"]
+position = Vector2(795, 143)
+scale = Vector2(1.69298, 1)
+texture = ExtResource("3_6t134")
+
+[node name="Icon Box" type="Sprite2D" parent="General"]
+position = Vector2(1131, 143)
+texture = ExtResource("3_6t134")
+
+[node name="Atmosphere Generator" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Battery" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Water Module" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Biosphere" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Materials" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Observation" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Probe Station" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Probe Status" type="Label" parent="Probe Station"]
+layout_mode = 0
+offset_left = 622.0
+offset_top = 45.0
+offset_right = 849.0
+offset_bottom = 83.0
+text = "Probe Status - Ready"
+label_settings = SubResource("LabelSettings_uoe1m")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Probe Station"]
+position = Vector2(911, 140)
+scale = Vector2(2.47619, 2.47619)
+sprite_frames = SubResource("SpriteFrames_fbbqa")
+autoplay = "default"
+frame_progress = 0.863946
+
+[node name="Probe Description" type="Label" parent="Probe Station"]
+layout_mode = 0
+offset_left = 636.0
+offset_top = 97.0
+offset_right = 835.0
+offset_bottom = 195.0
+text = "//Probe Ready For Deployment
+//SYStem SCAN Ready"
+label_settings = SubResource("LabelSettings_lw8bi")
+vertical_alignment = 1
+autowrap_mode = 3
+uppercase = true
+
+[node name="Menu Button" type="TextureButton" parent="Probe Station" node_paths=PackedStringArray("button_label")]
+layout_mode = 0
+offset_left = 693.0
+offset_top = 216.0
+offset_right = 893.0
+offset_bottom = 266.0
+scale = Vector2(0.5, 0.5)
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AtlasTexture_v8buo")
+texture_hover = SubResource("AtlasTexture_ow8hr")
+script = ExtResource("7_8yd37")
+button_text = "Scan"
+button_label = NodePath("Label")
+
+[node name="Label" type="Label" parent="Probe Station/Menu Button"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 196.0
+offset_bottom = 46.0
+text = "Text"
+label_settings = SubResource("LabelSettings_4jop5")
+horizontal_alignment = 1
+
+[node name="Propulsor" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Reactor" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Gravity Ring" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Solar Panel - Upper Deck" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Solar Panel - Lower Deck" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="No Module" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="No Module"]
+layout_mode = 1
+offset_left = 20.0
+offset_top = 19.0
+offset_right = 1266.0
+offset_bottom = 266.0
+text = "//No Module Selected"
+label_settings = SubResource("LabelSettings_6camc")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true

@@ -57,9 +57,11 @@ animations = [{
 "speed": 2.0
 }]
 
-[node name="Battery" type="Node2D"]
+[node name="Battery" type="TextureButton"]
+texture_click_mask = ExtResource("5_8lvam")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(114, 66)
 sprite_frames = SubResource("SpriteFrames_6kr70")
 animation = &"100"
 autoplay = "100"
@@ -70,8 +72,7 @@ autoplay = "100"
 script = ExtResource("3_c7jf2")
 
 [node name="ModuleHitbox" parent="." instance=ExtResource("4_lcwc8")]
-offset_left = -114.0
-offset_top = -66.0
-offset_right = 114.0
-offset_bottom = 66.0
+offset_right = 228.0
+offset_bottom = 132.0
+mouse_filter = 1
 texture_click_mask = ExtResource("5_8lvam")

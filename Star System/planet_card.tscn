@@ -189,7 +189,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Asteroid",
-"speed": 4.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -218,7 +218,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Gas",
-"speed": 4.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -247,7 +247,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Ice",
-"speed": 4.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -273,7 +273,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Ring",
-"speed": 4.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -302,7 +302,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Rock",
-"speed": 4.0
+"speed": 3.0
 }]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nhgtb"]
@@ -317,7 +317,7 @@ font = ExtResource("7_fxb80")
 font_size = 34
 font_color = Color(0, 1, 0.313726, 1)
 
-[sub_resource type="ButtonGroup" id="ButtonGroup_srkr3"]
+[sub_resource type="ButtonGroup" id="ButtonGroup_40vto"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nmsq3"]
 atlas = ExtResource("10_bcib5")
@@ -419,7 +419,7 @@ script = ExtResource("1_o1t52")
 [node name="Planet Animation" type="AnimatedSprite2D" parent="."]
 position = Vector2(212, 323)
 sprite_frames = SubResource("SpriteFrames_uj5xs")
-animation = &"Rock"
+animation = &"Asteroid"
 
 [node name="Transition" type="ColorRect" parent="."]
 offset_left = 25.0
@@ -467,7 +467,7 @@ offset_top = 803.0
 offset_right = 311.0
 offset_bottom = 853.0
 toggle_mode = true
-button_group = SubResource("ButtonGroup_srkr3")
+button_group = SubResource("ButtonGroup_40vto")
 texture_pressed = SubResource("AtlasTexture_nmsq3")
 texture_disabled = SubResource("AtlasTexture_ow8hr")
 button_text = "Launch"

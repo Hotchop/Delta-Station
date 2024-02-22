@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://by16b882gnvra"]
+[gd_scene load_steps=12 format=3 uid="uid://by16b882gnvra"]
 
+[ext_resource type="ButtonGroup" uid="uid://b5rqwxv0eiokr" path="res://Settings/station_modules.tres" id="1_5ntxj"]
 [ext_resource type="Texture2D" uid="uid://blj7tf73hsbon" path="res://Assets/Station Parts/Observation.png" id="1_yutan"]
 [ext_resource type="PackedScene" uid="uid://dv3x8bg41sp3l" path="res://Global/hull_component.tscn" id="2_1vvrr"]
 [ext_resource type="Script" path="res://Global/station_module.gd" id="3_r0m8d"]
@@ -57,21 +58,26 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Observation" type="Node2D"]
+[node name="Observation" type="TextureButton"]
+toggle_mode = true
+button_group = ExtResource("1_5ntxj")
+texture_click_mask = ExtResource("5_itcr8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(72, 77)
 sprite_frames = SubResource("SpriteFrames_0gjrj")
 animation = &"100"
 autoplay = "100"
 
 [node name="HullComponent" parent="." instance=ExtResource("2_1vvrr")]
+position = Vector2(72, 77)
 
 [node name="Station Module" type="Node2D" parent="."]
+position = Vector2(72, 77)
 script = ExtResource("3_r0m8d")
 
 [node name="ModuleHitbox" parent="." instance=ExtResource("4_1u3kn")]
-offset_left = -72.0
-offset_top = -77.0
-offset_right = 72.0
-offset_bottom = 77.0
+offset_right = 144.0
+offset_bottom = 154.0
+mouse_filter = 1
 texture_click_mask = ExtResource("5_itcr8")

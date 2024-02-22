@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://dqat5ttat3he8"]
+[gd_scene load_steps=12 format=3 uid="uid://dqat5ttat3he8"]
 
 [ext_resource type="Texture2D" uid="uid://blxxawj64pcmy" path="res://Assets/Station Parts/Solar-Panel.png" id="1_5m7ix"]
+[ext_resource type="ButtonGroup" uid="uid://b5rqwxv0eiokr" path="res://Settings/station_modules.tres" id="1_bnpss"]
 [ext_resource type="PackedScene" uid="uid://dv3x8bg41sp3l" path="res://Global/hull_component.tscn" id="2_qfn8j"]
 [ext_resource type="Script" path="res://Global/station_module.gd" id="3_5k7ob"]
 [ext_resource type="PackedScene" uid="uid://b0cymfq7qi6a6" path="res://Global/module_hitbox.tscn" id="4_u7ao7"]
@@ -57,21 +58,26 @@ animations = [{
 "speed": 1.0
 }]
 
-[node name="Solar Panel" type="Node2D"]
+[node name="Solar Panel" type="TextureButton"]
+toggle_mode = true
+button_group = ExtResource("1_bnpss")
+texture_click_mask = ExtResource("5_d4wfr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(311, 122)
 sprite_frames = SubResource("SpriteFrames_roxtb")
 animation = &"100"
 autoplay = "100"
 
 [node name="HullComponent" parent="." instance=ExtResource("2_qfn8j")]
+position = Vector2(311, 122)
 
 [node name="Station Module" type="Node2D" parent="."]
+position = Vector2(311, 122)
 script = ExtResource("3_5k7ob")
 
 [node name="ModuleHitbox" parent="." instance=ExtResource("4_u7ao7")]
-offset_left = -311.0
-offset_top = -122.0
-offset_right = 311.0
-offset_bottom = 122.0
+offset_right = 622.0
+offset_bottom = 244.0
+mouse_filter = 1
 texture_click_mask = ExtResource("5_d4wfr")

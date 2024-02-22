@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://dcqdt4vwtg2kj"]
+[gd_scene load_steps=12 format=3 uid="uid://dcqdt4vwtg2kj"]
 
 [ext_resource type="Texture2D" uid="uid://bc2gh1vveew63" path="res://Assets/Station Parts/Propulsor.png" id="1_57f7x"]
+[ext_resource type="ButtonGroup" uid="uid://b5rqwxv0eiokr" path="res://Settings/station_modules.tres" id="1_rnoje"]
 [ext_resource type="PackedScene" uid="uid://dv3x8bg41sp3l" path="res://Global/hull_component.tscn" id="2_ptv3w"]
 [ext_resource type="Script" path="res://Global/station_module.gd" id="3_6taur"]
 [ext_resource type="PackedScene" uid="uid://b0cymfq7qi6a6" path="res://Global/module_hitbox.tscn" id="4_d8cln"]
@@ -57,22 +58,26 @@ animations = [{
 "speed": 1.0
 }]
 
-[node name="Propulsor" type="Node2D"]
+[node name="Propulsor" type="TextureButton"]
+toggle_mode = true
+button_group = ExtResource("1_rnoje")
+texture_click_mask = ExtResource("5_setnk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(127, 174)
 sprite_frames = SubResource("SpriteFrames_roxtb")
 animation = &"100"
 autoplay = "100"
 
-[node name="HullComponent" parent="." node_paths=PackedStringArray("anim") instance=ExtResource("2_ptv3w")]
-anim = NodePath("../AnimatedSprite2D")
+[node name="HullComponent" parent="." instance=ExtResource("2_ptv3w")]
+position = Vector2(127, 174)
 
 [node name="Station Module" type="Node2D" parent="."]
+position = Vector2(127, 174)
 script = ExtResource("3_6taur")
 
 [node name="ModuleHitbox" parent="." instance=ExtResource("4_d8cln")]
-offset_left = -127.0
-offset_top = -174.0
-offset_right = 127.0
-offset_bottom = 174.0
+offset_right = 254.0
+offset_bottom = 348.0
+mouse_filter = 1
 texture_click_mask = ExtResource("5_setnk")

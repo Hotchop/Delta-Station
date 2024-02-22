@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://cgntm5eau2f4u"]
+[gd_scene load_steps=12 format=3 uid="uid://cgntm5eau2f4u"]
 
 [ext_resource type="Texture2D" uid="uid://cswkyfx87v4e6" path="res://Assets/Station Parts/Reactor.png" id="1_xuhym"]
+[ext_resource type="ButtonGroup" uid="uid://b5rqwxv0eiokr" path="res://Settings/station_modules.tres" id="1_yc3qm"]
 [ext_resource type="PackedScene" uid="uid://dv3x8bg41sp3l" path="res://Global/hull_component.tscn" id="2_rcqbr"]
 [ext_resource type="Script" path="res://Global/station_module.gd" id="3_afl5e"]
 [ext_resource type="PackedScene" uid="uid://b0cymfq7qi6a6" path="res://Global/module_hitbox.tscn" id="4_bd76q"]
@@ -57,22 +58,27 @@ animations = [{
 "speed": 1.0
 }]
 
-[node name="Reactor" type="Node2D"]
+[node name="Reactor" type="TextureButton"]
+toggle_mode = true
+button_group = ExtResource("1_yc3qm")
+texture_click_mask = ExtResource("5_cf5mp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(121, 140)
 sprite_frames = SubResource("SpriteFrames_roxtb")
 animation = &"100"
 autoplay = "100"
 
-[node name="HullComponent" parent="." node_paths=PackedStringArray("anim") instance=ExtResource("2_rcqbr")]
-anim = NodePath("../AnimatedSprite2D")
+[node name="HullComponent" parent="." instance=ExtResource("2_rcqbr")]
+position = Vector2(121, 140)
 
 [node name="Station Module" type="Node2D" parent="."]
+position = Vector2(121, 140)
 script = ExtResource("3_afl5e")
 
 [node name="ModuleHitbox" parent="." instance=ExtResource("4_bd76q")]
-offset_left = -121.0
-offset_top = -141.0
-offset_right = 121.0
-offset_bottom = 141.0
+offset_top = -1.0
+offset_right = 242.0
+offset_bottom = 281.0
+mouse_filter = 1
 texture_click_mask = ExtResource("5_cf5mp")

@@ -1,9 +1,20 @@
 extends Control
 
 @onready var selectedButton: BaseButton = $"Buttons/System Button"
+@onready var moduleMenusScene: PackedScene = preload("res://UI/module_menus.tscn")
+var modulesMenus: Node2D
+var noMenu: Control
+var generalMenu: Control
+var visibleMenu: Control
 
 func _ready():
+	$"Buttons/System Button/System Menu".visible = true
 	system_menu_data()
+	modulesMenus = moduleMenusScene.instantiate() as Node2D
+	$"Buttons/Module Button/Module Menu".add_child(modulesMenus)
+	modulesMenus.global_position = Vector2(20,776)
+	noMenu = modulesMenus.get_node("No Module")
+	generalMenu = modulesMenus.get_node("General")
 
 func _process(_delta):
 	pass
@@ -31,22 +42,36 @@ func codex_menu_data():
 func settings_menu_data():
 	pass
 
-func _on_system_button_toggled(toggled_on):
+func _on_system_button_toggled(_toggled_on):
 	selectedButton.get_child(0).visible = false
 	$"Buttons/System Button/System Menu".visible = true
 	selectedButton = $"Buttons/System Button"
 
-func _on_module_button_toggled(toggled_on):
+func _on_module_button_toggled(_toggled_on):
 	selectedButton.get_child(0).visible = false
 	$"Buttons/Module Button/Module Menu".visible = true
 	selectedButton = $"Buttons/Module Button"
 
-func _on_codex_button_toggled(toggled_on):
+func _on_codex_button_toggled(_toggled_on):
 	selectedButton.get_child(0).visible = false
 	$"Buttons/Codex Button/Codex Menu".visible = true
 	selectedButton = $"Buttons/Codex Button"
 
-func _on_settings_button_toggled(toggled_on):
+func _on_settings_button_toggled(_toggled_on):
 	selectedButton.get_child(0).visible = false
 	$"Buttons/Settings Button/Settings Menu".visible = true
 	selectedButton = $"Buttons/Settings Button"
+
+
+func _on_station_parts_toggle_menu(moduleName):
+	$"Buttons/Module Button".button_pressed = true
+	if noMenu.visible == true:
+		noMenu.visible = false
+		generalMenu.visible = true
+		visibleMenu = modulesMenus.get_node(str(moduleName))
+		visibleMenu.visible = true
+	else:
+		visibleMenu.visible = false
+		visibleMenu = modulesMenus.get_node(str(moduleName))
+		modulesMenus.get_node(str(moduleName)).visible = true
+	print("Showing "+visibleMenu.name+" menu")

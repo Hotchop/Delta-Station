@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://d031l5mvjvfwt"]
+[gd_scene load_steps=56 format=3 uid="uid://d031l5mvjvfwt"]
 
 [ext_resource type="Texture2D" uid="uid://bbij0qk86gr8e" path="res://Assets/Backgrounds/Station-Background-Clear.png" id="1_f3xoh"]
 [ext_resource type="PackedScene" uid="uid://b08qe65cohrkh" path="res://Assets/Particle Generators/star_bg_particles.tscn" id="2_1jq43"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dqat5ttat3he8" path="res://Station Modules/solar_panel.tscn" id="13_sfobf"]
 [ext_resource type="PackedScene" uid="uid://ckm6su6vqhhdp" path="res://Station Modules/water_module.tscn" id="15_6xrrf"]
 [ext_resource type="Texture2D" uid="uid://qfbms1tu01rg" path="res://Assets/UI/Station Menus.png" id="16_2cixr"]
+[ext_resource type="ButtonGroup" uid="uid://b5rqwxv0eiokr" path="res://Settings/station_modules.tres" id="16_3b35a"]
 [ext_resource type="Script" path="res://Screens/Station Menus.gd" id="16_febku"]
 [ext_resource type="ButtonGroup" uid="uid://cckeeejqad7ms" path="res://Settings/station_menu_buttons.tres" id="16_j5hh6"]
 [ext_resource type="Texture2D" uid="uid://bmhvt676ykh6i" path="res://Assets/UI/Station-Menu-Button.png" id="17_elx7s"]
@@ -23,7 +24,6 @@
 [ext_resource type="Texture2D" uid="uid://dlxtfp7bf68ig" path="res://Assets/UI/Connector1-Reactor-Materials.png" id="18_b3f58"]
 [ext_resource type="Texture2D" uid="uid://ddxkugucjulvn" path="res://Assets/UI/Connector2-Materials-Battery.png" id="19_kxcwf"]
 [ext_resource type="Script" path="res://Screens/UI.gd" id="20_8j76g"]
-[ext_resource type="LabelSettings" uid="uid://dgri43qjj5xtv" path="res://Assets/Fonts/game_titles.tres" id="20_wjdj1"]
 [ext_resource type="Texture2D" uid="uid://ceq0asxn2qpog" path="res://Assets/UI/Connector3-Battery-Atmosphere.png" id="20_wqj2i"]
 [ext_resource type="FontFile" uid="uid://c1rx8lmdovuo4" path="res://Assets/Fonts/VT323-Regular.ttf" id="21_kwp8f"]
 [ext_resource type="Texture2D" uid="uid://wiewvgbbjmye" path="res://Assets/UI/Connector4-Atmosphere-Biosphere.png" id="21_mwhsq"]
@@ -68,6 +68,11 @@ region = Rect2(5, 5, 112, 65)
 [sub_resource type="AtlasTexture" id="AtlasTexture_dhmxe"]
 atlas = ExtResource("17_elx7s")
 region = Rect2(127, 5, 112, 65)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rvlxg"]
+font = ExtResource("21_kwp8f")
+font_size = 48
+font_color = Color(0, 1, 0.313726, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_oas16"]
 font = ExtResource("21_kwp8f")
@@ -184,55 +189,99 @@ scale_amount_max = 0.3
 [node name="Station Parts" type="Node2D" parent="."]
 script = ExtResource("3_vdors")
 
-[node name="Atmosphere Generator" parent="Station Parts" instance=ExtResource("2_soymp")]
-position = Vector2(1168.8, 388.83)
+[node name="Atmosphere Generator" parent="Station Parts" groups=["Station Modules"] instance=ExtResource("2_soymp")]
+offset_left = 1081.0
+offset_top = 283.0
+offset_right = 1301.0
+offset_bottom = 539.0
+scale = Vector2(0.8, 0.8)
+toggle_mode = true
+button_group = ExtResource("16_3b35a")
+
+[node name="Battery" parent="Station Parts" groups=["Station Modules"] instance=ExtResource("4_j4de0")]
+offset_left = 882.0
+offset_top = 336.0
+offset_right = 1110.0
+offset_bottom = 468.0
+scale = Vector2(0.8, 0.8)
+toggle_mode = true
+button_group = ExtResource("16_3b35a")
+
+[node name="Water Module" parent="Station Parts" groups=["Station Modules"] instance=ExtResource("15_6xrrf")]
+offset_left = 1277.0
+offset_top = 511.0
+offset_right = 1461.0
+offset_bottom = 610.0
+scale = Vector2(0.8, 0.8)
+toggle_mode = true
+button_group = ExtResource("16_3b35a")
+
+[node name="Biosphere" parent="Station Parts" groups=["Station Modules"] instance=ExtResource("7_8t7o8")]
+offset_left = 1229.0
+offset_top = 269.0
+offset_right = 1533.0
+offset_bottom = 573.0
+scale = Vector2(0.8, 0.8)
+button_group = ExtResource("16_3b35a")
+
+[node name="Materials" parent="Station Parts" groups=["Station Modules"] instance=ExtResource("6_5m0kk")]
+offset_left = 675.0
+offset_top = 313.0
+offset_right = 897.0
+offset_bottom = 571.0
+scale = Vector2(0.8, 0.8)
+button_group = ExtResource("16_3b35a")
+
+[node name="Observation" parent="Station Parts" groups=["Station Modules"] instance=ExtResource("9_n4jvv")]
+offset_left = 1559.0
+offset_top = 328.0
+offset_right = 1703.0
+offset_bottom = 482.0
 scale = Vector2(0.8, 0.8)
 
-[node name="Battery" parent="Station Parts" instance=ExtResource("4_j4de0")]
-position = Vector2(972.8, 388.81)
-scale = Vector2(0.8, 0.8)
-
-[node name="Water Module" parent="Station Parts" instance=ExtResource("15_6xrrf")]
-position = Vector2(1350.4, 550.77)
-scale = Vector2(0.8, 0.8)
-
-[node name="Biosphere" parent="Station Parts" instance=ExtResource("7_8t7o8")]
-position = Vector2(1350.39, 390.37)
-scale = Vector2(0.8, 0.8)
-
-[node name="Materials" parent="Station Parts" instance=ExtResource("6_5m0kk")]
-position = Vector2(762.405, 408)
-scale = Vector2(0.8, 0.8)
-
-[node name="Observation" parent="Station Parts" instance=ExtResource("9_n4jvv")]
-position = Vector2(1616.81, 389.6)
-scale = Vector2(0.8, 0.8)
-
-[node name="Probe Station" parent="Station Parts" instance=ExtResource("8_hnw00")]
-position = Vector2(782.5, 280)
+[node name="Probe Station" parent="Station Parts" groups=["Station Modules"] instance=ExtResource("8_hnw00")]
+offset_left = 742.0
+offset_top = 246.0
+offset_right = 842.0
+offset_bottom = 329.001
 scale = Vector2(0.8, 0.8)
 
 [node name="Probe" parent="Station Parts/Probe Station" instance=ExtResource("5_4nw3o")]
-position = Vector2(0, -14.9812)
+position = Vector2(50, 28.75)
 
-[node name="Propulsor" parent="Station Parts" instance=ExtResource("11_ergll")]
-position = Vector2(379.18, 389.68)
+[node name="Propulsor" parent="Station Parts" groups=["Station Modules"] instance=ExtResource("11_ergll")]
+offset_left = 278.0
+offset_top = 251.0
+offset_right = 532.0
+offset_bottom = 599.0
 scale = Vector2(0.8, 0.8)
 
-[node name="Reactor" parent="Station Parts" instance=ExtResource("11_nhl55")]
-position = Vector2(576, 389.645)
+[node name="Reactor" parent="Station Parts" groups=["Station Modules"] instance=ExtResource("11_nhl55")]
+offset_left = 479.0
+offset_top = 278.0
+offset_right = 721.0
+offset_bottom = 560.0
 scale = Vector2(0.8, 0.8)
 
-[node name="Gravity Ring" parent="Station Parts" instance=ExtResource("12_sgjgt")]
-position = Vector2(1524, 375.2)
+[node name="Gravity Ring" parent="Station Parts" groups=["Station Modules"] instance=ExtResource("12_sgjgt")]
+offset_left = 1489.0
+offset_top = 151.0
+offset_right = 1577.0
+offset_bottom = 711.0
 scale = Vector2(0.8, 0.8)
 
-[node name="Solar Panel - Upper Deck" parent="Station Parts" instance=ExtResource("13_sfobf")]
-position = Vector2(972.8, 255.2)
+[node name="Solar Panel - Upper Deck" parent="Station Parts" groups=["Station Modules"] instance=ExtResource("13_sfobf")]
+offset_left = 724.0
+offset_top = 158.0
+offset_right = 1346.0
+offset_bottom = 402.0
 scale = Vector2(0.8, 0.8)
 
-[node name="Solar Panel - Lower Deck" parent="Station Parts" instance=ExtResource("13_sfobf")]
-position = Vector2(972.805, 522.41)
+[node name="Solar Panel - Lower Deck" parent="Station Parts" groups=["Station Modules"] instance=ExtResource("13_sfobf")]
+offset_left = 1222.0
+offset_top = 620.0
+offset_right = 1844.0
+offset_bottom = 864.0
 rotation = 3.14159
 scale = Vector2(0.8, 0.8)
 
@@ -314,17 +363,9 @@ texture_pressed = SubResource("AtlasTexture_fapvx")
 texture_click_mask = ExtResource("18_7xn6w")
 
 [node name="Module Menu" type="Control" parent="Menus/Buttons/Module Button"]
-visible = false
-layout_mode = 3
 anchors_preset = 0
-offset_left = -98.0
-offset_top = 65.0
-offset_right = 1188.0
-offset_bottom = 349.0
-
-[node name="Menu Sprite" type="Sprite2D" parent="Menus/Buttons/Module Button/Module Menu"]
-position = Vector2(643, 142)
-texture = SubResource("AtlasTexture_nbygq")
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="System Button" type="TextureButton" parent="Menus/Buttons"]
 top_level = true
@@ -360,7 +401,7 @@ offset_top = 29.0
 offset_right = 757.0
 offset_bottom = 78.0
 text = "Current System: System Name"
-label_settings = ExtResource("20_wjdj1")
+label_settings = SubResource("LabelSettings_rvlxg")
 
 [node name="Description" type="Label" parent="Menus/Buttons/System Button/System Menu"]
 layout_mode = 0
@@ -386,7 +427,7 @@ scale = Vector2(0.928571, 0.928571)
 texture = SubResource("AtlasTexture_mg0yf")
 
 [node name="FrameW" type="Sprite2D" parent="Menus/Buttons/System Button/System Menu"]
-position = Vector2(878, 142)
+position = Vector2(878, 143)
 texture = ExtResource("22_tiqys")
 
 [node name="BorderW" type="Sprite2D" parent="Menus/Buttons/System Button/System Menu/FrameW"]
@@ -576,6 +617,7 @@ offset_bottom = 944.0
 text = "Next System
 "
 
+[connection signal="toggle_menu" from="Station Parts" to="Menus" method="_on_station_parts_toggle_menu"]
 [connection signal="toggled" from="Menus/Buttons/Settings Button" to="Menus" method="_on_settings_button_toggled"]
 [connection signal="toggled" from="Menus/Buttons/Codex Button" to="Menus" method="_on_codex_button_toggled"]
 [connection signal="toggled" from="Menus/Buttons/Module Button" to="Menus" method="_on_module_button_toggled"]

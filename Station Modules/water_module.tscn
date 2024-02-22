@@ -94,12 +94,14 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Water Module" type="Node2D"]
-position = Vector2(131, 79)
+[node name="Water Module" type="TextureButton"]
+offset_right = 184.0
+offset_bottom = 99.0
+texture_click_mask = ExtResource("6_ivw3e")
 
 [node name="Clip Mask" type="Polygon2D" parent="."]
 clip_children = 1
-position = Vector2(-4, 1)
+position = Vector2(88, 50.5)
 color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(-56, -14, -48, -26, 59, -25, 60, -16, 71, -14, 72, 26, 69, 33, 60, 35, 58, 43, 30, 44, -39, 44, -51, 43, -55, 32, -64, 32, -65, 3, -64, -13)
 
@@ -117,19 +119,22 @@ autoplay = "default"
 frame_progress = 0.562633
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(92, 49.5)
 sprite_frames = SubResource("SpriteFrames_ppyj7")
 animation = &"100"
 autoplay = "100"
 frame_progress = 0.355777
 
 [node name="HullComponent" parent="." instance=ExtResource("2_yis6i")]
+position = Vector2(92, 49.5)
 
 [node name="Station Module" type="Node2D" parent="."]
+position = Vector2(92, 49.5)
 script = ExtResource("3_e0mal")
 
 [node name="ModuleHitbox" parent="." instance=ExtResource("4_ccl5d")]
-offset_left = -92.0
-offset_top = -49.0
-offset_right = 92.0
-offset_bottom = 50.0
+offset_top = 0.5
+offset_right = 184.0
+offset_bottom = 99.5
+mouse_filter = 1
 texture_click_mask = ExtResource("6_ivw3e")

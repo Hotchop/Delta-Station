@@ -141,9 +141,11 @@ animations = [{
 "speed": 2.0
 }]
 
-[node name="Atmosphere Generator" type="Node2D"]
+[node name="Atmosphere Generator" type="TextureButton"]
+texture_click_mask = ExtResource("5_uw0sh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(110, 133)
 sprite_frames = SubResource("SpriteFrames_e5iki")
 animation = &"100"
 autoplay = "100"
@@ -154,8 +156,7 @@ autoplay = "100"
 script = ExtResource("2_eteob")
 
 [node name="ModuleHitbox" parent="." instance=ExtResource("4_g2r0i")]
-offset_left = -110.0
-offset_top = -128.0
-offset_right = 110.0
-offset_bottom = 128.0
+offset_right = 220.0
+offset_bottom = 256.0
+mouse_filter = 1
 texture_click_mask = ExtResource("5_uw0sh")
