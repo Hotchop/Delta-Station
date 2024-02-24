@@ -53,3 +53,4 @@ oxigen = SubResource("Resource_80pns")
 nitrogen = SubResource("Resource_3q4sh")
 CO2 = SubResource("Resource_4wocu")
 metals = SubResource("Resource_1e12w")
+probe_dispatched = false

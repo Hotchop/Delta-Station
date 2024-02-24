@@ -6,9 +6,9 @@ class_name StationResourses
 @export var food: BasicResource
 @export var water: BasicResource
 @export var oxigen: BasicResource
-@export var nitrogen: BasicResource
-@export var CO2: BasicResource
 @export var metals: BasicResource
+@export var probe_dispatched: bool = false
+@export var probeData: ProbeData
 
 func generate_energy(value: float):
 	if energy.is_available:
@@ -23,3 +23,15 @@ func generate_energy(value: float):
 func consume_energy(value: float):
 	if battery.is_available && battery.stored > 0:
 		pass
+
+func probe_daily_check():
+	if probe_dispatched:
+		probeData.time -= 1
+		if probeData.time == 0:
+			food.change_amount(probeData.destination.food.stored)
+			water.change_amount(probeData.destination.water.stored)
+			oxigen.change_amount(probeData.destination.O2.stored)
+			metals.change_amount(probeData.destination.metal.stored)
+			probeData.destination = null
+			probe_dispatched = false
+			
