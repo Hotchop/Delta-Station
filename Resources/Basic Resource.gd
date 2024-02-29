@@ -6,7 +6,7 @@ const MIN: float = 0
 @export var stored: float
 @export var is_available: bool
 
-func _init(r_stored = 0,r_available = true):
+func _init(r_stored:float = 0.0,r_available:bool = true):
 	stored = r_stored
 	is_available = r_available
 

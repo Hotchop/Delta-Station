@@ -212,7 +212,7 @@ vertical_alignment = 1
 autowrap_mode = 3
 uppercase = true
 
-[node name="Menu Button" type="TextureButton" parent="Probe Station" node_paths=PackedStringArray("button_label")]
+[node name="Scan Button" type="TextureButton" parent="Probe Station" node_paths=PackedStringArray("button_label")]
 layout_mode = 0
 offset_left = 693.0
 offset_top = 216.0
@@ -226,7 +226,7 @@ script = ExtResource("7_8yd37")
 button_text = "Scan"
 button_label = NodePath("Label")
 
-[node name="Label" type="Label" parent="Probe Station/Menu Button"]
+[node name="Label" type="Label" parent="Probe Station/Scan Button"]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 4.0
@@ -288,3 +288,5 @@ label_settings = SubResource("LabelSettings_6camc")
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
+
+[connection signal="pressed" from="Probe Station/Scan Button" to="." method="_on_scan_button_pressed"]

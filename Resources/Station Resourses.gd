@@ -7,8 +7,23 @@ class_name StationResourses
 @export var water: BasicResource
 @export var oxigen: BasicResource
 @export var metals: BasicResource
-@export var probe_dispatched: bool = false
+@export var probe_dispatched: bool
 @export var probeData: ProbeData
+
+func _init(difficulty: int):
+	energy = BasicResource.new(100*randf_range(difficulty,1),true)
+	battery = BasicResource.new(0.0,true)
+	food = BasicResource.new(100*randf_range(difficulty,1),true)
+	water = BasicResource.new(100*randf_range(difficulty,1),true)
+	oxigen = BasicResource.new(100*randf_range(difficulty,1),true)
+	metals = BasicResource.new(100*randf_range(difficulty,1),true)
+	probe_dispatched = false
+	print("Starting Energy: "+str(energy.stored))
+	print("Starting Battery: "+str(battery.stored))
+	print("Starting Food: "+str(food.stored))
+	print("Starting Water: "+str(water.stored))
+	print("Starting O2: "+str(oxigen.stored))
+	print("Starting Metal: "+str(metals.stored))
 
 func generate_energy(value: float):
 	if energy.is_available:
@@ -20,9 +35,13 @@ func generate_energy(value: float):
 		else:
 			energy.change_amount(value)
 
-func consume_energy(value: float):
+func consume_energy(_value: float):
 	if battery.is_available && battery.stored > 0:
 		pass
+
+func lauch_probe(data: CelestialBody):
+	probeData = ProbeData.new(data)
+	probe_dispatched = true
 
 func probe_daily_check():
 	if probe_dispatched:

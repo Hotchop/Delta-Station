@@ -15,6 +15,7 @@ func _ready():
 	modulesMenus.global_position = Vector2(20,776)
 	noMenu = modulesMenus.get_node("No Module")
 	generalMenu = modulesMenus.get_node("General")
+	Game.nextDay.connect(system_menu_data) #debugg
 
 func _process(_delta):
 	pass

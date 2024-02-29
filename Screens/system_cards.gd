@@ -2,6 +2,7 @@ extends Node2D
 
 var card = preload("res://Star System/planet_card.tscn")
 var buttonGroup: ButtonGroup = preload("res://Settings/planet_card_button_group.tres")
+signal launch
 
 func _ready():
 	get_current_system()
@@ -64,6 +65,8 @@ func _on_buttonGroup_pressed(button: BaseButton):
 		i.disabled = true
 	var anim: AnimatedSprite2D = selectedCard.get_node("Planet Animation")
 	anim.animation_finished.connect(_on_animation_finished)
+	Game.stationResources.lauch_probe(selectedCard.bodyData)
+	launch.emit()
 	anim.play()
 	
 func _on_animation_finished():
