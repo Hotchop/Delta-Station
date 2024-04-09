@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="ModuleStats" load_steps=7 format=3 uid="uid://cc7bxhptnd4a7"]
+
+[ext_resource type="Texture2D" uid="uid://dpucmf41c0up8" path="res://Assets/Station Parts/Biosphere.png" id="1_bdx7b"]
+[ext_resource type="Script" path="res://Resources/Module Stats.gd" id="1_evau6"]
+[ext_resource type="Script" path="res://Resources/Basic Resource.gd" id="2_snhpt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwwb0"]
+atlas = ExtResource("1_bdx7b")
+region = Rect2(0, 0, 314, 314)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5h5sx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwwb0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Resource" id="Resource_eo4db"]
+script = ExtResource("2_snhpt")
+stored = 0.0
+is_available = true
+
+[resource]
+script = ExtResource("1_evau6")
+moduleName = "Biosphere"
+moduleDescription = "Manages food production"
+hull = 100.0
+energyUse = 25.0
+moduleLogo = SubResource("SpriteFrames_5h5sx")
+has_resource = true
+resourseName = "Food"
+resourse = SubResource("Resource_eo4db")

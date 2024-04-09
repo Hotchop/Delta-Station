@@ -1,8 +1,8 @@
 [gd_scene load_steps=39 format=3 uid="uid://drshswm10xhix"]
 
 [ext_resource type="Texture2D" uid="uid://bnkpkdybne018" path="res://Assets/Station Parts/Materials.png" id="1_x6l04"]
-[ext_resource type="PackedScene" uid="uid://dv3x8bg41sp3l" path="res://Global/hull_component.tscn" id="2_3nlcw"]
 [ext_resource type="Script" path="res://Global/station_module.gd" id="3_dqimb"]
+[ext_resource type="Resource" uid="uid://bqko4l2vf6ljy" path="res://Station Modules/Modules Data/materials_data.tres" id="4_aqaou"]
 [ext_resource type="PackedScene" uid="uid://b0cymfq7qi6a6" path="res://Global/module_hitbox.tscn" id="4_tg83y"]
 [ext_resource type="BitMap" uid="uid://c67q2nw5d6sqk" path="res://Assets/Bitmap/Materials-Bitmap.bmp" id="5_ooptd"]
 
@@ -263,14 +263,13 @@ sprite_frames = SubResource("SpriteFrames_3etgm")
 animation = &"100"
 autoplay = "100"
 
-[node name="HullComponent" parent="." instance=ExtResource("2_3nlcw")]
-position = Vector2(110, 119)
-
 [node name="Station Module" type="Node2D" parent="."]
 position = Vector2(110, 119)
 script = ExtResource("3_dqimb")
+module = ExtResource("4_aqaou")
 
 [node name="ModuleHitbox" parent="." instance=ExtResource("4_tg83y")]
+layout_mode = 0
 offset_top = -18.0
 offset_right = 222.0
 offset_bottom = 240.0

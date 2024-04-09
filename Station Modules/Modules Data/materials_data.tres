@@ -1,0 +1,85 @@
+[gd_resource type="Resource" script_class="ModuleStats" load_steps=14 format=3 uid="uid://bqko4l2vf6ljy"]
+
+[ext_resource type="Texture2D" uid="uid://bnkpkdybne018" path="res://Assets/Station Parts/Materials.png" id="1_6cyyl"]
+[ext_resource type="Script" path="res://Resources/Module Stats.gd" id="1_epifv"]
+[ext_resource type="Script" path="res://Resources/Basic Resource.gd" id="2_qc3n5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nv4il"]
+atlas = ExtResource("1_6cyyl")
+region = Rect2(0, 0, 232, 268)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsnpn"]
+atlas = ExtResource("1_6cyyl")
+region = Rect2(232, 0, 232, 268)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ptbeq"]
+atlas = ExtResource("1_6cyyl")
+region = Rect2(464, 0, 232, 268)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqllw"]
+atlas = ExtResource("1_6cyyl")
+region = Rect2(696, 0, 232, 268)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_372lj"]
+atlas = ExtResource("1_6cyyl")
+region = Rect2(928, 0, 232, 268)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_slh43"]
+atlas = ExtResource("1_6cyyl")
+region = Rect2(1160, 0, 232, 268)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bk63m"]
+atlas = ExtResource("1_6cyyl")
+region = Rect2(0, 268, 232, 268)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l2cjk"]
+atlas = ExtResource("1_6cyyl")
+region = Rect2(232, 268, 232, 268)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r1v3k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nv4il")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vsnpn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ptbeq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sqllw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_372lj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_slh43")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bk63m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l2cjk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="Resource" id="Resource_vf6wv"]
+script = ExtResource("2_qc3n5")
+stored = 0.0
+is_available = true
+
+[resource]
+script = ExtResource("1_epifv")
+moduleName = "Materials"
+moduleDescription = "MateriResource procesing plant and repair station"
+hull = 100.0
+energyUse = 25.0
+moduleLogo = SubResource("SpriteFrames_r1v3k")
+has_resource = true
+resourseName = "Metals"
+resourse = SubResource("Resource_vf6wv")

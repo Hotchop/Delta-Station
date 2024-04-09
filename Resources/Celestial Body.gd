@@ -23,7 +23,7 @@ var quality: Dictionary = {
 @export var metal: BasicResource = BasicResource.new()
 
 #Init only accepts the Enum type GlobalEnums.CelestialBodyType
-func _init(type,name: String):
+func _init(type = GlobalEnums.CelestialBodyType.ROCK,name: String = "Planet"):
 	bodyType = type
 	bodyName = name
 	match type:

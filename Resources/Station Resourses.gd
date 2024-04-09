@@ -10,7 +10,7 @@ class_name StationResourses
 @export var probe_dispatched: bool
 @export var probeData: ProbeData
 
-func _init(difficulty: int):
+func starting_values(difficulty: float):
 	energy = BasicResource.new(100*randf_range(difficulty,1),true)
 	battery = BasicResource.new(0.0,true)
 	food = BasicResource.new(100*randf_range(difficulty,1),true)

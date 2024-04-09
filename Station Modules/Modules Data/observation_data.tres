@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="ModuleStats" load_steps=5 format=3 uid="uid://bcoln24nk48wg"]
+
+[ext_resource type="Script" path="res://Resources/Module Stats.gd" id="1_4du2g"]
+[ext_resource type="Texture2D" uid="uid://blj7tf73hsbon" path="res://Assets/Station Parts/Observation.png" id="1_yyl6q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_payse"]
+atlas = ExtResource("1_yyl6q")
+region = Rect2(0, 0, 154, 164)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qpbij"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_payse")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_4du2g")
+moduleName = "Observation"
+moduleDescription = "Guidance and star system charter"
+hull = 100.0
+energyUse = 25.0
+moduleLogo = SubResource("SpriteFrames_qpbij")
+has_resource = false
+resourseName = "Resourse"

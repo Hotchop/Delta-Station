@@ -1,6 +1,7 @@
-[gd_scene load_steps=56 format=3 uid="uid://d031l5mvjvfwt"]
+[gd_scene load_steps=67 format=3 uid="uid://d031l5mvjvfwt"]
 
 [ext_resource type="Texture2D" uid="uid://bbij0qk86gr8e" path="res://Assets/Backgrounds/Station-Background-Clear.png" id="1_f3xoh"]
+[ext_resource type="Script" path="res://Screens/MainGame.gd" id="1_ynyw1"]
 [ext_resource type="PackedScene" uid="uid://b08qe65cohrkh" path="res://Assets/Particle Generators/star_bg_particles.tscn" id="2_1jq43"]
 [ext_resource type="PackedScene" uid="uid://bl2jf6iexhjb4" path="res://Station Modules/atmosphere_generator.tscn" id="2_soymp"]
 [ext_resource type="Script" path="res://Screens/Station Parts.gd" id="3_vdors"]
@@ -13,25 +14,81 @@
 [ext_resource type="PackedScene" uid="uid://dcqdt4vwtg2kj" path="res://Station Modules/propulsor.tscn" id="11_ergll"]
 [ext_resource type="PackedScene" uid="uid://cgntm5eau2f4u" path="res://Station Modules/reactor.tscn" id="11_nhl55"]
 [ext_resource type="PackedScene" uid="uid://yeqlaavupdnf" path="res://Station Modules/ring.tscn" id="12_sgjgt"]
-[ext_resource type="PackedScene" uid="uid://dqat5ttat3he8" path="res://Station Modules/solar_panel.tscn" id="13_sfobf"]
 [ext_resource type="PackedScene" uid="uid://ckm6su6vqhhdp" path="res://Station Modules/water_module.tscn" id="15_6xrrf"]
 [ext_resource type="Texture2D" uid="uid://qfbms1tu01rg" path="res://Assets/UI/Station Menus.png" id="16_2cixr"]
 [ext_resource type="ButtonGroup" uid="uid://b5rqwxv0eiokr" path="res://Settings/station_modules.tres" id="16_3b35a"]
 [ext_resource type="Script" path="res://Screens/Station Menus.gd" id="16_febku"]
 [ext_resource type="ButtonGroup" uid="uid://cckeeejqad7ms" path="res://Settings/station_menu_buttons.tres" id="16_j5hh6"]
 [ext_resource type="Texture2D" uid="uid://bmhvt676ykh6i" path="res://Assets/UI/Station-Menu-Button.png" id="17_elx7s"]
+[ext_resource type="BitMap" uid="uid://cf2nmaq75g8id" path="res://Assets/Bitmap/Solar-Panel-Bitmap.bmp" id="17_lcpw1"]
 [ext_resource type="BitMap" uid="uid://cisrx24g5o5pk" path="res://Assets/Bitmap/Station-Menu-Button-Bitmap.bmp" id="18_7xn6w"]
 [ext_resource type="Texture2D" uid="uid://dlxtfp7bf68ig" path="res://Assets/UI/Connector1-Reactor-Materials.png" id="18_b3f58"]
+[ext_resource type="Texture2D" uid="uid://blxxawj64pcmy" path="res://Assets/Station Parts/Solar-Panel.png" id="18_epex2"]
+[ext_resource type="Script" path="res://Global/station_module.gd" id="19_itp7r"]
 [ext_resource type="Texture2D" uid="uid://ddxkugucjulvn" path="res://Assets/UI/Connector2-Materials-Battery.png" id="19_kxcwf"]
 [ext_resource type="Script" path="res://Screens/UI.gd" id="20_8j76g"]
+[ext_resource type="Resource" uid="uid://dhqs0avy5mcis" path="res://Station Modules/Modules Data/solar_upper_data.tres" id="20_usa2g"]
 [ext_resource type="Texture2D" uid="uid://ceq0asxn2qpog" path="res://Assets/UI/Connector3-Battery-Atmosphere.png" id="20_wqj2i"]
 [ext_resource type="FontFile" uid="uid://c1rx8lmdovuo4" path="res://Assets/Fonts/VT323-Regular.ttf" id="21_kwp8f"]
 [ext_resource type="Texture2D" uid="uid://wiewvgbbjmye" path="res://Assets/UI/Connector4-Atmosphere-Biosphere.png" id="21_mwhsq"]
+[ext_resource type="PackedScene" uid="uid://b0cymfq7qi6a6" path="res://Global/module_hitbox.tscn" id="21_r4wjd"]
 [ext_resource type="Texture2D" uid="uid://dmtfkbth6h88a" path="res://Assets/UI/Connector5-Biosphere-Ring.png" id="22_hnjjf"]
 [ext_resource type="Script" path="res://Screens/Debugg.gd" id="22_q7h35"]
 [ext_resource type="Texture2D" uid="uid://4o7gvibxs1yh" path="res://Assets/UI/Green-Frame.png" id="22_tiqys"]
+[ext_resource type="Resource" uid="uid://44hwdv1klryg" path="res://Station Modules/Modules Data/solar_lower_data.tres" id="22_ukr42"]
 [ext_resource type="Texture2D" uid="uid://bh8j1fpyn6qns" path="res://Assets/UI/Planet-System.png" id="23_xna26"]
 [ext_resource type="Texture2D" uid="uid://cif6gkduqdq7x" path="res://Assets/UI/Warning Simbol.png" id="24_6jod7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5t4c"]
+atlas = ExtResource("18_epex2")
+region = Rect2(0, 0, 632, 254)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vyaud"]
+atlas = ExtResource("18_epex2")
+region = Rect2(632, 254, 632, 254)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3hgdm"]
+atlas = ExtResource("18_epex2")
+region = Rect2(0, 254, 632, 254)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gtgqv"]
+atlas = ExtResource("18_epex2")
+region = Rect2(632, 0, 632, 254)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_roxtb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5t4c")
+}],
+"loop": true,
+"name": &"100",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vyaud")
+}],
+"loop": true,
+"name": &"25",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3hgdm")
+}],
+"loop": true,
+"name": &"50",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gtgqv")
+}],
+"loop": true,
+"name": &"75",
+"speed": 1.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7rvik"]
 atlas = ExtResource("17_elx7s")
@@ -161,6 +218,7 @@ _data = {
 }
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_ynyw1")
 
 [node name="BG" type="ParallaxBackground" parent="."]
 
@@ -263,27 +321,69 @@ offset_right = 721.0
 offset_bottom = 560.0
 scale = Vector2(0.8, 0.8)
 
-[node name="Gravity Ring" parent="Station Parts" groups=["Station Modules"] instance=ExtResource("12_sgjgt")]
+[node name="Ring" parent="Station Parts" groups=["Station Modules"] instance=ExtResource("12_sgjgt")]
 offset_left = 1489.0
 offset_top = 151.0
 offset_right = 1577.0
 offset_bottom = 711.0
 scale = Vector2(0.8, 0.8)
 
-[node name="Solar Panel - Upper Deck" parent="Station Parts" groups=["Station Modules"] instance=ExtResource("13_sfobf")]
+[node name="Solar Panel - Upper Deck" type="TextureButton" parent="Station Parts" groups=["Station Modules"]]
 offset_left = 724.0
 offset_top = 158.0
 offset_right = 1346.0
 offset_bottom = 402.0
 scale = Vector2(0.8, 0.8)
+toggle_mode = true
+button_group = ExtResource("16_3b35a")
+texture_click_mask = ExtResource("17_lcpw1")
 
-[node name="Solar Panel - Lower Deck" parent="Station Parts" groups=["Station Modules"] instance=ExtResource("13_sfobf")]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Station Parts/Solar Panel - Upper Deck"]
+position = Vector2(311, 122)
+sprite_frames = SubResource("SpriteFrames_roxtb")
+animation = &"100"
+autoplay = "100"
+
+[node name="Station Module" type="Node2D" parent="Station Parts/Solar Panel - Upper Deck"]
+position = Vector2(311, 122)
+script = ExtResource("19_itp7r")
+module = ExtResource("20_usa2g")
+
+[node name="ModuleHitbox" parent="Station Parts/Solar Panel - Upper Deck" instance=ExtResource("21_r4wjd")]
+layout_mode = 0
+offset_right = 622.0
+offset_bottom = 244.0
+mouse_filter = 1
+texture_click_mask = ExtResource("17_lcpw1")
+
+[node name="Solar Panel - Lower Deck" type="TextureButton" parent="Station Parts" groups=["Station Modules"]]
 offset_left = 1222.0
 offset_top = 620.0
 offset_right = 1844.0
 offset_bottom = 864.0
 rotation = 3.14159
 scale = Vector2(0.8, 0.8)
+toggle_mode = true
+button_group = ExtResource("16_3b35a")
+texture_click_mask = ExtResource("17_lcpw1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Station Parts/Solar Panel - Lower Deck"]
+position = Vector2(311, 122)
+sprite_frames = SubResource("SpriteFrames_roxtb")
+animation = &"100"
+autoplay = "100"
+
+[node name="Station Module" type="Node2D" parent="Station Parts/Solar Panel - Lower Deck"]
+position = Vector2(311, 122)
+script = ExtResource("19_itp7r")
+module = ExtResource("22_ukr42")
+
+[node name="ModuleHitbox" parent="Station Parts/Solar Panel - Lower Deck" instance=ExtResource("21_r4wjd")]
+layout_mode = 0
+offset_right = 622.0
+offset_bottom = 244.0
+mouse_filter = 1
+texture_click_mask = ExtResource("17_lcpw1")
 
 [node name="Menus" type="Control" parent="."]
 layout_mode = 3
@@ -617,6 +717,13 @@ offset_bottom = 944.0
 text = "Next System
 "
 
+[node name="Main Menu" type="Button" parent="Debugg"]
+offset_left = 1829.0
+offset_top = 961.0
+offset_right = 1925.0
+offset_bottom = 992.0
+text = "Main Menu"
+
 [connection signal="toggle_menu" from="Station Parts" to="Menus" method="_on_station_parts_toggle_menu"]
 [connection signal="toggled" from="Menus/Buttons/Settings Button" to="Menus" method="_on_settings_button_toggled"]
 [connection signal="toggled" from="Menus/Buttons/Codex Button" to="Menus" method="_on_codex_button_toggled"]
@@ -628,3 +735,4 @@ text = "Next System
 [connection signal="pressed" from="Debugg/Reset" to="Debugg" method="_on_reset_pressed"]
 [connection signal="pressed" from="Debugg/Current System" to="Debugg" method="_on_current_system_pressed"]
 [connection signal="pressed" from="Debugg/Next System" to="Debugg" method="_on_next_system_pressed"]
+[connection signal="pressed" from="Debugg/Main Menu" to="Debugg" method="_on_main_menu_pressed"]

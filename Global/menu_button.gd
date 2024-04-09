@@ -1,4 +1,5 @@
 extends TextureButton
+class_name menu_button
 
 @export var button_text = "Text"
 @export var button_label: Label

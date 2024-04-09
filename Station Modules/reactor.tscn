@@ -1,10 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://cgntm5eau2f4u"]
+[gd_scene load_steps=15 format=3 uid="uid://cgntm5eau2f4u"]
 
 [ext_resource type="Texture2D" uid="uid://cswkyfx87v4e6" path="res://Assets/Station Parts/Reactor.png" id="1_xuhym"]
 [ext_resource type="ButtonGroup" uid="uid://b5rqwxv0eiokr" path="res://Settings/station_modules.tres" id="1_yc3qm"]
-[ext_resource type="PackedScene" uid="uid://dv3x8bg41sp3l" path="res://Global/hull_component.tscn" id="2_rcqbr"]
 [ext_resource type="Script" path="res://Global/station_module.gd" id="3_afl5e"]
 [ext_resource type="PackedScene" uid="uid://b0cymfq7qi6a6" path="res://Global/module_hitbox.tscn" id="4_bd76q"]
+[ext_resource type="Script" path="res://Resources/Module Stats.gd" id="5_7klum"]
 [ext_resource type="BitMap" uid="uid://c1vgsg82ohy67" path="res://Assets/Bitmap/Reactor-Bitmap.bmp" id="5_cf5mp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oreih"]
@@ -58,6 +58,31 @@ animations = [{
 "speed": 1.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2l8au"]
+atlas = ExtResource("1_xuhym")
+region = Rect2(0, 0, 252, 292)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4ff3p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2l8au")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Resource" id="Resource_glqd6"]
+script = ExtResource("5_7klum")
+moduleName = "Reactor"
+moduleDescription = "Main energy production facility"
+hull = 100.0
+energyUse = 25.0
+moduleLogo = SubResource("SpriteFrames_4ff3p")
+has_resource = false
+resourseName = "Resourse"
+
 [node name="Reactor" type="TextureButton"]
 toggle_mode = true
 button_group = ExtResource("1_yc3qm")
@@ -69,14 +94,13 @@ sprite_frames = SubResource("SpriteFrames_roxtb")
 animation = &"100"
 autoplay = "100"
 
-[node name="HullComponent" parent="." instance=ExtResource("2_rcqbr")]
-position = Vector2(121, 140)
-
 [node name="Station Module" type="Node2D" parent="."]
 position = Vector2(121, 140)
 script = ExtResource("3_afl5e")
+module = SubResource("Resource_glqd6")
 
 [node name="ModuleHitbox" parent="." instance=ExtResource("4_bd76q")]
+layout_mode = 0
 offset_top = -1.0
 offset_right = 242.0
 offset_bottom = 281.0

@@ -4,3 +4,9 @@
 
 [resource]
 script = ExtResource("1_0km62")
+moduleName = "Module"
+moduleDescription = "A module"
+hull = 100.0
+energyUse = 25.0
+has_resource = false
+resourseName = "Resourse"

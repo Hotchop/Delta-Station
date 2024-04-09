@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="ModuleStats" load_steps=5 format=3 uid="uid://0vv4r6o8pulm"]
+
+[ext_resource type="Texture2D" uid="uid://b6hikbbh8scy4" path="res://Assets/Station Parts/Probe-Station.png" id="1_tn6vo"]
+[ext_resource type="Script" path="res://Resources/Module Stats.gd" id="2_enpby"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85ndn"]
+atlas = ExtResource("1_tn6vo")
+region = Rect2(0, 0, 110, 93)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i3svt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85ndn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("2_enpby")
+moduleName = "Probe Station"
+moduleDescription = "Probe control and deployment module"
+hull = 100.0
+energyUse = 25.0
+moduleLogo = SubResource("SpriteFrames_i3svt")
+has_resource = false
+resourseName = "Resourse"

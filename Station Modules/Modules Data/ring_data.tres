@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="ModuleStats" load_steps=8 format=3 uid="uid://clb618died2sw"]
+
+[ext_resource type="Texture2D" uid="uid://c0ub384cidla" path="res://Assets/Station Parts/Ring.png" id="1_7tj32"]
+[ext_resource type="Script" path="res://Resources/Module Stats.gd" id="2_50omk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_omv57"]
+atlas = ExtResource("1_7tj32")
+region = Rect2(0, 0, 98, 570)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2nbn"]
+atlas = ExtResource("1_7tj32")
+region = Rect2(98, 0, 98, 570)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fk0uv"]
+atlas = ExtResource("1_7tj32")
+region = Rect2(196, 0, 98, 570)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ob2km"]
+atlas = ExtResource("1_7tj32")
+region = Rect2(294, 0, 98, 570)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bo42p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_omv57")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2nbn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fk0uv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ob2km")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[resource]
+script = ExtResource("2_50omk")
+moduleName = "Gravity Ring"
+moduleDescription = "Gravity generation module"
+hull = 100.0
+energyUse = 25.0
+moduleLogo = SubResource("SpriteFrames_bo42p")
+has_resource = false
+resourseName = "Resourse"

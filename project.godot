@@ -22,6 +22,7 @@ WorldUi="*res://Global/world_ui.gd"
 Game="*res://Global/Game.gd"
 GlobalEnums="*res://Global/GlobalEnums.gd"
 GlobalFlags="*res://Global/GlobalFlags.gd"
+SaveSystem="*res://Global/SaveSystem.gd"
 
 [display]
 

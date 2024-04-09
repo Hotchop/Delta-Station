@@ -2,6 +2,7 @@ extends Node2D
 @onready var dif: TextureButton = $"Difficulty/Normal Option"
 @onready var group:ButtonGroup = dif.button_group
 @onready var description: RichTextLabel = $Difficulty/Description
+@onready var difficulty_name: String = "Normal"
 
 func _ready():
 	dif.button_pressed = true
@@ -12,22 +13,26 @@ func _process(_delta):
 		match dif.name:
 			"Easy Option":
 				Game.difficulty = Game.difficultyList["Easy"]
+				difficulty_name = "Easy"
 				description.text = "[center][b]Easy Mode[/b]
 Recomended for first time players
 All modules start at full health"
 			"Normal Option":
 				Game.difficulty = Game.difficultyList["Normal"]
+				difficulty_name = "Normal"
 				description.text = "[center][b]Normal Mode[/b]
 Standar game mode
 Some modules may start a bit damaged"
 			"Hard Option":
 				Game.difficulty = Game.difficultyList["Hard"]
+				difficulty_name = "Hard"
 				description.text = "[center][b]Hard Mode[/b]
 Recomended for experienced players
 More modules are damaged at start
 Damage is more severe"
 			"Voided Option":
 				Game.difficulty = Game.difficultyList["Voided"]
+				difficulty_name = "Voided"
 				description.text = "[center][b]Voided Mode[/b]
 Ultimate challenge
 All modules start damaged
@@ -52,7 +57,13 @@ func _on_intro_toggle_toggled(toggled_on):
 
 
 func _on_start_pressed():
+	get_node("CanvasLayer/Input Bloquer").visible = true
 	$"Extra Settings/Scene Transition/AnimationPlayer".play("fade_out")
+	Game.game_start()
+	var new_save = GameData.new(difficulty_name+" - Day "+str(Game.date))
+	SaveSystem.gameData = new_save
+	SaveSystem.save_data(SaveSystem.currentSave)
+	GlobalFlags.game_start = false
 
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "fade_out":

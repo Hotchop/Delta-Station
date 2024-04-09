@@ -1,0 +1,57 @@
+[gd_resource type="Resource" script_class="ModuleStats" load_steps=10 format=3 uid="uid://cgeybi8er2ov6"]
+
+[ext_resource type="Texture2D" uid="uid://bojhf0sr1me8v" path="res://Assets/Station Parts/Atmosphere.png" id="1_qnum0"]
+[ext_resource type="Script" path="res://Resources/Basic Resource.gd" id="2_7megr"]
+[ext_resource type="Script" path="res://Resources/Module Stats.gd" id="3_2qepa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qu3xm"]
+atlas = ExtResource("1_qnum0")
+region = Rect2(0, 0, 230, 266)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ief0"]
+atlas = ExtResource("1_qnum0")
+region = Rect2(230, 0, 230, 266)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0avos"]
+atlas = ExtResource("1_qnum0")
+region = Rect2(460, 0, 230, 266)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5fy1s"]
+atlas = ExtResource("1_qnum0")
+region = Rect2(690, 0, 230, 266)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sn4fh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qu3xm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ief0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0avos")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5fy1s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Resource" id="Resource_efxf4"]
+script = ExtResource("2_7megr")
+stored = 0.0
+is_available = true
+
+[resource]
+script = ExtResource("3_2qepa")
+moduleName = "Atmosphere Generator"
+moduleDescription = "Mantains O2 levels on the station at an acceptable level"
+hull = 100.0
+energyUse = 25.0
+moduleLogo = SubResource("SpriteFrames_sn4fh")
+has_resource = true
+resourseName = "Oxigen"
+resourse = SubResource("Resource_efxf4")

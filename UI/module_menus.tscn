@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dakqrgxef16qq"]
+[gd_scene load_steps=23 format=3 uid="uid://dakqrgxef16qq"]
 
 [ext_resource type="Script" path="res://UI/module_menus.gd" id="1_pge6p"]
 [ext_resource type="Texture2D" uid="uid://qfbms1tu01rg" path="res://Assets/UI/Station Menus.png" id="2_qcbua"]
@@ -66,7 +66,12 @@ animations = [{
 
 [sub_resource type="LabelSettings" id="LabelSettings_lw8bi"]
 font = ExtResource("5_5l1ay")
-font_size = 20
+font_size = 22
+font_color = Color(0, 1, 0.313726, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ltucp"]
+font = ExtResource("5_5l1ay")
+font_size = 22
 font_color = Color(0, 1, 0.313726, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v8buo"]
@@ -206,19 +211,33 @@ offset_top = 97.0
 offset_right = 835.0
 offset_bottom = 195.0
 text = "//Probe Ready For Deployment
+
 //SYStem SCAN Ready"
 label_settings = SubResource("LabelSettings_lw8bi")
 vertical_alignment = 1
 autowrap_mode = 3
 uppercase = true
 
+[node name="Probe Data" type="Label" parent="Probe Station"]
+layout_mode = 0
+offset_left = 823.0
+offset_top = 97.0
+offset_right = 948.0
+offset_bottom = 220.0
+text = "//Food:
+//Water:
+//O2:
+//Metal:"
+label_settings = SubResource("LabelSettings_ltucp")
+uppercase = true
+
 [node name="Scan Button" type="TextureButton" parent="Probe Station" node_paths=PackedStringArray("button_label")]
 layout_mode = 0
-offset_left = 693.0
-offset_top = 216.0
-offset_right = 893.0
-offset_bottom = 266.0
-scale = Vector2(0.5, 0.5)
+offset_left = 730.0
+offset_top = 210.0
+offset_right = 930.0
+offset_bottom = 260.0
+scale = Vector2(0.7, 0.7)
 mouse_default_cursor_shape = 2
 texture_normal = SubResource("AtlasTexture_v8buo")
 texture_hover = SubResource("AtlasTexture_ow8hr")

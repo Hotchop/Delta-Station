@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="ModuleStats" load_steps=5 format=3 uid="uid://b75066ilshxhe"]
+
+[ext_resource type="Script" path="res://Resources/Module Stats.gd" id="1_2qinw"]
+[ext_resource type="Texture2D" uid="uid://bc2gh1vveew63" path="res://Assets/Station Parts/Propulsor.png" id="1_tskeu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5fbg"]
+atlas = ExtResource("1_tskeu")
+region = Rect2(0, 0, 264, 358)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kp83o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5fbg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_2qinw")
+moduleName = "Propulsor"
+moduleDescription = "Station propulsion and system traversal module"
+hull = 100.0
+energyUse = 25.0
+moduleLogo = SubResource("SpriteFrames_kp83o")
+has_resource = false
+resourseName = "Resourse"

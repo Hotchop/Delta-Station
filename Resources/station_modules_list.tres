@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="Station_Modules_List" load_steps=2 format=3 uid="uid://bp1fnik62ffic"]
+
+[ext_resource type="Script" path="res://Screens/Station Modules List.gd" id="1_qstne"]
+
+[resource]
+script = ExtResource("1_qstne")

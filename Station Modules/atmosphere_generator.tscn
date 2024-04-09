@@ -1,9 +1,9 @@
 [gd_scene load_steps=23 format=3 uid="uid://bl2jf6iexhjb4"]
 
-[ext_resource type="PackedScene" uid="uid://dv3x8bg41sp3l" path="res://Global/hull_component.tscn" id="1_tnmwo"]
 [ext_resource type="Script" path="res://Global/station_module.gd" id="2_eteob"]
 [ext_resource type="Texture2D" uid="uid://bojhf0sr1me8v" path="res://Assets/Station Parts/Atmosphere.png" id="3_aqam3"]
 [ext_resource type="PackedScene" uid="uid://b0cymfq7qi6a6" path="res://Global/module_hitbox.tscn" id="4_g2r0i"]
+[ext_resource type="Resource" uid="uid://cgeybi8er2ov6" path="res://Station Modules/Modules Data/atmosphere_generator_data.tres" id="4_t1rpk"]
 [ext_resource type="BitMap" uid="uid://dcg0e6jpqt2ef" path="res://Assets/Bitmap/Atmosphere-Bitmap.bmp" id="5_uw0sh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqwhc"]
@@ -150,12 +150,12 @@ sprite_frames = SubResource("SpriteFrames_e5iki")
 animation = &"100"
 autoplay = "100"
 
-[node name="HullComponent" parent="." instance=ExtResource("1_tnmwo")]
-
 [node name="Station Module" type="Node2D" parent="."]
 script = ExtResource("2_eteob")
+module = ExtResource("4_t1rpk")
 
 [node name="ModuleHitbox" parent="." instance=ExtResource("4_g2r0i")]
+layout_mode = 0
 offset_right = 220.0
 offset_bottom = 256.0
 mouse_filter = 1

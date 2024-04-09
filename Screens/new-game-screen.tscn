@@ -147,6 +147,7 @@ offset_top = 408.0
 offset_right = 608.0
 offset_bottom = 480.0
 size_flags_horizontal = 0
+mouse_default_cursor_shape = 2
 toggle_mode = true
 button_group = ExtResource("4_k00gg")
 texture_normal = SubResource("AtlasTexture_66ydp")
@@ -171,6 +172,7 @@ offset_top = 408.0
 offset_right = 960.0
 offset_bottom = 480.0
 size_flags_horizontal = 0
+mouse_default_cursor_shape = 2
 toggle_mode = true
 button_group = ExtResource("4_k00gg")
 texture_normal = SubResource("AtlasTexture_66ydp")
@@ -195,6 +197,7 @@ offset_top = 407.0
 offset_right = 1312.0
 offset_bottom = 479.0
 size_flags_horizontal = 0
+mouse_default_cursor_shape = 2
 toggle_mode = true
 button_group = ExtResource("4_k00gg")
 texture_normal = SubResource("AtlasTexture_66ydp")
@@ -219,6 +222,7 @@ offset_top = 407.0
 offset_right = 1664.0
 offset_bottom = 479.0
 size_flags_horizontal = 0
+mouse_default_cursor_shape = 2
 toggle_mode = true
 button_group = ExtResource("4_k00gg")
 texture_normal = SubResource("AtlasTexture_66ydp")
@@ -278,6 +282,7 @@ offset_bottom = 99.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.7, 0.7)
+mouse_default_cursor_shape = 2
 toggle_mode = true
 texture_normal = SubResource("AtlasTexture_6spnm")
 texture_pressed = SubResource("AtlasTexture_wulpx")
@@ -306,6 +311,7 @@ offset_bottom = 99.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.7, 0.7)
+mouse_default_cursor_shape = 2
 toggle_mode = true
 texture_normal = SubResource("AtlasTexture_6spnm")
 texture_pressed = SubResource("AtlasTexture_wulpx")
@@ -328,6 +334,14 @@ color = Color(0, 0, 0, 0)
 libraries = {
 "": SubResource("AnimationLibrary_xhjty")
 }
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Input Bloquer" type="ColorRect" parent="CanvasLayer"]
+visible = false
+offset_right = 1984.0
+offset_bottom = 1080.0
+color = Color(1, 1, 1, 0)
 
 [connection signal="pressed" from="Background/Menu Button" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="Background/Start" to="." method="_on_start_pressed"]
