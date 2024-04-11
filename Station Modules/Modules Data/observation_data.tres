@@ -1,17 +1,17 @@
 [gd_resource type="Resource" script_class="ModuleStats" load_steps=5 format=3 uid="uid://bcoln24nk48wg"]
 
 [ext_resource type="Script" path="res://Resources/Module Stats.gd" id="1_4du2g"]
-[ext_resource type="Texture2D" uid="uid://blj7tf73hsbon" path="res://Assets/Station Parts/Observation.png" id="1_yyl6q"]
+[ext_resource type="Texture2D" uid="uid://b3gxh7njpj4xu" path="res://Assets/Module Logos/Observation-Logo.png" id="1_703sp"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_payse"]
-atlas = ExtResource("1_yyl6q")
-region = Rect2(0, 0, 154, 164)
+[sub_resource type="AtlasTexture" id="AtlasTexture_18msj"]
+atlas = ExtResource("1_703sp")
+region = Rect2(0, 0, 187, 200)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qpbij"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_payse")
+"texture": SubResource("AtlasTexture_18msj")
 }],
 "loop": true,
 "name": &"default",

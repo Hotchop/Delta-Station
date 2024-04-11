@@ -1,17 +1,17 @@
 [gd_resource type="Resource" script_class="ModuleStats" load_steps=5 format=3 uid="uid://dhqs0avy5mcis"]
 
-[ext_resource type="Texture2D" uid="uid://blxxawj64pcmy" path="res://Assets/Station Parts/Solar-Panel.png" id="1_wy2x8"]
+[ext_resource type="Texture2D" uid="uid://dux6qsosn6rjk" path="res://Assets/Module Logos/Solar-Panel-Upper-Logo.png" id="1_n35vy"]
 [ext_resource type="Script" path="res://Resources/Module Stats.gd" id="2_phwei"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6y6ci"]
-atlas = ExtResource("1_wy2x8")
-region = Rect2(0, 0, 632, 254)
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxhep"]
+atlas = ExtResource("1_n35vy")
+region = Rect2(0, 0, 200, 78)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kpyt2"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6y6ci")
+"texture": SubResource("AtlasTexture_pxhep")
 }],
 "loop": true,
 "name": &"default",
@@ -20,10 +20,10 @@ animations = [{
 
 [resource]
 script = ExtResource("2_phwei")
-moduleName = "Solar Panel - Lower Deck"
+moduleName = "Solar Panel Up"
 moduleDescription = "Solar power generator"
 hull = 100.0
-energyUse = 25.0
+energyUse = 0.0
 moduleLogo = SubResource("SpriteFrames_kpyt2")
 has_resource = false
 resourseName = "Resourse"

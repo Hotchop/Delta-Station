@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dakqrgxef16qq"]
+[gd_scene load_steps=24 format=3 uid="uid://dakqrgxef16qq"]
 
 [ext_resource type="Script" path="res://UI/module_menus.gd" id="1_pge6p"]
 [ext_resource type="Texture2D" uid="uid://qfbms1tu01rg" path="res://Assets/UI/Station Menus.png" id="2_qcbua"]
@@ -22,6 +22,8 @@ line_spacing = 6.0
 font = ExtResource("5_5l1ay")
 font_size = 28
 font_color = Color(0, 1, 0.313726, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4wx7q"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_uoe1m"]
 font = ExtResource("5_5l1ay")
@@ -100,7 +102,6 @@ position = Vector2(643, 142)
 texture = SubResource("AtlasTexture_0dd8a")
 
 [node name="General" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 
@@ -136,6 +137,17 @@ texture = ExtResource("3_6t134")
 [node name="Icon Box" type="Sprite2D" parent="General"]
 position = Vector2(1131, 143)
 texture = ExtResource("3_6t134")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="General/Icon Box"]
+offset_left = -104.0
+offset_top = -104.0
+offset_right = 104.0
+offset_bottom = 104.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="General/Icon Box/AspectRatioContainer"]
+position = Vector2(103, 105)
+scale = Vector2(0.9, 0.9)
+sprite_frames = SubResource("SpriteFrames_4wx7q")
 
 [node name="Atmosphere Generator" type="Control" parent="."]
 visible = false
@@ -269,7 +281,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Gravity Ring" type="Control" parent="."]
+[node name="Ring" type="Control" parent="."]
 visible = false
 layout_mode = 3
 anchors_preset = 0

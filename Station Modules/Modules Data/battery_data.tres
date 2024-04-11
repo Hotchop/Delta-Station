@@ -1,18 +1,18 @@
 [gd_resource type="Resource" script_class="ModuleStats" load_steps=7 format=3 uid="uid://gl1eaq1w0unv"]
 
-[ext_resource type="Texture2D" uid="uid://b35ao6xyeshqp" path="res://Assets/Station Parts/Battery.png" id="1_cwtkn"]
+[ext_resource type="Texture2D" uid="uid://bvgi6v0i12ynp" path="res://Assets/Module Logos/Battery-Logo.png" id="1_5quyk"]
 [ext_resource type="Script" path="res://Resources/Module Stats.gd" id="1_mfek0"]
 [ext_resource type="Script" path="res://Resources/Basic Resource.gd" id="2_gdmak"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_y14pg"]
-atlas = ExtResource("1_cwtkn")
-region = Rect2(0, 0, 238, 142)
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhs1y"]
+atlas = ExtResource("1_5quyk")
+region = Rect2(0, 0, 200, 115)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jenva"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_y14pg")
+"texture": SubResource("AtlasTexture_nhs1y")
 }],
 "loop": true,
 "name": &"default",

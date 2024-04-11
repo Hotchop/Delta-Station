@@ -1,14 +1,25 @@
 extends Node2D
 
+
 @onready var menuTitle: Label = $General/Title
 @onready var menuDescription: Label = $General/Description
 @onready var systemPlanets: PackedScene = preload("res://Screens/system_cards.tscn")
+@onready var menuSprite: AnimatedSprite2D = $"General/Icon Box/AspectRatioContainer/AnimatedSprite2D"
 
 func _ready():
 	probe_station_menu()
 	var scene_instance = systemPlanets.instantiate()
 	scene_instance.launch.connect(probe_station_menu)
 	Game.nextDay.connect(probe_station_menu) #Debugg
+
+func set_menu_info(data: ModuleStats):
+	menuSprite.sprite_frames = data.moduleLogo
+	menuSprite.play("default")
+	menuTitle.text = "Module: "+data.moduleName
+	menuDescription.text = "//"+data.moduleDescription+"
+	//Hull: "+str("%0.1f"%data.hull)+"%
+	//Energy: "+str(data.energyUse)+"%"
+	
 
 func probe_station_menu():
 	var station = Game.stationResources

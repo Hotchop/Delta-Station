@@ -1,17 +1,17 @@
 [gd_resource type="Resource" script_class="ModuleStats" load_steps=5 format=3 uid="uid://0vv4r6o8pulm"]
 
-[ext_resource type="Texture2D" uid="uid://b6hikbbh8scy4" path="res://Assets/Station Parts/Probe-Station.png" id="1_tn6vo"]
+[ext_resource type="Texture2D" uid="uid://cir1tff3ovjb0" path="res://Assets/Module Logos/Probe-Station-Logo.png" id="1_w6hlw"]
 [ext_resource type="Script" path="res://Resources/Module Stats.gd" id="2_enpby"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_85ndn"]
-atlas = ExtResource("1_tn6vo")
-region = Rect2(0, 0, 110, 93)
+[sub_resource type="AtlasTexture" id="AtlasTexture_kofmn"]
+atlas = ExtResource("1_w6hlw")
+region = Rect2(0, 0, 200, 166)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i3svt"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_85ndn")
+"texture": SubResource("AtlasTexture_kofmn")
 }],
 "loop": true,
 "name": &"default",

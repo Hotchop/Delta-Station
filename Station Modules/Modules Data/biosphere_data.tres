@@ -1,18 +1,18 @@
 [gd_resource type="Resource" script_class="ModuleStats" load_steps=7 format=3 uid="uid://cc7bxhptnd4a7"]
 
-[ext_resource type="Texture2D" uid="uid://dpucmf41c0up8" path="res://Assets/Station Parts/Biosphere.png" id="1_bdx7b"]
+[ext_resource type="Texture2D" uid="uid://c5s0mhm5rlvrl" path="res://Assets/Module Logos/Biosphere-Logo.png" id="1_3vrh5"]
 [ext_resource type="Script" path="res://Resources/Module Stats.gd" id="1_evau6"]
 [ext_resource type="Script" path="res://Resources/Basic Resource.gd" id="2_snhpt"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mwwb0"]
-atlas = ExtResource("1_bdx7b")
-region = Rect2(0, 0, 314, 314)
+[sub_resource type="AtlasTexture" id="AtlasTexture_m7g2y"]
+atlas = ExtResource("1_3vrh5")
+region = Rect2(0, 0, 200, 200)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5h5sx"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mwwb0")
+"texture": SubResource("AtlasTexture_m7g2y")
 }],
 "loop": true,
 "name": &"default",

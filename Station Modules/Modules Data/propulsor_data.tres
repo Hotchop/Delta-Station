@@ -1,17 +1,17 @@
 [gd_resource type="Resource" script_class="ModuleStats" load_steps=5 format=3 uid="uid://b75066ilshxhe"]
 
 [ext_resource type="Script" path="res://Resources/Module Stats.gd" id="1_2qinw"]
-[ext_resource type="Texture2D" uid="uid://bc2gh1vveew63" path="res://Assets/Station Parts/Propulsor.png" id="1_tskeu"]
+[ext_resource type="Texture2D" uid="uid://cvlr55io34f8u" path="res://Assets/Module Logos/Propulsor-Logo.png" id="1_07ueb"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c5fbg"]
-atlas = ExtResource("1_tskeu")
-region = Rect2(0, 0, 264, 358)
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkk7u"]
+atlas = ExtResource("1_07ueb")
+region = Rect2(0, 0, 145, 200)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kp83o"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_c5fbg")
+"texture": SubResource("AtlasTexture_lkk7u")
 }],
 "loop": true,
 "name": &"default",

@@ -64,7 +64,8 @@ func _on_settings_button_toggled(_toggled_on):
 	selectedButton = $"Buttons/Settings Button"
 
 
-func _on_station_parts_toggle_menu(moduleName):
+func _on_station_parts_toggle_menu(moduleName,data):
+	modulesMenus.set_menu_info(data)
 	$"Buttons/Module Button".button_pressed = true
 	if noMenu.visible == true:
 		noMenu.visible = false

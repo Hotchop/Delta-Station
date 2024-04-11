@@ -615,7 +615,7 @@ layout_mode = 0
 offset_left = 64.0
 offset_right = 136.0
 offset_bottom = 49.0
-text = "0"
+text = "1"
 label_settings = SubResource("LabelSettings_5lgfh")
 horizontal_alignment = 1
 

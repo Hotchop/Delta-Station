@@ -1,6 +1,6 @@
 extends Node2D
 
-signal toggle_menu(moduleName: String)
+signal toggle_menu(moduleName: String,data: ModuleStats)
 @onready var modulesButtonGroup: ButtonGroup = preload("res://Settings/station_modules.tres")
 #var startDamagedModules = []
 
@@ -29,4 +29,4 @@ func _ready():
 
 func _show_module_menu(button: BaseButton):
 	print("Pressed "+button.name)
-	toggle_menu.emit(button.name)
+	toggle_menu.emit(button.name,button.get_node("Station Module").module)

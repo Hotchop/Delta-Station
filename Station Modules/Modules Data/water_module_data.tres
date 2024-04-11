@@ -1,18 +1,18 @@
 [gd_resource type="Resource" script_class="ModuleStats" load_steps=7 format=3 uid="uid://va3ria4an0i0"]
 
 [ext_resource type="Script" path="res://Resources/Module Stats.gd" id="1_3ps2l"]
-[ext_resource type="Texture2D" uid="uid://bhtivmgwn6k6a" path="res://Assets/Station Parts/Water-Module.png" id="1_4lfu5"]
+[ext_resource type="Texture2D" uid="uid://bb88d6dv44hud" path="res://Assets/Module Logos/Water-Module-Logo.png" id="1_deh0f"]
 [ext_resource type="Script" path="res://Resources/Basic Resource.gd" id="2_715i7"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rdkpk"]
-atlas = ExtResource("1_4lfu5")
-region = Rect2(0, 0, 194, 109)
+[sub_resource type="AtlasTexture" id="AtlasTexture_gehib"]
+atlas = ExtResource("1_deh0f")
+region = Rect2(0, 0, 200, 107)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4qh5h"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rdkpk")
+"texture": SubResource("AtlasTexture_gehib")
 }],
 "loop": true,
 "name": &"default",
