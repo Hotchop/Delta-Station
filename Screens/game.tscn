@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://d031l5mvjvfwt"]
+[gd_scene load_steps=73 format=3 uid="uid://d031l5mvjvfwt"]
 
 [ext_resource type="Texture2D" uid="uid://bbij0qk86gr8e" path="res://Assets/Backgrounds/Station-Background-Clear.png" id="1_f3xoh"]
 [ext_resource type="Script" path="res://Screens/MainGame.gd" id="1_ynyw1"]
@@ -38,6 +38,222 @@
 [ext_resource type="Resource" uid="uid://44hwdv1klryg" path="res://Station Modules/Modules Data/solar_lower_data.tres" id="22_ukr42"]
 [ext_resource type="Texture2D" uid="uid://bh8j1fpyn6qns" path="res://Assets/UI/Planet-System.png" id="23_xna26"]
 [ext_resource type="Texture2D" uid="uid://cif6gkduqdq7x" path="res://Assets/UI/Warning Simbol.png" id="24_6jod7"]
+[ext_resource type="PackedScene" uid="uid://ch3n31b5rlbbf" path="res://Global/alert_message.tscn" id="38_tarno"]
+
+[sub_resource type="Animation" id="Animation_w166y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:amount")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:speed_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../../UI/Screen Flash:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 1, 0.313726, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../../UI/Screen Flash:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_w3vpc"]
+resource_name = "propulsor_next"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:amount")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:speed_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [1.0, 30.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../../UI/Screen Flash:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3.5, 3.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 1, 0.313726, 0), Color(0, 1, 0.313726, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../../UI/Screen Flash:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_5q0il"]
+resource_name = "propulsor_arrival"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:amount")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:speed_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 2),
+"update": 0,
+"values": [30.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../../UI/Screen Flash:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 1, 0.313726, 1), Color(0, 1, 0.313726, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../../UI/Screen Flash:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_vt5d7"]
+resource_name = "propulsor_skip"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:amount")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:speed_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [1.0, 30.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../../UI/Screen Flash:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3.5, 3.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 1, 0.313726, 0), Color(0, 1, 0.313726, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../../UI/Screen Flash:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kofi7"]
+_data = {
+"RESET": SubResource("Animation_w166y"),
+"propulsor_arrival": SubResource("Animation_5q0il"),
+"propulsor_next": SubResource("Animation_w3vpc"),
+"propulsor_skip": SubResource("Animation_vt5d7")
+}
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a5t4c"]
 atlas = ExtResource("18_epex2")
@@ -243,6 +459,11 @@ scale = Vector2(0.5, 0.5)
 gravity = Vector2(-200, 0)
 scale_amount_min = 0.1
 scale_amount_max = 0.3
+
+[node name="Warp Animations" type="AnimationPlayer" parent="BG/Station-background-clear/StarBG-Particles"]
+libraries = {
+"": SubResource("AnimationLibrary_kofi7")
+}
 
 [node name="Station Parts" type="Node2D" parent="."]
 script = ExtResource("3_vdors")
@@ -671,6 +892,26 @@ libraries = {
 "": SubResource("AnimationLibrary_xhjty")
 }
 
+[node name="Screen Flash" type="ColorRect" parent="UI"]
+visible = false
+offset_right = 1979.0
+offset_bottom = 1080.0
+color = Color(0, 1, 0.313726, 0)
+
+[node name="Screen Flash" type="ColorRect" parent="UI/Screen Flash"]
+layout_mode = 0
+offset_right = 1979.0
+offset_bottom = 1080.0
+color = Color(0, 1, 0.313726, 0)
+
+[node name="Alerts" type="CanvasLayer" parent="."]
+
+[node name="System Jump" parent="Alerts" instance=ExtResource("38_tarno")]
+visible = false
+message = "Preparing warp jump"
+info = "Jumping to next system
+Confirmation Requiered"
+
 [node name="Debugg" type="CanvasLayer" parent="."]
 script = ExtResource("22_q7h35")
 
@@ -724,11 +965,13 @@ offset_right = 1925.0
 offset_bottom = 992.0
 text = "Main Menu"
 
+[connection signal="animation_finished" from="BG/Station-background-clear/StarBG-Particles/Warp Animations" to="." method="_on_warp_animations_animation_finished"]
 [connection signal="toggle_menu" from="Station Parts" to="Menus" method="_on_station_parts_toggle_menu"]
 [connection signal="toggled" from="Menus/Buttons/Settings Button" to="Menus" method="_on_settings_button_toggled"]
 [connection signal="toggled" from="Menus/Buttons/Codex Button" to="Menus" method="_on_codex_button_toggled"]
 [connection signal="toggled" from="Menus/Buttons/Module Button" to="Menus" method="_on_module_button_toggled"]
 [connection signal="toggled" from="Menus/Buttons/System Button" to="Menus" method="_on_system_button_toggled"]
+[connection signal="confirm_alert" from="Alerts/System Jump" to="." method="_on_system_jump_confirm_alert"]
 [connection signal="pressed" from="Debugg/Quit Button DB" to="Debugg" method="_on_quit_button_db_pressed"]
 [connection signal="pressed" from="Debugg/Next Day DB" to="Debugg" method="_on_next_day_db_pressed"]
 [connection signal="pressed" from="Debugg/Damage Hull" to="Debugg" method="_on_damage_hull_pressed"]

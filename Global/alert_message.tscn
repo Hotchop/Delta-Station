@@ -1,0 +1,140 @@
+[gd_scene load_steps=9 format=3 uid="uid://ch3n31b5rlbbf"]
+
+[ext_resource type="Script" path="res://Global/alert_message.gd" id="1_6bp4j"]
+[ext_resource type="Texture2D" uid="uid://cif6gkduqdq7x" path="res://Assets/UI/Warning Simbol.png" id="1_kq45d"]
+[ext_resource type="Texture2D" uid="uid://qfbms1tu01rg" path="res://Assets/UI/Station Menus.png" id="2_j7l02"]
+[ext_resource type="FontFile" uid="uid://c1rx8lmdovuo4" path="res://Assets/Fonts/VT323-Regular.ttf" id="3_5axi1"]
+[ext_resource type="PackedScene" uid="uid://crnf5vthlii6q" path="res://Global/menu_button.tscn" id="4_qr2p2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w21w3"]
+atlas = ExtResource("2_j7l02")
+region = Rect2(5, 299, 1286, 284)
+
+[sub_resource type="LabelSettings" id="LabelSettings_yo1oo"]
+font = ExtResource("3_5axi1")
+font_size = 64
+font_color = Color(0, 1, 0.313726, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_n0ctn"]
+font = ExtResource("3_5axi1")
+font_size = 64
+font_color = Color(0, 1, 0.313726, 1)
+
+[node name="Alert Message" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6bp4j")
+
+[node name="Backdrop" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -990.0
+offset_top = -540.0
+offset_right = 990.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.607843)
+
+[node name="Alert" type="Sprite2D" parent="."]
+position = Vector2(992, 304)
+scale = Vector2(2, 2)
+texture = ExtResource("1_kq45d")
+
+[node name="Border" type="Sprite2D" parent="."]
+position = Vector2(992, 520)
+texture = SubResource("AtlasTexture_w21w3")
+
+[node name="Message" type="Label" parent="Border"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1267.0
+offset_top = -262.0
+offset_right = -19.0
+offset_bottom = -174.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Message"
+label_settings = SubResource("LabelSettings_yo1oo")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Info" type="Label" parent="Border"]
+offset_left = -624.0
+offset_top = -24.0
+offset_right = 624.0
+offset_bottom = 120.0
+text = "Info
+"
+label_settings = SubResource("LabelSettings_n0ctn")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Confirm" parent="." instance=ExtResource("4_qr2p2")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -270.0
+offset_top = 156.0
+offset_right = -70.0
+offset_bottom = 206.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(200, 0)
+button_text = "Confirm"
+
+[node name="ColorRect" type="ColorRect" parent="Confirm"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 3.0
+offset_top = 4.0
+offset_right = 196.0
+offset_bottom = 46.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Cancel" parent="." instance=ExtResource("4_qr2p2")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 74.0
+offset_top = 156.0
+offset_right = 274.0
+offset_bottom = 206.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+button_text = "Cancel"
+
+[node name="ColorRect" type="ColorRect" parent="Cancel"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 196.0
+offset_bottom = 46.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[connection signal="pressed" from="Confirm" to="." method="_on_confirm_pressed"]
+[connection signal="pressed" from="Cancel" to="." method="_on_cancel_pressed"]

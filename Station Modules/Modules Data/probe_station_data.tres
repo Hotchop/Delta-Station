@@ -23,6 +23,7 @@ script = ExtResource("2_enpby")
 moduleName = "Probe Station"
 moduleDescription = "Probe control and deployment module"
 hull = 100.0
+is_destroyed = false
 energyUse = 25.0
 moduleLogo = SubResource("SpriteFrames_i3svt")
 has_resource = false

@@ -56,11 +56,13 @@ func warp_system():
 	currentSystem = nextSystem
 	nextSystem = futureSystem
 	futureSystem = StarSystem.new()
+	nextDay.emit()
 
-func jump_sytem():
+func jump_system():
 	currentSystem = futureSystem
 	nextSystem = StarSystem.new()
 	futureSystem = StarSystem.new()
+	nextDay.emit()
 	
 func load_name_files(filepath: String):
 	if FileAccess.file_exists(filepath):

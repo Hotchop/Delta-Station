@@ -13,8 +13,10 @@ config_version=5
 config/name="Delta Station"
 run/main_scene="res://Screens/main.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
-boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/bg_color=Color(0.243137, 0.207843, 0.219608, 1)
+boot_splash/image="res://Assets/Game Logos/Moon Otter Splash Screen.png"
 config/icon="res://icon.svg"
+boot_splash/minimum_display_time=2000
 
 [autoload]
 
@@ -26,7 +28,7 @@ SaveSystem="*res://Global/SaveSystem.gd"
 
 [display]
 
-window/size/viewport_width=1920
+window/size/viewport_width=1980
 window/size/viewport_height=1080
 window/stretch/mode="viewport"
 mouse_cursor/custom_image="res://Assets/UI/Cursor.png"

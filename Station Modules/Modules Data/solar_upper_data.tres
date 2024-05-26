@@ -23,6 +23,7 @@ script = ExtResource("2_phwei")
 moduleName = "Solar Panel Up"
 moduleDescription = "Solar power generator"
 hull = 100.0
+is_destroyed = false
 energyUse = 0.0
 moduleLogo = SubResource("SpriteFrames_kpyt2")
 has_resource = false

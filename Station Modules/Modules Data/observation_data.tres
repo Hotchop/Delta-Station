@@ -23,6 +23,7 @@ script = ExtResource("1_4du2g")
 moduleName = "Observation"
 moduleDescription = "Guidance and star system charter"
 hull = 100.0
+is_destroyed = false
 energyUse = 25.0
 moduleLogo = SubResource("SpriteFrames_qpbij")
 has_resource = false

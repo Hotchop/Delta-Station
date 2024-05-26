@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://ckm6su6vqhhdp"]
+[gd_scene load_steps=18 format=3 uid="uid://ckm6su6vqhhdp"]
 
 [ext_resource type="Texture2D" uid="uid://bhtivmgwn6k6a" path="res://Assets/Station Parts/Water-Module.png" id="1_mkhbq"]
 [ext_resource type="Texture2D" uid="uid://cqw3ol8jsd3ob" path="res://Assets/Station Parts/Water-Sprite.png" id="1_ygv0x"]
+[ext_resource type="Script" path="res://Station Modules/water_module_logic.gd" id="2_a3gf6"]
 [ext_resource type="Script" path="res://Global/station_module.gd" id="3_e0mal"]
 [ext_resource type="PackedScene" uid="uid://b0cymfq7qi6a6" path="res://Global/module_hitbox.tscn" id="4_ccl5d"]
 [ext_resource type="Resource" uid="uid://va3ria4an0i0" path="res://Station Modules/Modules Data/water_module_data.tres" id="5_wnlw7"]
@@ -98,6 +99,7 @@ animations = [{
 offset_right = 184.0
 offset_bottom = 99.0
 texture_click_mask = ExtResource("6_ivw3e")
+script = ExtResource("2_a3gf6")
 
 [node name="Clip Mask" type="Polygon2D" parent="."]
 clip_children = 1
@@ -113,10 +115,10 @@ offset_bottom = 46.0
 color = Color(0, 0, 0, 1)
 
 [node name="Water Sprite" type="AnimatedSprite2D" parent="Clip Mask"]
-position = Vector2(4, 15)
+position = Vector2(0, 15)
 sprite_frames = SubResource("SpriteFrames_yr4vf")
 autoplay = "default"
-frame_progress = 0.562633
+frame_progress = 0.952291
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(92, 49.5)

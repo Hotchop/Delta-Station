@@ -11,10 +11,12 @@ func _ready():
 	$"Buttons/System Button/System Menu".visible = true
 	system_menu_data()
 	modulesMenus = moduleMenusScene.instantiate() as Node2D
+	modulesMenus.system_jump.connect(system_jump_alert)
 	$"Buttons/Module Button/Module Menu".add_child(modulesMenus)
 	modulesMenus.global_position = Vector2(20,776)
 	noMenu = modulesMenus.get_node("No Module")
 	generalMenu = modulesMenus.get_node("General")
+	
 	Game.nextDay.connect(system_menu_data) #debugg
 
 func _process(_delta):
@@ -77,3 +79,13 @@ func _on_station_parts_toggle_menu(moduleName,data):
 		visibleMenu = modulesMenus.get_node(str(moduleName))
 		modulesMenus.get_node(str(moduleName)).visible = true
 	print("Showing "+visibleMenu.name+" menu")
+
+func system_jump_alert(string,value):
+	if value == 1:
+		$"../Alerts/System Jump".set_info("Preparing warp jump","Jumping to next system
+Confirmation Requiered")
+	else:
+		$"../Alerts/System Jump".set_info("Preparing warp jump","Skiping next system
+Confirmation Requiered")
+	$"../Alerts/System Jump".set_data(string,value)
+	$"../Alerts/System Jump".visible = true

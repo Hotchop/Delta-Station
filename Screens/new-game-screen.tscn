@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://d3cc54dpupjr6"]
+[gd_scene load_steps=23 format=3 uid="uid://d3cc54dpupjr6"]
 
 [ext_resource type="Script" path="res://Screens/new_game.gd" id="1_4dneu"]
 [ext_resource type="FontFile" uid="uid://c1rx8lmdovuo4" path="res://Assets/Fonts/VT323-Regular.ttf" id="1_yqybp"]
@@ -29,6 +29,21 @@ region = Rect2(215, 5, 200, 50)
 [sub_resource type="AtlasTexture" id="AtlasTexture_u664v"]
 atlas = ExtResource("4_m6iux")
 region = Rect2(215, 5, 200, 50)
+
+[sub_resource type="LabelSettings" id="LabelSettings_dq1o0"]
+font = ExtResource("1_yqybp")
+font_size = 40
+font_color = Color(0, 1, 0.313726, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bfxwo"]
+font = ExtResource("1_yqybp")
+font_size = 40
+font_color = Color(0, 1, 0.313726, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_feeo8"]
+font = ExtResource("1_yqybp")
+font_size = 40
+font_color = Color(0, 1, 0.313726, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_ae4ey"]
 font = ExtResource("1_yqybp")
@@ -162,7 +177,7 @@ offset_top = 6.0
 offset_right = 282.0
 offset_bottom = 66.0
 text = "Easy"
-label_settings = ExtResource("3_evf4h")
+label_settings = SubResource("LabelSettings_dq1o0")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -187,7 +202,7 @@ offset_top = 6.0
 offset_right = 282.0
 offset_bottom = 66.0
 text = "Normal"
-label_settings = ExtResource("3_evf4h")
+label_settings = SubResource("LabelSettings_bfxwo")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -212,7 +227,7 @@ offset_top = 6.0
 offset_right = 282.0
 offset_bottom = 66.0
 text = "Hard"
-label_settings = ExtResource("3_evf4h")
+label_settings = SubResource("LabelSettings_feeo8")
 horizontal_alignment = 1
 vertical_alignment = 1
 

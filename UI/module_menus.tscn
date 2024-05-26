@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dakqrgxef16qq"]
+[gd_scene load_steps=30 format=3 uid="uid://dakqrgxef16qq"]
 
 [ext_resource type="Script" path="res://UI/module_menus.gd" id="1_pge6p"]
 [ext_resource type="Texture2D" uid="uid://qfbms1tu01rg" path="res://Assets/UI/Station Menus.png" id="2_qcbua"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cgd77evvex27a" path="res://Assets/UI/Menu-Button.png" id="6_sbm5o"]
 [ext_resource type="Texture2D" uid="uid://b7ue85373ij7v" path="res://Assets/Station Parts/Probe.png" id="6_syijb"]
 [ext_resource type="Script" path="res://Global/menu_button.gd" id="7_8yd37"]
+[ext_resource type="LabelSettings" uid="uid://dgri43qjj5xtv" path="res://Assets/Fonts/game_titles.tres" id="8_qa806"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0dd8a"]
 atlas = ExtResource("2_qcbua")
@@ -25,9 +26,19 @@ font_color = Color(0, 1, 0.313726, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4wx7q"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_uoe1m"]
+[sub_resource type="LabelSettings" id="LabelSettings_78ung"]
 font = ExtResource("5_5l1ay")
-font_size = 24
+font_size = 42
+font_color = Color(0, 1, 0.313726, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_niqm4"]
+font = ExtResource("5_5l1ay")
+font_size = 28
+font_color = Color(0, 1, 0.313726, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_r1xcj"]
+font = ExtResource("5_5l1ay")
+font_size = 42
 font_color = Color(0, 1, 0.313726, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ouy8d"]
@@ -68,12 +79,12 @@ animations = [{
 
 [sub_resource type="LabelSettings" id="LabelSettings_lw8bi"]
 font = ExtResource("5_5l1ay")
-font_size = 22
+font_size = 26
 font_color = Color(0, 1, 0.313726, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_ltucp"]
 font = ExtResource("5_5l1ay")
-font_size = 22
+font_size = 24
 font_color = Color(0, 1, 0.313726, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v8buo"]
@@ -85,6 +96,19 @@ atlas = ExtResource("6_sbm5o")
 region = Rect2(215, 5, 200, 50)
 
 [sub_resource type="LabelSettings" id="LabelSettings_4jop5"]
+font = ExtResource("5_5l1ay")
+font_size = 38
+font_color = Color(0, 1, 0.313726, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_772oh"]
+atlas = ExtResource("6_sbm5o")
+region = Rect2(5, 5, 200, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kaiuq"]
+atlas = ExtResource("6_sbm5o")
+region = Rect2(215, 5, 200, 50)
+
+[sub_resource type="LabelSettings" id="LabelSettings_n8e1s"]
 font = ExtResource("5_5l1ay")
 font_size = 38
 font_color = Color(0, 1, 0.313726, 1)
@@ -102,6 +126,7 @@ position = Vector2(643, 142)
 texture = SubResource("AtlasTexture_0dd8a")
 
 [node name="General" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 
@@ -160,8 +185,34 @@ offset_bottom = 40.0
 visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 619.0
+offset_top = 39.0
+offset_right = 971.0
+offset_bottom = 247.0
+
+[node name="Status" type="Label" parent="Battery"]
+layout_mode = 0
+offset_right = 352.0
+offset_bottom = 49.0
+text = "Status - Empty"
+label_settings = SubResource("LabelSettings_78ung")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Info" type="Label" parent="Battery"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 45.0
+offset_right = 336.0
+offset_bottom = 205.0
+text = "//Battery Storage In Use:
+//0%
+//currenty duplicating maximum energy reserves"
+label_settings = SubResource("LabelSettings_niqm4")
+vertical_alignment = 1
+autowrap_mode = 3
+uppercase = true
 
 [node name="Water Module" type="Control" parent="."]
 visible = false
@@ -200,28 +251,30 @@ offset_bottom = 40.0
 
 [node name="Probe Status" type="Label" parent="Probe Station"]
 layout_mode = 0
-offset_left = 622.0
-offset_top = 45.0
-offset_right = 849.0
-offset_bottom = 83.0
-text = "Probe Status - Ready"
-label_settings = SubResource("LabelSettings_uoe1m")
+offset_left = 619.0
+offset_top = 39.0
+offset_right = 971.0
+offset_bottom = 87.0
+text = "Status - Active"
+label_settings = SubResource("LabelSettings_r1xcj")
 horizontal_alignment = 1
 vertical_alignment = 1
+uppercase = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Probe Station"]
-position = Vector2(911, 140)
-scale = Vector2(2.47619, 2.47619)
+position = Vector2(1130, 115)
+scale = Vector2(1.8, 1.8)
 sprite_frames = SubResource("SpriteFrames_fbbqa")
 autoplay = "default"
-frame_progress = 0.863946
+frame = 2
+frame_progress = 0.707934
 
 [node name="Probe Description" type="Label" parent="Probe Station"]
 layout_mode = 0
 offset_left = 636.0
-offset_top = 97.0
-offset_right = 835.0
-offset_bottom = 195.0
+offset_top = 88.0
+offset_right = 956.0
+offset_bottom = 206.0
 text = "//Probe Ready For Deployment
 
 //SYStem SCAN Ready"
@@ -232,15 +285,16 @@ uppercase = true
 
 [node name="Probe Data" type="Label" parent="Probe Station"]
 layout_mode = 0
-offset_left = 823.0
-offset_top = 97.0
-offset_right = 948.0
-offset_bottom = 220.0
+offset_left = 638.0
+offset_top = 80.0
+offset_right = 963.0
+offset_bottom = 209.0
 text = "//Food:
 //Water:
 //O2:
 //Metal:"
 label_settings = SubResource("LabelSettings_ltucp")
+vertical_alignment = 1
 uppercase = true
 
 [node name="Scan Button" type="TextureButton" parent="Probe Station" node_paths=PackedStringArray("button_label")]
@@ -271,15 +325,134 @@ horizontal_alignment = 1
 visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 619.0
+offset_top = 39.0
+offset_right = 971.0
+offset_bottom = 247.0
+
+[node name="Propulsor Status" type="Label" parent="Propulsor"]
+layout_mode = 0
+offset_right = 352.0
+offset_bottom = 48.0
+text = "System jump"
+label_settings = SubResource("LabelSettings_r1xcj")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Actions Container" type="VBoxContainer" parent="Propulsor"]
+layout_mode = 0
+offset_top = 52.0
+offset_right = 352.0
+offset_bottom = 208.0
+alignment = 1
+
+[node name="HSplitContainer" type="HBoxContainer" parent="Propulsor/Actions Container"]
+layout_mode = 2
+alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="Propulsor/Actions Container/HSplitContainer"]
+layout_mode = 2
+
+[node name="Next Label" type="Label" parent="Propulsor/Actions Container/HSplitContainer/CenterContainer"]
+layout_mode = 2
+text = "next system "
+label_settings = ExtResource("8_qa806")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="CenterContainer2" type="CenterContainer" parent="Propulsor/Actions Container/HSplitContainer"]
+layout_mode = 2
+
+[node name="Next Button" type="TextureButton" parent="Propulsor/Actions Container/HSplitContainer/CenterContainer2" node_paths=PackedStringArray("button_label")]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AtlasTexture_772oh")
+texture_hover = SubResource("AtlasTexture_kaiuq")
+script = ExtResource("7_8yd37")
+button_text = "Energy 25%"
+button_label = NodePath("Label")
+
+[node name="Label" type="Label" parent="Propulsor/Actions Container/HSplitContainer/CenterContainer2/Next Button"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 196.0
+offset_bottom = 46.0
+text = "Text"
+label_settings = SubResource("LabelSettings_n8e1s")
+horizontal_alignment = 1
+
+[node name="HSplitContainer2" type="HBoxContainer" parent="Propulsor/Actions Container"]
+layout_mode = 2
+alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="Propulsor/Actions Container/HSplitContainer2"]
+layout_mode = 2
+
+[node name="Skip Label" type="Label" parent="Propulsor/Actions Container/HSplitContainer2/CenterContainer"]
+layout_mode = 2
+text = "skip system "
+label_settings = ExtResource("8_qa806")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="CenterContainer2" type="CenterContainer" parent="Propulsor/Actions Container/HSplitContainer2"]
+layout_mode = 2
+
+[node name="Skip Button" type="TextureButton" parent="Propulsor/Actions Container/HSplitContainer2/CenterContainer2" node_paths=PackedStringArray("button_label")]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AtlasTexture_772oh")
+texture_hover = SubResource("AtlasTexture_kaiuq")
+script = ExtResource("7_8yd37")
+button_text = "Energy 50%"
+button_label = NodePath("../../../HSplitContainer/CenterContainer2/Next Button/Label")
+
+[node name="Label" type="Label" parent="Propulsor/Actions Container/HSplitContainer2/CenterContainer2/Skip Button"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 196.0
+offset_bottom = 46.0
+text = "Text"
+label_settings = SubResource("LabelSettings_n8e1s")
+horizontal_alignment = 1
 
 [node name="Reactor" type="Control" parent="."]
 visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 619.0
+offset_top = 39.0
+offset_right = 971.0
+offset_bottom = 247.0
+
+[node name="Status" type="Label" parent="Reactor"]
+layout_mode = 1
+offset_right = 352.0
+offset_bottom = 49.0
+text = "Status - Active"
+label_settings = SubResource("LabelSettings_78ung")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Info" type="Label" parent="Reactor"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 48.0
+offset_right = 339.0
+offset_bottom = 208.0
+text = "//Reactor operating at full capacity
+//warning: reactor shutdown may damage station
+"
+label_settings = SubResource("LabelSettings_niqm4")
+vertical_alignment = 1
+autowrap_mode = 3
+uppercase = true
 
 [node name="Ring" type="Control" parent="."]
 visible = false
@@ -292,15 +465,67 @@ offset_bottom = 40.0
 visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 619.0
+offset_top = 39.0
+offset_right = 971.0
+offset_bottom = 247.0
+
+[node name="Status" type="Label" parent="Solar Panel - Upper Deck"]
+layout_mode = 0
+offset_right = 352.0
+offset_bottom = 48.0
+text = "Status - Active"
+label_settings = SubResource("LabelSettings_r1xcj")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Info" type="Label" parent="Solar Panel - Upper Deck"]
+layout_mode = 1
+offset_left = 13.0
+offset_top = 48.0
+offset_right = 333.0
+offset_bottom = 208.0
+text = "//System Star Category:
+//Yellow
+//Solar Energy Efficiency:
+//100%"
+label_settings = SubResource("LabelSettings_niqm4")
+vertical_alignment = 1
+uppercase = true
 
 [node name="Solar Panel - Lower Deck" type="Control" parent="."]
 visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 619.0
+offset_top = 39.0
+offset_right = 971.0
+offset_bottom = 247.0
+
+[node name="Status" type="Label" parent="Solar Panel - Lower Deck"]
+layout_mode = 0
+offset_right = 352.0
+offset_bottom = 48.0
+text = "Status - Active"
+label_settings = SubResource("LabelSettings_r1xcj")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Info" type="Label" parent="Solar Panel - Lower Deck"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 48.0
+offset_right = 341.0
+offset_bottom = 208.0
+text = "//System Star Category:
+//Yellow
+//Solar Energy Efficiency:
+//100%"
+label_settings = SubResource("LabelSettings_niqm4")
+vertical_alignment = 1
+uppercase = true
 
 [node name="No Module" type="Control" parent="."]
 layout_mode = 3
@@ -321,3 +546,5 @@ vertical_alignment = 1
 uppercase = true
 
 [connection signal="pressed" from="Probe Station/Scan Button" to="." method="_on_scan_button_pressed"]
+[connection signal="pressed" from="Propulsor/Actions Container/HSplitContainer/CenterContainer2/Next Button" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="Propulsor/Actions Container/HSplitContainer2/CenterContainer2/Skip Button" to="." method="_on_skip_button_pressed"]

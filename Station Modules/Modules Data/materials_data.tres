@@ -76,8 +76,9 @@ is_available = true
 [resource]
 script = ExtResource("1_epifv")
 moduleName = "Materials"
-moduleDescription = "MateriResource procesing plant and repair station"
+moduleDescription = "Resource procesing plant and repair station"
 hull = 100.0
+is_destroyed = false
 energyUse = 25.0
 moduleLogo = SubResource("SpriteFrames_r1v3k")
 has_resource = true

@@ -50,6 +50,7 @@ script = ExtResource("3_2qepa")
 moduleName = "Atmosphere Generator"
 moduleDescription = "Mantains O2 levels on the station at an acceptable level"
 hull = 100.0
+is_destroyed = false
 energyUse = 25.0
 moduleLogo = SubResource("SpriteFrames_sn4fh")
 has_resource = true
