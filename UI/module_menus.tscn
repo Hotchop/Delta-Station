@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dakqrgxef16qq"]
+[gd_scene load_steps=34 format=3 uid="uid://dakqrgxef16qq"]
 
 [ext_resource type="Script" path="res://UI/module_menus.gd" id="1_pge6p"]
 [ext_resource type="Texture2D" uid="uid://qfbms1tu01rg" path="res://Assets/UI/Station Menus.png" id="2_qcbua"]
@@ -39,6 +39,24 @@ font_color = Color(0, 1, 0.313726, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_r1xcj"]
 font = ExtResource("5_5l1ay")
 font_size = 42
+font_color = Color(0, 1, 0.313726, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ajlsm"]
+font = ExtResource("5_5l1ay")
+font_size = 32
+font_color = Color(0, 1, 0.313726, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8buo"]
+atlas = ExtResource("6_sbm5o")
+region = Rect2(5, 5, 200, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ow8hr"]
+atlas = ExtResource("6_sbm5o")
+region = Rect2(215, 5, 200, 50)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4jop5"]
+font = ExtResource("5_5l1ay")
+font_size = 38
 font_color = Color(0, 1, 0.313726, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ouy8d"]
@@ -87,15 +105,15 @@ font = ExtResource("5_5l1ay")
 font_size = 24
 font_color = Color(0, 1, 0.313726, 1)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_v8buo"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_66y0y"]
 atlas = ExtResource("6_sbm5o")
 region = Rect2(5, 5, 200, 50)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ow8hr"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_insum"]
 atlas = ExtResource("6_sbm5o")
 region = Rect2(215, 5, 200, 50)
 
-[sub_resource type="LabelSettings" id="LabelSettings_4jop5"]
+[sub_resource type="LabelSettings" id="LabelSettings_yfrm7"]
 font = ExtResource("5_5l1ay")
 font_size = 38
 font_color = Color(0, 1, 0.313726, 1)
@@ -239,8 +257,58 @@ offset_bottom = 40.0
 visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 619.0
+offset_top = 39.0
+offset_right = 971.0
+offset_bottom = 247.0
+
+[node name="Observation Status" type="Label" parent="Observation"]
+layout_mode = 0
+offset_right = 352.0
+offset_bottom = 48.0
+text = "radar - active"
+label_settings = SubResource("LabelSettings_r1xcj")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Observation"]
+layout_mode = 0
+offset_top = 45.0
+offset_right = 352.0
+offset_bottom = 208.0
+alignment = 1
+
+[node name="Info" type="Label" parent="Observation/VBoxContainer"]
+layout_mode = 2
+text = "//Scan Forward System
+//{{System name}}
+//Energy cost"
+label_settings = SubResource("LabelSettings_ajlsm")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="CenterContainer" type="CenterContainer" parent="Observation/VBoxContainer"]
+layout_mode = 2
+
+[node name="Observation Button" type="TextureButton" parent="Observation/VBoxContainer/CenterContainer" node_paths=PackedStringArray("button_label")]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AtlasTexture_v8buo")
+texture_hover = SubResource("AtlasTexture_ow8hr")
+script = ExtResource("7_8yd37")
+button_text = "Scan"
+button_label = NodePath("Label")
+
+[node name="Label" type="Label" parent="Observation/VBoxContainer/CenterContainer/Observation Button"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 196.0
+offset_bottom = 46.0
+text = "Text"
+label_settings = SubResource("LabelSettings_4jop5")
+horizontal_alignment = 1
 
 [node name="Probe Station" type="Control" parent="."]
 visible = false
@@ -305,8 +373,8 @@ offset_right = 930.0
 offset_bottom = 260.0
 scale = Vector2(0.7, 0.7)
 mouse_default_cursor_shape = 2
-texture_normal = SubResource("AtlasTexture_v8buo")
-texture_hover = SubResource("AtlasTexture_ow8hr")
+texture_normal = SubResource("AtlasTexture_66y0y")
+texture_hover = SubResource("AtlasTexture_insum")
 script = ExtResource("7_8yd37")
 button_text = "Scan"
 button_label = NodePath("Label")
@@ -318,7 +386,7 @@ offset_top = 4.0
 offset_right = 196.0
 offset_bottom = 46.0
 text = "Text"
-label_settings = SubResource("LabelSettings_4jop5")
+label_settings = SubResource("LabelSettings_yfrm7")
 horizontal_alignment = 1
 
 [node name="Propulsor" type="Control" parent="."]
@@ -342,9 +410,11 @@ uppercase = true
 
 [node name="Actions Container" type="VBoxContainer" parent="Propulsor"]
 layout_mode = 0
-offset_top = 52.0
-offset_right = 352.0
-offset_bottom = 208.0
+offset_left = 14.0
+offset_top = 56.0
+offset_right = 422.0
+offset_bottom = 212.0
+scale = Vector2(0.8, 0.8)
 alignment = 1
 
 [node name="HSplitContainer" type="HBoxContainer" parent="Propulsor/Actions Container"]
@@ -545,6 +615,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
+[connection signal="pressed" from="Observation/VBoxContainer/CenterContainer/Observation Button" to="." method="_on_observation_button_pressed"]
 [connection signal="pressed" from="Probe Station/Scan Button" to="." method="_on_scan_button_pressed"]
 [connection signal="pressed" from="Propulsor/Actions Container/HSplitContainer/CenterContainer2/Next Button" to="." method="_on_next_button_pressed"]
 [connection signal="pressed" from="Propulsor/Actions Container/HSplitContainer2/CenterContainer2/Skip Button" to="." method="_on_skip_button_pressed"]

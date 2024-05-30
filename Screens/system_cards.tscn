@@ -1,8 +1,40 @@
-[gd_scene load_steps=4 format=3 uid="uid://ygnd06pud35r"]
+[gd_scene load_steps=15 format=3 uid="uid://ygnd06pud35r"]
 
 [ext_resource type="Script" path="res://Screens/system_cards.gd" id="1_iqkrk"]
+[ext_resource type="Texture2D" uid="uid://qfbms1tu01rg" path="res://Assets/UI/Station Menus.png" id="2_gv7dy"]
 [ext_resource type="LabelSettings" uid="uid://dgri43qjj5xtv" path="res://Assets/Fonts/game_titles.tres" id="2_mnbqs"]
+[ext_resource type="FontFile" uid="uid://c1rx8lmdovuo4" path="res://Assets/Fonts/VT323-Regular.ttf" id="3_84w6q"]
 [ext_resource type="PackedScene" uid="uid://ucvnbf5vhqqa" path="res://Global/back_arrow.tscn" id="3_fhkmi"]
+[ext_resource type="Texture2D" uid="uid://4o7gvibxs1yh" path="res://Assets/UI/Green-Frame.png" id="4_phmr0"]
+[ext_resource type="Texture2D" uid="uid://bh8j1fpyn6qns" path="res://Assets/UI/Planet-System.png" id="5_kmeav"]
+[ext_resource type="Texture2D" uid="uid://cif6gkduqdq7x" path="res://Assets/UI/Warning Simbol.png" id="6_npwvl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxjok"]
+atlas = ExtResource("2_gv7dy")
+region = Rect2(5, 299, 1286, 284)
+
+[sub_resource type="LabelSettings" id="LabelSettings_npujs"]
+font = ExtResource("3_84w6q")
+font_size = 51
+font_color = Color(0, 1, 0.313726, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_af8q0"]
+atlas = ExtResource("5_kmeav")
+region = Rect2(2, 2, 224, 224)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfp21"]
+atlas = ExtResource("2_gv7dy")
+region = Rect2(5, 299, 1286, 284)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gulif"]
+font = ExtResource("3_84w6q")
+font_size = 120
+font_color = Color(0, 1, 0.313726, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_neupo"]
+font = ExtResource("3_84w6q")
+font_size = 24
+font_color = Color(0, 1, 0.313726, 1)
 
 [node name="System Cards" type="Node2D"]
 script = ExtResource("1_iqkrk")
@@ -15,6 +47,84 @@ color = Color(0, 0, 0, 1)
 [node name="Current" type="Node2D" parent="."]
 
 [node name="Next" type="Node2D" parent="."]
+
+[node name="System Menu" type="Control" parent="."]
+top_level = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = 475.0
+offset_top = 112.0
+offset_right = 1761.0
+offset_bottom = 396.0
+scale = Vector2(0.8, 0.8)
+
+[node name="Menu Sprite" type="Sprite2D" parent="System Menu"]
+position = Vector2(643, 142)
+texture = SubResource("AtlasTexture_mxjok")
+
+[node name="Description" type="Label" parent="System Menu"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 25.0
+offset_right = 752.0
+offset_bottom = 255.0
+text = "//Star Type: Yellow
+//Solar Power: 100%
+//Celestial Bodies Detected: 3
+"
+label_settings = SubResource("LabelSettings_npujs")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Frame" type="Sprite2D" parent="System Menu"]
+position = Vector2(1135, 143)
+texture = ExtResource("4_phmr0")
+
+[node name="System Sprite" type="Sprite2D" parent="System Menu/Frame"]
+position = Vector2(5.04851e-05, 2.13981e-05)
+scale = Vector2(0.928571, 0.928571)
+texture = SubResource("AtlasTexture_af8q0")
+
+[node name="FrameW" type="Sprite2D" parent="System Menu"]
+position = Vector2(878, 143)
+texture = ExtResource("4_phmr0")
+
+[node name="BorderW" type="Sprite2D" parent="System Menu/FrameW"]
+position = Vector2(1.04904e-05, -82.0625)
+scale = Vector2(0.164852, 0.168574)
+texture = SubResource("AtlasTexture_bfp21")
+
+[node name="Warning" type="Label" parent="System Menu/FrameW/BorderW"]
+offset_left = -619.0
+offset_top = -124.0
+offset_right = 619.0
+offset_bottom = 125.0
+text = "SYSTEM HAZARDS"
+label_settings = SubResource("LabelSettings_gulif")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Warning Simbol" type="Sprite2D" parent="System Menu/FrameW/BorderW"]
+position = Vector2(-515.613, 0.370874)
+scale = Vector2(2.67999, 2.67999)
+texture = ExtResource("6_npwvl")
+
+[node name="Warning Simbol2" type="Sprite2D" parent="System Menu/FrameW/BorderW"]
+position = Vector2(521.679, 0.370874)
+scale = Vector2(2.67999, 2.67999)
+texture = ExtResource("6_npwvl")
+
+[node name="Description" type="Label" parent="System Menu/FrameW"]
+offset_left = -100.0
+offset_top = -58.0
+offset_right = 100.0
+offset_bottom = 104.0
+text = "//No Active Hazards Detected"
+label_settings = SubResource("LabelSettings_neupo")
+vertical_alignment = 1
+autowrap_mode = 3
+uppercase = true
 
 [node name="Empty System" type="Label" parent="."]
 visible = false
@@ -35,15 +145,6 @@ text = "Current System Name"
 label_settings = ExtResource("2_mnbqs")
 horizontal_alignment = 1
 
-[node name="Debugg" type="CanvasLayer" parent="."]
-
-[node name="Reload" type="Button" parent="Debugg"]
-offset_left = 44.0
-offset_top = 972.0
-offset_right = 268.0
-offset_bottom = 1036.0
-text = "Reload"
-
 [node name="Back Arrow" parent="." instance=ExtResource("3_fhkmi")]
 offset_left = 1813.0
 offset_top = 922.0
@@ -51,5 +152,4 @@ offset_right = 1877.0
 offset_bottom = 986.0
 scale = Vector2(1.5, 1.5)
 
-[connection signal="pressed" from="Debugg/Reload" to="." method="_on_reload_pressed"]
 [connection signal="pressed" from="Back Arrow" to="." method="_on_back_arrow_pressed"]

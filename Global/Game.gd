@@ -40,6 +40,7 @@ func next_day():
 	date += 1
 	warp_system()
 	stationResources.probe_daily_check()
+	stationResources.observer_activated = false
 	nextDay.emit()
 
 #Star System Generator

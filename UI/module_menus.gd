@@ -32,6 +32,8 @@ func choose_menu(module:String):
 	match module:
 		"Battery": 
 				battery_menu()
+		"Observation":
+			observation_menu()
 		"Probe Station":
 			probe_station_menu()
 		"Propulsor":
@@ -61,6 +63,40 @@ func battery_menu():
 	//"+str(snapped(data.stored,0.1))+"%
 	//currenty duplicating maximum energy reserves"
 
+func observation_menu():
+	var status: Label = get_node("Observation/Observation Status")
+	var info: Label = $Observation/VBoxContainer/Info
+	var button: menu_button = get_node("Observation/VBoxContainer/CenterContainer/Observation Button")
+	var button_label: Label = $"Observation/VBoxContainer/CenterContainer/Observation Button/Label"
+	var module: ModuleStats = Game.modules.Observation
+	var used: bool = Game.stationResources.observer_activated
+	var cost = module.energyUse
+	var energy: float = Game.stationResources.energy.stored
+	if cost <= energy && used == false:
+		status.text = "Radar - Active"
+		info.text = "//Scan Forward System
+		//"+Game.nextSystem.systemName+"
+		//"+str(snapped(cost,0.0))+"% energy requiered"
+		button.disabled = false
+		button_label.text = "Scan"
+	elif used == true:
+		info.text = "//System Scanned
+		//"+Game.nextSystem.systemName+""
+		button_label.text = "View"
+	else:
+		status.text = "Radar - Inactive"
+		info.text = "//Energy insufficient
+		//"+str(snapped(cost,0.0))+" energy requiered"
+		button.disabled = true
+		button_label.text = "Need Energy"
+
+func _on_observation_button_pressed():
+	if Game.stationResources.observer_activated == false:
+		Game.stationResources.observer_activated = true
+		Game.stationResources.energy.change_amount(-Game.modules.Observation.energyUse)
+	GlobalFlags.view_current_system = false
+	get_tree().change_scene_to_packed(systemPlanets)
+
 func probe_station_menu():
 	var station = Game.stationResources
 	if station.probe_dispatched == false:
@@ -85,21 +121,23 @@ func probe_station_menu():
 		$"Probe Station/AnimatedSprite2D".visible = false
 		$"Probe Station/Scan Button/Label".text = "Waiting"
 func _on_scan_button_pressed():
+	GlobalFlags.view_current_system = true
 	get_tree().change_scene_to_packed(systemPlanets)
 
 func propulsor_menu():
 	var module: ModuleStats = Game.modules.Propulsor
-	var energy: float = Game.stationResources.energy.stored
 	var next:menu_button = get_node("Propulsor/Actions Container/HSplitContainer/CenterContainer2/Next Button")
 	var next_label:Label = get_node("Propulsor/Actions Container/HSplitContainer/CenterContainer2/Next Button/Label")
 	var skip:menu_button = get_node("Propulsor/Actions Container/HSplitContainer2/CenterContainer2/Skip Button")
 	var skip_label:Label = get_node("Propulsor/Actions Container/HSplitContainer2/CenterContainer2/Skip Button/Label")
-	if energy >= 50:
+	var energy: float = Game.stationResources.energy.stored
+	if energy >= 50 :
 		next_label.text = "Energy "+str(snapped(module.energyUse,0.0))+"%"
 		skip_label.text = "Energy "+str(snapped(module.energyUse*2,0.0))+"%"
 		next.disabled = false
 		skip.disabled = false
 	elif  energy < 50 && energy >= 25:
+		next_label.text = "Energy "+str(snapped(module.energyUse,0.0))+"%"
 		skip_label.text = "Need Energy"
 		skip.disabled = true
 		next.disabled = false
@@ -138,4 +176,6 @@ func solar_panel_menu():
 		//Solar Energy Efficiency:
 		//"+str(100 * Game.currentSystem.starEnergy)+"%"
 		solar_low_info.text = solar_up_info.text
+
+
 

@@ -8,6 +8,7 @@ class_name StationResourses
 @export var oxigen: BasicResource
 @export var metals: BasicResource
 @export var probe_dispatched: bool
+@export var observer_activated: bool
 @export var probeData: ProbeData
 
 func starting_values(difficulty: float):
@@ -18,6 +19,7 @@ func starting_values(difficulty: float):
 	oxigen = BasicResource.new(100*randf_range(difficulty,1),true)
 	metals = BasicResource.new(100*randf_range(difficulty,1),true)
 	probe_dispatched = false
+	observer_activated = false
 	print("Starting Energy: "+str(energy.stored))
 	print("Starting Battery: "+str(battery.stored))
 	print("Starting Food: "+str(food.stored))
