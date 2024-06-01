@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://d031l5mvjvfwt"]
+[gd_scene load_steps=75 format=3 uid="uid://d031l5mvjvfwt"]
 
 [ext_resource type="Texture2D" uid="uid://bbij0qk86gr8e" path="res://Assets/Backgrounds/Station-Background-Clear.png" id="1_f3xoh"]
 [ext_resource type="Script" path="res://Screens/MainGame.gd" id="1_ynyw1"]
@@ -38,7 +38,7 @@
 [ext_resource type="Resource" uid="uid://44hwdv1klryg" path="res://Station Modules/Modules Data/solar_lower_data.tres" id="22_ukr42"]
 [ext_resource type="Texture2D" uid="uid://bh8j1fpyn6qns" path="res://Assets/UI/Planet-System.png" id="23_xna26"]
 [ext_resource type="Texture2D" uid="uid://cif6gkduqdq7x" path="res://Assets/UI/Warning Simbol.png" id="24_6jod7"]
-[ext_resource type="Texture2D" uid="uid://c874xsltbs6qa" path="res://Assets/UI/Warp.png" id="38_8hagd"]
+[ext_resource type="Texture2D" uid="uid://bj5ceighkw4t6" path="res://Assets/UI/Warp Silhouette.png" id="38_0wxgb"]
 [ext_resource type="PackedScene" uid="uid://btdoe8vwph8p4" path="res://UI/resource_bar.tscn" id="38_aox6d"]
 [ext_resource type="PackedScene" uid="uid://ch3n31b5rlbbf" path="res://Global/alert_message.tscn" id="38_tarno"]
 
@@ -71,203 +71,31 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../../../UI/Warp:frame")
+tracks/2/path = NodePath("../../../UI/Warp Silhouette:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../../../UI/WarpBG:size")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(12, 486)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../../../UI/WarpBG:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1697, 140)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../../../UI/WarpBG:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../../../UI/Warp2:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
 }
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("../../../UI/Warp2:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1703, 397)]
-}
-
-[sub_resource type="Animation" id="Animation_w3vpc"]
-resource_name = "propulsor_next"
-length = 6.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = false
-tracks/0/path = NodePath(".:amount")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [3]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:speed_scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(2, 1),
-"update": 0,
-"values": [1.0, 30.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../../../UI/Warp:animation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(2),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"default"]
-}
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("../../../UI/Warp:visible")
+tracks/3/path = NodePath("../../../UI/Warp Silhouette:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../../../UI/Warp:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(3, 6),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1703, 397), Vector2(240, 397)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../../../UI/Warp:frame")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../../../UI/WarpBG:size")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(3, 6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(12, 486), Vector2(1469, 486)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("../../../UI/WarpBG:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(3, 6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1697, 140), Vector2(240, 140)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("../../../UI/WarpBG:visible")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("../../../UI/Warp2:visible")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
+"values": [Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_7a681"]
+[sub_resource type="Animation" id="Animation_j74lw"]
 resource_name = "propulsor_arrival"
-length = 6.0
+length = 4.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = false
@@ -294,116 +122,32 @@ tracks/1/keys = {
 }
 tracks/2/type = "value"
 tracks/2/imported = false
-tracks/2/enabled = false
-tracks/2/path = NodePath("../../../UI/Warp:animation")
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../../UI/Warp Silhouette:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(2),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [&"default"]
+"values": [true, false, true, false, true, false]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("../../../UI/Warp:visible")
+tracks/3/path = NodePath("../../../UI/Warp Silhouette:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../../../UI/Warp:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 4, 5.9),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(240, 397), Vector2(240, 397), Vector2(1703, 397)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../../../UI/Warp:frame")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(-0.1, 3, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [9, 9, 8, 7, 6, 5, 4, 3, 2, 1]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../../../UI/WarpBG:size")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 3),
+"times": PackedFloat32Array(0, 1.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1469, 486), Vector2(12, 486)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("../../../UI/WarpBG:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0, 3, 5.9),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(240, 140), Vector2(240, 140), Vector2(1697, 140)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("../../../UI/WarpBG:visible")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("../../../UI/Warp2:visible")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("../../../UI/Warp2:position")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0, 3, 5.8),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(1703, 397), Vector2(240, 397), Vector2(1703, 397)]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_s01n4"]
-resource_name = "propulsor_skip"
-length = 6.0
+[sub_resource type="Animation" id="Animation_w3vpc"]
+resource_name = "propulsor_next"
+length = 4.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = false
@@ -431,106 +175,86 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../../../UI/Warp:animation")
+tracks/2/path = NodePath("../../../UI/Warp Silhouette:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(2),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 2.5, 3.7, 3.8, 3.9, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [&"default"]
+"values": [false, true, false, true, false, true]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("../../../UI/Warp:visible")
+tracks/3/path = NodePath("../../../UI/Warp Silhouette:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../../../UI/Warp:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(3, 6),
+"times": PackedFloat32Array(2.5, 3.7),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1703, 397), Vector2(240, 397)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../../../UI/Warp:frame")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+
+[sub_resource type="Animation" id="Animation_bln2f"]
+resource_name = "propulsor_skip"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:amount")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+"values": [3]
 }
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../../../UI/WarpBG:size")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(3, 6),
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:speed_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [1.0, 30.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../../UI/Warp Silhouette:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.5, 3.7, 3.8, 3.9, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../../UI/Warp Silhouette:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2.5, 3.7),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(12, 486), Vector2(1469, 486)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("../../../UI/WarpBG:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(3, 6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1697, 140), Vector2(240, 140)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("../../../UI/WarpBG:visible")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("../../../UI/Warp2:visible")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kofi7"]
 _data = {
 "RESET": SubResource("Animation_w166y"),
-"propulsor_arrival": SubResource("Animation_7a681"),
+"propulsor_arrival": SubResource("Animation_j74lw"),
 "propulsor_next": SubResource("Animation_w3vpc"),
-"propulsor_skip": SubResource("Animation_s01n4")
+"propulsor_skip": SubResource("Animation_bln2f")
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a5t4c"]
@@ -672,84 +396,6 @@ font_color = Color(0, 1, 0.313726, 1)
 font = ExtResource("21_kwp8f")
 font_size = 48
 font_color = Color(0, 1, 0.313726, 1)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_menac"]
-atlas = ExtResource("38_8hagd")
-region = Rect2(0, 0, 99, 670)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lmy1x"]
-atlas = ExtResource("38_8hagd")
-region = Rect2(99, 0, 99, 670)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vuo8f"]
-atlas = ExtResource("38_8hagd")
-region = Rect2(198, 0, 99, 670)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pq6oe"]
-atlas = ExtResource("38_8hagd")
-region = Rect2(297, 0, 99, 670)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_g2fqy"]
-atlas = ExtResource("38_8hagd")
-region = Rect2(396, 0, 99, 670)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jx6qd"]
-atlas = ExtResource("38_8hagd")
-region = Rect2(495, 0, 99, 670)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f2nw7"]
-atlas = ExtResource("38_8hagd")
-region = Rect2(594, 0, 99, 670)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oegjm"]
-atlas = ExtResource("38_8hagd")
-region = Rect2(693, 0, 99, 670)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vmb11"]
-atlas = ExtResource("38_8hagd")
-region = Rect2(792, 0, 99, 670)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a2vr7"]
-atlas = ExtResource("38_8hagd")
-region = Rect2(891, 0, 99, 670)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_cr145"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_menac")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lmy1x")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vuo8f")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pq6oe")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g2fqy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jx6qd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_f2nw7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_oegjm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vmb11")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a2vr7")
-}],
-"loop": false,
-"name": &"default",
-"speed": 10.0
-}]
 
 [sub_resource type="Animation" id="Animation_xkjr4"]
 resource_name = "fade_in"
@@ -1229,27 +875,11 @@ scale = Vector2(0.8, 0.8)
 texture = ExtResource("22_hnjjf")
 metadata/_edit_lock_ = true
 
-[node name="WarpBG" type="ColorRect" parent="UI"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -283.0
-offset_top = 140.0
-offset_right = -271.0
-offset_bottom = 626.0
-grow_horizontal = 0
-color = Color(0, 0, 0, 1)
-
-[node name="Warp" type="AnimatedSprite2D" parent="UI"]
+[node name="Warp Silhouette" type="Sprite2D" parent="UI"]
 visible = false
-position = Vector2(1703, 397)
-sprite_frames = SubResource("SpriteFrames_cr145")
-
-[node name="Warp2" type="AnimatedSprite2D" parent="UI"]
-visible = false
-position = Vector2(1703, 397)
-sprite_frames = SubResource("SpriteFrames_cr145")
-frame = 9
+position = Vector2(976.195, 386.67)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("38_0wxgb")
 
 [node name="Scene Transition" type="Control" parent="UI"]
 visible = false
