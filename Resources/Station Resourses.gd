@@ -10,6 +10,7 @@ class_name StationResourses
 @export var probe_dispatched: bool
 @export var observer_activated: bool
 @export var probeData: ProbeData
+var resource_list: Array[BasicResource] = [energy,battery,food,water,oxigen,metals]
 
 func starting_values(difficulty: float):
 	energy = BasicResource.new(100*randf_range(difficulty,1),true)
@@ -37,9 +38,20 @@ func generate_energy(value: float):
 		else:
 			energy.change_amount(value)
 
-func consume_energy(_value: float):
+func consume_energy(value: float):
 	if battery.is_available && battery.stored > 0:
-		pass
+		if value <= battery.stored:
+			battery.change_amount(-value)
+		else:
+			var excess = value - battery.stored
+			battery.set("stored",battery.MIN)
+			energy.change_amount(-excess)
+	else:
+		if value > energy.stored:
+			print("Not enoguth energy")
+			return
+		else:
+			energy.change_amount(-value)
 
 func lauch_probe(data: CelestialBody):
 	probeData = ProbeData.new(data)

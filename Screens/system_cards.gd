@@ -130,6 +130,7 @@ func get_current_system():
 
 func _on_buttonGroup_pressed(button: BaseButton):
 	var selectedCard: Node2D = button.get_parent()
+	Game.stationResources.consume_energy(Game.modules.Probe_Station.energyUse)
 	for i in buttonGroup.get_buttons():
 		i.disabled = true
 	var anim: AnimatedSprite2D = selectedCard.get_node("Planet Animation")

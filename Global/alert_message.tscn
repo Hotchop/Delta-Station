@@ -42,7 +42,7 @@ offset_right = 990.0
 offset_bottom = 540.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.607843)
+color = Color(0, 0, 0, 0.843137)
 
 [node name="Alert" type="Sprite2D" parent="."]
 position = Vector2(992, 304)

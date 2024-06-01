@@ -93,23 +93,25 @@ func observation_menu():
 func _on_observation_button_pressed():
 	if Game.stationResources.observer_activated == false:
 		Game.stationResources.observer_activated = true
-		Game.stationResources.energy.change_amount(-Game.modules.Observation.energyUse)
+		Game.stationResources.consume_energy(Game.modules.Observation.energyUse)
+		#Game.stationResources.energy.change_amount(-Game.modules.Observation.energyUse)
 	GlobalFlags.view_current_system = false
 	get_tree().change_scene_to_packed(systemPlanets)
 
 func probe_station_menu():
 	var station = Game.stationResources
-	if station.probe_dispatched == false:
+	var module = Game.modules.Probe_Station
+	if station.probe_dispatched == false && station.energy.stored >= module.energyUse:
 		$"Probe Station/Probe Status".text = "Status - Ready"
 		$"Probe Station/Probe Description".text = "//Deployment Ready
-//System Scan Ready"
+	//System Scan Ready"
 		$"Probe Station/Scan Button".disabled = false
 		$"Probe Station/Probe Data".visible = false
 		$"Probe Station/AnimatedSprite2D".visible = true
 		$"Probe Station/Probe Description".visible = true
 		$"Probe Station/Scan Button/Label".text = "Scan"
 
-	else:
+	elif station.probe_dispatched == true:
 		$"Probe Station/Probe Status".text = "Status - Deployed"
 		$"Probe Station/Probe Data".text = "//Deployed At: "+str(station.probeData.destination.bodyName)+"
 		//Estimated Return: "+str(station.probeData.time)+" day(s)
@@ -120,6 +122,16 @@ func probe_station_menu():
 		$"Probe Station/Probe Data".visible = true
 		$"Probe Station/AnimatedSprite2D".visible = false
 		$"Probe Station/Scan Button/Label".text = "Waiting"
+	else:
+		$"Probe Station/Probe Status".text = "Status - Inactive"
+		$"Probe Station/Probe Description".text = "//Deployment Haulted
+	//"+str(snapped(module.energyUse,1))+"% Energy Requiered"
+		$"Probe Station/Scan Button".disabled = true
+		$"Probe Station/Probe Data".visible = false
+		$"Probe Station/AnimatedSprite2D".visible = true
+		$"Probe Station/Probe Description".visible = true
+		$"Probe Station/Scan Button/Label".text = "Need Energy"
+
 func _on_scan_button_pressed():
 	GlobalFlags.view_current_system = true
 	get_tree().change_scene_to_packed(systemPlanets)
