@@ -9,6 +9,8 @@ class_name StationResourses
 @export var metals: BasicResource
 @export var probe_dispatched: bool
 @export var observer_activated: bool
+@export var gravity_activated: bool
+@export var consumption: float
 @export var probeData: ProbeData
 var resource_list: Array[BasicResource] = [energy,battery,food,water,oxigen,metals]
 
@@ -21,6 +23,8 @@ func starting_values(difficulty: float):
 	metals = BasicResource.new(100*randf_range(difficulty,1),true)
 	probe_dispatched = false
 	observer_activated = false
+	gravity_activated = false
+	consumption = 25.0
 	print("Starting Energy: "+str(energy.stored))
 	print("Starting Battery: "+str(battery.stored))
 	print("Starting Food: "+str(food.stored))

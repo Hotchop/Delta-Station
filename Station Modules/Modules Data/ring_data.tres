@@ -100,6 +100,7 @@ script = ExtResource("2_50omk")
 moduleName = "Gravity Ring"
 moduleDescription = "Gravity generation module"
 hull = 100.0
+is_destroyed = false
 energyUse = 25.0
 moduleLogo = SubResource("SpriteFrames_bo42p")
 has_resource = false

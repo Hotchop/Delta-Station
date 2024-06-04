@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dakqrgxef16qq"]
+[gd_scene load_steps=37 format=3 uid="uid://dakqrgxef16qq"]
 
 [ext_resource type="Script" path="res://UI/module_menus.gd" id="1_pge6p"]
 [ext_resource type="Texture2D" uid="uid://qfbms1tu01rg" path="res://Assets/UI/Station Menus.png" id="2_qcbua"]
@@ -127,6 +127,19 @@ atlas = ExtResource("6_sbm5o")
 region = Rect2(215, 5, 200, 50)
 
 [sub_resource type="LabelSettings" id="LabelSettings_n8e1s"]
+font = ExtResource("5_5l1ay")
+font_size = 38
+font_color = Color(0, 1, 0.313726, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2epb"]
+atlas = ExtResource("6_sbm5o")
+region = Rect2(5, 5, 200, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vb6h4"]
+atlas = ExtResource("6_sbm5o")
+region = Rect2(215, 5, 200, 50)
+
+[sub_resource type="LabelSettings" id="LabelSettings_pwymp"]
 font = ExtResource("5_5l1ay")
 font_size = 38
 font_color = Color(0, 1, 0.313726, 1)
@@ -528,8 +541,56 @@ uppercase = true
 visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 619.0
+offset_top = 39.0
+offset_right = 971.0
+offset_bottom = 247.0
+
+[node name="Ring Status" type="Label" parent="Ring"]
+offset_right = 352.0
+offset_bottom = 48.0
+text = "Gravity - inactive"
+label_settings = SubResource("LabelSettings_r1xcj")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Ring"]
+offset_top = 45.0
+offset_right = 352.0
+offset_bottom = 208.0
+alignment = 1
+
+[node name="Info" type="Label" parent="Ring/VBoxContainer"]
+layout_mode = 2
+text = "//estimated improvement
+on resource consumption
+//25% --> 10%"
+label_settings = SubResource("LabelSettings_ajlsm")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="CenterContainer" type="CenterContainer" parent="Ring/VBoxContainer"]
+layout_mode = 2
+
+[node name="Ring Button" type="TextureButton" parent="Ring/VBoxContainer/CenterContainer" node_paths=PackedStringArray("button_label")]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AtlasTexture_o2epb")
+texture_hover = SubResource("AtlasTexture_vb6h4")
+script = ExtResource("7_8yd37")
+button_text = "Activate"
+button_label = NodePath("Label")
+
+[node name="Label" type="Label" parent="Ring/VBoxContainer/CenterContainer/Ring Button"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 196.0
+offset_bottom = 46.0
+text = "Text"
+label_settings = SubResource("LabelSettings_pwymp")
+horizontal_alignment = 1
 
 [node name="Solar Panel - Upper Deck" type="Control" parent="."]
 visible = false
@@ -619,3 +680,4 @@ uppercase = true
 [connection signal="pressed" from="Probe Station/Scan Button" to="." method="_on_scan_button_pressed"]
 [connection signal="pressed" from="Propulsor/Actions Container/HSplitContainer/CenterContainer2/Next Button" to="." method="_on_next_button_pressed"]
 [connection signal="pressed" from="Propulsor/Actions Container/HSplitContainer2/CenterContainer2/Skip Button" to="." method="_on_skip_button_pressed"]
+[connection signal="pressed" from="Ring/VBoxContainer/CenterContainer/Ring Button" to="." method="_on_ring_button_pressed"]

@@ -12,6 +12,7 @@ func _ready():
 	system_menu_data()
 	modulesMenus = moduleMenusScene.instantiate() as Node2D
 	modulesMenus.system_jump.connect(system_jump_alert)
+	modulesMenus.activate_gravity.connect(activate_gravity_alert)
 	$"Buttons/Module Button/Module Menu".add_child(modulesMenus)
 	modulesMenus.global_position = Vector2(20,776)
 	noMenu = modulesMenus.get_node("No Module")
@@ -83,9 +84,16 @@ func _on_station_parts_toggle_menu(moduleName,data):
 func system_jump_alert(string,value):
 	if value == 1:
 		$"../Alerts/System Jump".set_info("Preparing warp jump","Jumping to next system
-Confirmation Requiered")
+	Confirmation Requiered")
 	else:
 		$"../Alerts/System Jump".set_info("Preparing warp jump","Skiping next system
-Confirmation Requiered")
+	Confirmation Requiered")
 	$"../Alerts/System Jump".set_data(string,value)
 	$"../Alerts/System Jump".visible = true
+
+func activate_gravity_alert():
+	var use: float = Game.modules.Ring.energyUse
+	$"../Alerts/Activate Gravity".set_info("Activate Station Gravity","Station Gravity will be activated
+		Energy consumption -> "+str(snapped(use,1))+"%")	
+	$"../Alerts/Activate Gravity".set_data("",0)
+	$"../Alerts/Activate Gravity".visible = true

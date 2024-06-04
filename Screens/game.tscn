@@ -956,6 +956,10 @@ message = "Preparing warp jump"
 info = "Jumping to next system
 Confirmation Requiered"
 
+[node name="Activate Gravity" parent="Alerts" instance=ExtResource("38_tarno")]
+visible = false
+message = "Activate Station Gravity"
+
 [node name="Debugg" type="CanvasLayer" parent="."]
 script = ExtResource("22_q7h35")
 
@@ -1016,6 +1020,7 @@ text = "Main Menu"
 [connection signal="toggled" from="Menus/Buttons/Module Button" to="Menus" method="_on_module_button_toggled"]
 [connection signal="toggled" from="Menus/Buttons/System Button" to="Menus" method="_on_system_button_toggled"]
 [connection signal="confirm_alert" from="Alerts/System Jump" to="." method="_on_system_jump_confirm_alert"]
+[connection signal="confirm_alert" from="Alerts/Activate Gravity" to="." method="_on_activate_gravity_confirm_alert"]
 [connection signal="pressed" from="Debugg/Quit Button DB" to="Debugg" method="_on_quit_button_db_pressed"]
 [connection signal="pressed" from="Debugg/Next Day DB" to="Debugg" method="_on_next_day_db_pressed"]
 [connection signal="pressed" from="Debugg/Damage Hull" to="Debugg" method="_on_damage_hull_pressed"]

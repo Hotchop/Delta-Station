@@ -1,6 +1,7 @@
 extends Node2D
 
 signal system_jump(type,distance)
+signal activate_gravity
 
 @onready var menuTitle: Label = $General/Title
 @onready var menuDescription: Label = $General/Description
@@ -38,6 +39,8 @@ func choose_menu(module:String):
 			probe_station_menu()
 		"Propulsor":
 			propulsor_menu()
+		"Gravity Ring":
+			ring_menu()
 		"Reactor":
 			reactor_menu()
 		"Solar Panel Down":
@@ -167,6 +170,21 @@ func _on_skip_button_pressed():
 func reactor_menu():
 	pass
 
+func ring_menu():
+	var module: ModuleStats = Game.modules.Ring
+	var energy: float = Game.stationResources.energy.stored
+	if Game.stationResources.gravity_activated == true:
+		print("Working Ok")
+		$"Ring/Ring Status".text = "Gravity - Active"
+		$"Ring/VBoxContainer/CenterContainer/Ring Button/Label".text = "Online"
+		$"Ring/VBoxContainer/CenterContainer/Ring Button".disabled = true
+	if Game.stationResources.gravity_activated == false && energy < module.energyUse:
+		$"Ring/Ring Status".text = "Gravity - Inactive"
+		$"Ring/VBoxContainer/CenterContainer/Ring Button/Label".text = "Need Energy"
+		$"Ring/VBoxContainer/CenterContainer/Ring Button".disabled = true
+func _on_ring_button_pressed():
+	activate_gravity.emit()
+
 func solar_panel_menu():
 	var solar_up_status:Label = get_node("Solar Panel - Upper Deck/Status")
 	var solar_low_status:Label = get_node("Solar Panel - Lower Deck/Status")
@@ -188,6 +206,8 @@ func solar_panel_menu():
 		//Solar Energy Efficiency:
 		//"+str(100 * Game.currentSystem.starEnergy)+"%"
 		solar_low_info.text = solar_up_info.text
+
+
 
 
 
